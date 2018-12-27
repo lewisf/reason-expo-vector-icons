@@ -201,7 +201,7 @@ module SimpleLineIcons = {
     [@bs.optional]
     allowFontScaling: bool,
     [@bs.optional]
-    name: name,
+    name: string,
     [@bs.optional]
     size: int,
     [@bs.optional]
@@ -210,27 +210,27 @@ module SimpleLineIcons = {
     style: BsReactNative.Style.t,
   };
 
-  let make =
-    (
-      ~allowFontScaling=false,
-      ~name=`user,
-      ~color="black",
-      ~size=12,
-      ~style=BsReactNative.Style.style([]),
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=js,
-    ~props=
-      props(
-        ~allowFontScaling,
-        ~name,
-        ~size,
-        ~color,
-        ~style,
-        (),
-      ),
-    children,
-  );
-
 }
+
+let make =
+  (
+    ~allowFontScaling=false,
+    ~name=`user,
+    ~color="black",
+    ~size=12,
+    ~style=BsReactNative.Style.style([]),
+    children,
+  ) =>
+ReasonReact.wrapJsForReason(
+  ~reactClass=SimpleLineIcons.js,
+  ~props=
+    SimpleLineIcons.props(
+      ~allowFontScaling,
+      ~name=SimpleLineIcons.nameToJs(name),
+      ~size,
+      ~color,
+      ~style,
+      (),
+    ),
+  children,
+);

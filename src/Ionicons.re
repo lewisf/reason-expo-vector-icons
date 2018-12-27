@@ -708,7 +708,7 @@ module Ionicons = {
     [@bs.optional]
     allowFontScaling: bool,
     [@bs.optional]
-    name: name,
+    name: string,
     [@bs.optional]
     size: int,
     [@bs.optional]
@@ -717,27 +717,27 @@ module Ionicons = {
     style: BsReactNative.Style.t,
   };
 
-  let make =
-    (
-      ~allowFontScaling=false,
-      ~name=`iosAdd,
-      ~color="black",
-      ~size=12,
-      ~style=BsReactNative.Style.style([]),
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=js,
-    ~props=
-      props(
-        ~allowFontScaling,
-        ~name,
-        ~size,
-        ~color,
-        ~style,
-        (),
-      ),
-    children,
-  );
-
 }
+
+let make =
+  (
+    ~allowFontScaling=false,
+    ~name=`iosAdd,
+    ~color="black",
+    ~size=12,
+    ~style=BsReactNative.Style.style([]),
+    children,
+  ) =>
+ReasonReact.wrapJsForReason(
+  ~reactClass=Ionicons.js,
+  ~props=
+    Ionicons.props(
+      ~allowFontScaling,
+      ~name=Ionicons.nameToJs(name),
+      ~size,
+      ~color,
+      ~style,
+      (),
+    ),
+  children,
+);

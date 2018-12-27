@@ -4,7 +4,7 @@ module MaterialIcons = {
 
   [@bs.deriving jsConverter]
   type name = [
-    | [@bs.as "3d-rotation"] `3DRotation
+    | [@bs.as "3d-rotation"] `_3DRotation
     | [@bs.as "ac-unit"] `acUnit
     | [@bs.as "access-alarm"] `accessAlarm
     | [@bs.as "access-alarms"] `accessAlarms
@@ -168,7 +168,7 @@ module MaterialIcons = {
     | [@bs.as "child-care"] `childCare
     | [@bs.as "child-friendly"] `childFriendly
     | [@bs.as "chrome-reader-mode"] `chromeReaderMode
-    | [@bs.as "class"] `class
+    | [@bs.as "class"] `class_
     | [@bs.as "clear"] `clear
     | [@bs.as "clear-all"] `clearAll
     | [@bs.as "close"] `close
@@ -250,7 +250,7 @@ module MaterialIcons = {
     | [@bs.as "do-not-disturb-on"] `doNotDisturbOn
     | [@bs.as "dock"] `dock
     | [@bs.as "domain"] `domain
-    | [@bs.as "done"] `done
+    | [@bs.as "done"] `done_
     | [@bs.as "done-all"] `doneAll
     | [@bs.as "donut-large"] `donutLarge
     | [@bs.as "donut-small"] `donutSmall
@@ -944,7 +944,7 @@ module MaterialIcons = {
     [@bs.optional]
     allowFontScaling: bool,
     [@bs.optional]
-    name: name,
+    name: string,
     [@bs.optional]
     size: int,
     [@bs.optional]
@@ -953,27 +953,27 @@ module MaterialIcons = {
     style: BsReactNative.Style.t,
   };
 
-  let make =
-    (
-      ~allowFontScaling=false,
-      ~name=`3DRotation,
-      ~color="black",
-      ~size=12,
-      ~style=BsReactNative.Style.style([]),
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=js,
-    ~props=
-      props(
-        ~allowFontScaling,
-        ~name,
-        ~size,
-        ~color,
-        ~style,
-        (),
-      ),
-    children,
-  );
-
 }
+
+let make =
+  (
+    ~allowFontScaling=false,
+    ~name=`_3DRotation,
+    ~color="black",
+    ~size=12,
+    ~style=BsReactNative.Style.style([]),
+    children,
+  ) =>
+ReasonReact.wrapJsForReason(
+  ~reactClass=MaterialIcons.js,
+  ~props=
+    MaterialIcons.props(
+      ~allowFontScaling,
+      ~name=MaterialIcons.nameToJs(name),
+      ~size,
+      ~color,
+      ~style,
+      (),
+    ),
+  children,
+);

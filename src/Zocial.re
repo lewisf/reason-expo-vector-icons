@@ -112,7 +112,7 @@ module Zocial = {
     [@bs.optional]
     allowFontScaling: bool,
     [@bs.optional]
-    name: name,
+    name: string,
     [@bs.optional]
     size: int,
     [@bs.optional]
@@ -121,27 +121,27 @@ module Zocial = {
     style: BsReactNative.Style.t,
   };
 
-  let make =
-    (
-      ~allowFontScaling=false,
-      ~name=`acrobat,
-      ~color="black",
-      ~size=12,
-      ~style=BsReactNative.Style.style([]),
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=js,
-    ~props=
-      props(
-        ~allowFontScaling,
-        ~name,
-        ~size,
-        ~color,
-        ~style,
-        (),
-      ),
-    children,
-  );
-
 }
+
+let make =
+  (
+    ~allowFontScaling=false,
+    ~name=`acrobat,
+    ~color="black",
+    ~size=12,
+    ~style=BsReactNative.Style.style([]),
+    children,
+  ) =>
+ReasonReact.wrapJsForReason(
+  ~reactClass=Zocial.js,
+  ~props=
+    Zocial.props(
+      ~allowFontScaling,
+      ~name=Zocial.nameToJs(name),
+      ~size,
+      ~color,
+      ~style,
+      (),
+    ),
+  children,
+);

@@ -2475,7 +2475,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "swap-vertical"] `swapVertical
     | [@bs.as "swap-vertical-variant"] `swapVerticalVariant
     | [@bs.as "swim"] `swim
-    | [@bs.as "switch"] `switch
+    | [@bs.as "switch"] `switch_
     | [@bs.as "sword"] `sword
     | [@bs.as "sword-cross"] `swordCross
     | [@bs.as "symfony"] `symfony
@@ -2907,7 +2907,7 @@ module MaterialCommunityIcons = {
     [@bs.optional]
     allowFontScaling: bool,
     [@bs.optional]
-    name: name,
+    name: string,
     [@bs.optional]
     size: int,
     [@bs.optional]
@@ -2916,27 +2916,27 @@ module MaterialCommunityIcons = {
     style: BsReactNative.Style.t,
   };
 
-  let make =
-    (
-      ~allowFontScaling=false,
-      ~name=`accessPoint,
-      ~color="black",
-      ~size=12,
-      ~style=BsReactNative.Style.style([]),
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=js,
-    ~props=
-      props(
-        ~allowFontScaling,
-        ~name,
-        ~size,
-        ~color,
-        ~style,
-        (),
-      ),
-    children,
-  );
-
 }
+
+let make =
+  (
+    ~allowFontScaling=false,
+    ~name=`accessPoint,
+    ~color="black",
+    ~size=12,
+    ~style=BsReactNative.Style.style([]),
+    children,
+  ) =>
+ReasonReact.wrapJsForReason(
+  ~reactClass=MaterialCommunityIcons.js,
+  ~props=
+    MaterialCommunityIcons.props(
+      ~allowFontScaling,
+      ~name=MaterialCommunityIcons.nameToJs(name),
+      ~size,
+      ~color,
+      ~style,
+      (),
+    ),
+  children,
+);

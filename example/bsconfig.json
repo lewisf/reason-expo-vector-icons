@@ -1,0 +1,17 @@
+{
+  "name": "reason-expo-vector-icons-playground",
+  "bsc-flags": ["-bs-super-errors"],
+  "refmt": 3,
+  "reason": {"react-jsx": 2},
+  "bs-dependencies": [
+    "reason-react",
+    "bs-react-native",
+    "../../reason-expo-vector-icons"
+  ],
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ]
+}

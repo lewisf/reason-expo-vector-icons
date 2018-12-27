@@ -421,7 +421,7 @@ module FontAwesome = {
     | [@bs.as "wheelchair"] `wheelchair
     | [@bs.as "vimeo-square"] `vimeoSquare
     | [@bs.as "turkish-lira"] `turkishLira
-    | [@bs.as "try"] `try
+    | [@bs.as "try"] `try_
     | [@bs.as "plus-square-o"] `plusSquareO
     | [@bs.as "space-shuttle"] `spaceShuttle
     | [@bs.as "slack"] `slack
@@ -663,7 +663,7 @@ module FontAwesome = {
     | [@bs.as "tv"] `tv
     | [@bs.as "television"] `television
     | [@bs.as "contao"] `contao
-    | [@bs.as "500px"] `500Px
+    | [@bs.as "500px"] `_500Px
     | [@bs.as "amazon"] `amazon
     | [@bs.as "calendar-plus-o"] `calendarPlusO
     | [@bs.as "calendar-minus-o"] `calendarMinusO
@@ -798,7 +798,7 @@ module FontAwesome = {
     [@bs.optional]
     allowFontScaling: bool,
     [@bs.optional]
-    name: name,
+    name: string,
     [@bs.optional]
     size: int,
     [@bs.optional]
@@ -807,27 +807,27 @@ module FontAwesome = {
     style: BsReactNative.Style.t,
   };
 
-  let make =
-    (
-      ~allowFontScaling=false,
-      ~name=`glass,
-      ~color="black",
-      ~size=12,
-      ~style=BsReactNative.Style.style([]),
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=js,
-    ~props=
-      props(
-        ~allowFontScaling,
-        ~name,
-        ~size,
-        ~color,
-        ~style,
-        (),
-      ),
-    children,
-  );
-
 }
+
+let make =
+  (
+    ~allowFontScaling=false,
+    ~name=`glass,
+    ~color="black",
+    ~size=12,
+    ~style=BsReactNative.Style.style([]),
+    children,
+  ) =>
+ReasonReact.wrapJsForReason(
+  ~reactClass=FontAwesome.js,
+  ~props=
+    FontAwesome.props(
+      ~allowFontScaling,
+      ~name=FontAwesome.nameToJs(name),
+      ~size,
+      ~color,
+      ~style,
+      (),
+    ),
+  children,
+);

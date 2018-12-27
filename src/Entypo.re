@@ -4,8 +4,8 @@ module Entypo = {
 
   [@bs.deriving jsConverter]
   type name = [
-    | [@bs.as "500px"] `500Px
-    | [@bs.as "500px-with-circle"] `500PxWithCircle
+    | [@bs.as "500px"] `_500Px
+    | [@bs.as "500px-with-circle"] `_500PxWithCircle
     | [@bs.as "add-to-list"] `addToList
     | [@bs.as "add-user"] `addUser
     | [@bs.as "address"] `address
@@ -265,7 +265,7 @@ module Entypo = {
     | [@bs.as "mouse-pointer"] `mousePointer
     | [@bs.as "music"] `music
     | [@bs.as "network"] `network
-    | [@bs.as "new"] `new
+    | [@bs.as "new"] `new_
     | [@bs.as "new-message"] `newMessage
     | [@bs.as "news"] `news
     | [@bs.as "newsletter"] `newsletter
@@ -356,7 +356,7 @@ module Entypo = {
     | [@bs.as "swap"] `swap
     | [@bs.as "swarm"] `swarm
     | [@bs.as "sweden"] `sweden
-    | [@bs.as "switch"] `switch
+    | [@bs.as "switch"] `switch_
     | [@bs.as "tablet"] `tablet
     | [@bs.as "tablet-mobile-combo"] `tabletMobileCombo
     | [@bs.as "tag"] `tag
@@ -423,7 +423,7 @@ module Entypo = {
     [@bs.optional]
     allowFontScaling: bool,
     [@bs.optional]
-    name: name,
+    name: string,
     [@bs.optional]
     size: int,
     [@bs.optional]
@@ -432,27 +432,27 @@ module Entypo = {
     style: BsReactNative.Style.t,
   };
 
-  let make =
-    (
-      ~allowFontScaling=false,
-      ~name=`500Px,
-      ~color="black",
-      ~size=12,
-      ~style=BsReactNative.Style.style([]),
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=js,
-    ~props=
-      props(
-        ~allowFontScaling,
-        ~name,
-        ~size,
-        ~color,
-        ~style,
-        (),
-      ),
-    children,
-  );
-
 }
+
+let make =
+  (
+    ~allowFontScaling=false,
+    ~name=`_500Px,
+    ~color="black",
+    ~size=12,
+    ~style=BsReactNative.Style.style([]),
+    children,
+  ) =>
+ReasonReact.wrapJsForReason(
+  ~reactClass=Entypo.js,
+  ~props=
+    Entypo.props(
+      ~allowFontScaling,
+      ~name=Entypo.nameToJs(name),
+      ~size,
+      ~color,
+      ~style,
+      (),
+    ),
+  children,
+);

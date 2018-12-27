@@ -85,7 +85,7 @@ module ${name} = {
     [@bs.optional]
     allowFontScaling: bool,
     [@bs.optional]
-    name: name,
+    name: string,
     [@bs.optional]
     size: int,
     [@bs.optional]
@@ -94,35 +94,39 @@ module ${name} = {
     style: BsReactNative.Style.t,
   };
 
-  let make =
-    (
-      ~allowFontScaling=false,
-      ~name=\`${defaultIcon},
-      ~color="black",
-      ~size=12,
-      ~style=BsReactNative.Style.style([]),
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=js,
-    ~props=
-      props(
-        ~allowFontScaling,
-        ~name,
-        ~size,
-        ~color,
-        ~style,
-        (),
-      ),
-    children,
-  );
-
 }
+
+let make =
+  (
+    ~allowFontScaling=false,
+    ~name=\`${defaultIcon},
+    ~color="black",
+    ~size=12,
+    ~style=BsReactNative.Style.style([]),
+    children,
+  ) =>
+ReasonReact.wrapJsForReason(
+  ~reactClass=${name}.js,
+  ~props=
+    ${name}.props(
+      ~allowFontScaling,
+      ~name=${name}.nameToJs(name),
+      ~size,
+      ~color,
+      ~style,
+      (),
+    ),
+  children,
+);
 `;
 
 const handleKeywordCollisions = x => {
-  if (x === "function") {
+  if (
+    ["class", "done", "function", "new", "switch", "try", "type"].includes(x)
+  ) {
     return `${x}_`;
+  } else if (/[0-9]/.test(x[0])) {
+    return `_${x}`;
   } else {
     return x;
   }

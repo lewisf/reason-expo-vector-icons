@@ -239,7 +239,7 @@ module Feather = {
     | [@bs.as "truck"] `truck
     | [@bs.as "tv"] `tv
     | [@bs.as "twitter"] `twitter
-    | [@bs.as "type"] `type
+    | [@bs.as "type"] `type_
     | [@bs.as "umbrella"] `umbrella
     | [@bs.as "underline"] `underline
     | [@bs.as "unlock"] `unlock
@@ -278,7 +278,7 @@ module Feather = {
     [@bs.optional]
     allowFontScaling: bool,
     [@bs.optional]
-    name: name,
+    name: string,
     [@bs.optional]
     size: int,
     [@bs.optional]
@@ -287,27 +287,27 @@ module Feather = {
     style: BsReactNative.Style.t,
   };
 
-  let make =
-    (
-      ~allowFontScaling=false,
-      ~name=`activity,
-      ~color="black",
-      ~size=12,
-      ~style=BsReactNative.Style.style([]),
-      children,
-    ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=js,
-    ~props=
-      props(
-        ~allowFontScaling,
-        ~name,
-        ~size,
-        ~color,
-        ~style,
-        (),
-      ),
-    children,
-  );
-
 }
+
+let make =
+  (
+    ~allowFontScaling=false,
+    ~name=`activity,
+    ~color="black",
+    ~size=12,
+    ~style=BsReactNative.Style.style([]),
+    children,
+  ) =>
+ReasonReact.wrapJsForReason(
+  ~reactClass=Feather.js,
+  ~props=
+    Feather.props(
+      ~allowFontScaling,
+      ~name=Feather.nameToJs(name),
+      ~size,
+      ~color,
+      ~style,
+      (),
+    ),
+  children,
+);

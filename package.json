@@ -8,9 +8,7 @@
     "install::dev": "yarn && install-self-peers -- --ignore-scripts",
     "pub": "npx np --yolo"
   },
-  "keywords": [
-    "BuckleScript"
-  ],
+  "keywords": ["BuckleScript"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
@@ -22,8 +20,7 @@
     "lodash.capitalize": "^4.2.1"
   },
   "dependencies": {
-    "@expo/vector-icons": "^8.1.0",
-    "kebabify": "^0.1.0"
+    "@expo/vector-icons": "^8.1.0"
   },
   "peerDependencies": {
     "bs-react-native": "^0.10.0",
