@@ -4,7 +4,9 @@
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world"
+    "clean": "bsb -clean-world",
+    "install::dev": "yarn && install-self-peers -- --ignore-scripts",
+    "pub": "npx np --yolo"
   },
   "keywords": [
     "BuckleScript"
@@ -12,9 +14,20 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^4.0.14"
+    "@team-griffin/install-self-peers": "^1.1.1",
+    "bs-platform": "^4.0.14",
+    "common-tags": "^1.8.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.capitalize": "^4.2.1"
   },
   "dependencies": {
-    "@expo/vector-icons": "^8.1.0"
+    "@expo/vector-icons": "^8.1.0",
+    "kebabify": "^0.1.0"
+  },
+  "peerDependencies": {
+    "bs-react-native": "^0.10.0",
+    "expo": "^31.0.6",
+    "reason-react": "^0.5.3"
   }
 }
