@@ -2,1417 +2,2815 @@
 'use strict';
 
 var Caml_option = require("bs-platform/lib/js/caml_option.js");
+var Js_mapperRt = require("bs-platform/lib/js/js_mapperRt.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var VectorIcons = require("@expo/vector-icons");
 var Style$BsReactNative = require("bs-react-native/src/style.js");
 
-function getIcon(x) {
-  switch (x) {
-    case 0 : 
-        return "ios-add";
-    case 1 : 
-        return "ios-add-circle";
-    case 2 : 
-        return "ios-add-circle-outline";
-    case 3 : 
-        return "ios-airplane";
-    case 4 : 
-        return "ios-alarm";
-    case 5 : 
-        return "ios-albums";
-    case 6 : 
-        return "ios-alert";
-    case 7 : 
-        return "ios-american-football";
-    case 8 : 
-        return "ios-analytics";
-    case 9 : 
-        return "ios-aperture";
-    case 10 : 
-        return "ios-apps";
-    case 11 : 
-        return "ios-appstore";
-    case 12 : 
-        return "ios-archive";
-    case 13 : 
-        return "ios-arrow-back";
-    case 14 : 
-        return "ios-arrow-down";
-    case 15 : 
-        return "ios-arrow-dropdown";
-    case 16 : 
-        return "ios-arrow-dropdown-circle";
-    case 17 : 
-        return "ios-arrow-dropleft";
-    case 18 : 
-        return "ios-arrow-dropleft-circle";
-    case 19 : 
-        return "ios-arrow-dropright";
-    case 20 : 
-        return "ios-arrow-dropright-circle";
-    case 21 : 
-        return "ios-arrow-dropup";
-    case 22 : 
-        return "ios-arrow-dropup-circle";
-    case 23 : 
-        return "ios-arrow-forward";
-    case 24 : 
-        return "ios-arrow-round-back";
-    case 25 : 
-        return "ios-arrow-round-down";
-    case 26 : 
-        return "ios-arrow-round-forward";
-    case 27 : 
-        return "ios-arrow-round-up";
-    case 28 : 
-        return "ios-arrow-up";
-    case 29 : 
-        return "ios-at";
-    case 30 : 
-        return "ios-attach";
-    case 31 : 
-        return "ios-backspace";
-    case 32 : 
-        return "ios-barcode";
-    case 33 : 
-        return "ios-baseball";
-    case 34 : 
-        return "ios-basket";
-    case 35 : 
-        return "ios-basketball";
-    case 36 : 
-        return "ios-battery-charging";
-    case 37 : 
-        return "ios-battery-dead";
-    case 38 : 
-        return "ios-battery-full";
-    case 39 : 
-        return "ios-beaker";
-    case 40 : 
-        return "ios-bed";
-    case 41 : 
-        return "ios-beer";
-    case 42 : 
-        return "ios-bicycle";
-    case 43 : 
-        return "ios-bluetooth";
-    case 44 : 
-        return "ios-boat";
-    case 45 : 
-        return "ios-body";
-    case 46 : 
-        return "ios-bonfire";
-    case 47 : 
-        return "ios-book";
-    case 48 : 
-        return "ios-bookmark";
-    case 49 : 
-        return "ios-bookmarks";
-    case 50 : 
-        return "ios-bowtie";
-    case 51 : 
-        return "ios-briefcase";
-    case 52 : 
-        return "ios-browsers";
-    case 53 : 
-        return "ios-brush";
-    case 54 : 
-        return "ios-bug";
-    case 55 : 
-        return "ios-build";
-    case 56 : 
-        return "ios-bulb";
-    case 57 : 
-        return "ios-bus";
-    case 58 : 
-        return "ios-business";
-    case 59 : 
-        return "ios-cafe";
-    case 60 : 
-        return "ios-calculator";
-    case 61 : 
-        return "ios-calendar";
-    case 62 : 
-        return "ios-call";
-    case 63 : 
-        return "ios-camera";
-    case 64 : 
-        return "ios-car";
-    case 65 : 
-        return "ios-card";
-    case 66 : 
-        return "ios-cart";
-    case 67 : 
-        return "ios-cash";
-    case 68 : 
-        return "ios-cellular";
-    case 69 : 
-        return "ios-chatboxes";
-    case 70 : 
-        return "ios-chatbubbles";
-    case 71 : 
-        return "ios-checkbox";
-    case 72 : 
-        return "ios-checkbox-outline";
-    case 73 : 
-        return "ios-checkmark";
-    case 74 : 
-        return "ios-checkmark-circle";
-    case 75 : 
-        return "ios-checkmark-circle-outline";
-    case 76 : 
-        return "ios-clipboard";
-    case 77 : 
-        return "ios-clock";
-    case 78 : 
-        return "ios-close";
-    case 79 : 
-        return "ios-close-circle";
-    case 80 : 
-        return "ios-close-circle-outline";
-    case 81 : 
-        return "ios-cloud";
-    case 82 : 
-        return "ios-cloud-circle";
-    case 83 : 
-        return "ios-cloud-done";
-    case 84 : 
-        return "ios-cloud-download";
-    case 85 : 
-        return "ios-cloud-outline";
-    case 86 : 
-        return "ios-cloud-upload";
-    case 87 : 
-        return "ios-cloudy";
-    case 88 : 
-        return "ios-cloudy-night";
-    case 89 : 
-        return "ios-code";
-    case 90 : 
-        return "ios-code-download";
-    case 91 : 
-        return "ios-code-working";
-    case 92 : 
-        return "ios-cog";
-    case 93 : 
-        return "ios-color-fill";
-    case 94 : 
-        return "ios-color-filter";
-    case 95 : 
-        return "ios-color-palette";
-    case 96 : 
-        return "ios-color-wand";
-    case 97 : 
-        return "ios-compass";
-    case 98 : 
-        return "ios-construct";
-    case 99 : 
-        return "ios-contact";
-    case 100 : 
-        return "ios-contacts";
-    case 101 : 
-        return "ios-contract";
-    case 102 : 
-        return "ios-contrast";
-    case 103 : 
-        return "ios-copy";
-    case 104 : 
-        return "ios-create";
-    case 105 : 
-        return "ios-crop";
-    case 106 : 
-        return "ios-cube";
-    case 107 : 
-        return "ios-cut";
-    case 108 : 
-        return "ios-desktop";
-    case 109 : 
-        return "ios-disc";
-    case 110 : 
-        return "ios-document";
-    case 111 : 
-        return "ios-done-all";
-    case 112 : 
-        return "ios-download";
-    case 113 : 
-        return "ios-easel";
-    case 114 : 
-        return "ios-egg";
-    case 115 : 
-        return "ios-exit";
-    case 116 : 
-        return "ios-expand";
-    case 117 : 
-        return "ios-eye";
-    case 118 : 
-        return "ios-eye-off";
-    case 119 : 
-        return "ios-fastforward";
-    case 120 : 
-        return "ios-female";
-    case 121 : 
-        return "ios-filing";
-    case 122 : 
-        return "ios-film";
-    case 123 : 
-        return "ios-finger-print";
-    case 124 : 
-        return "ios-fitness";
-    case 125 : 
-        return "ios-flag";
-    case 126 : 
-        return "ios-flame";
-    case 127 : 
-        return "ios-flash";
-    case 128 : 
-        return "ios-flash-off";
-    case 129 : 
-        return "ios-flashlight";
-    case 130 : 
-        return "ios-flask";
-    case 131 : 
-        return "ios-flower";
-    case 132 : 
-        return "ios-folder";
-    case 133 : 
-        return "ios-folder-open";
-    case 134 : 
-        return "ios-football";
-    case 135 : 
-        return "ios-funnel";
-    case 136 : 
-        return "ios-gift";
-    case 137 : 
-        return "ios-git-branch";
-    case 138 : 
-        return "ios-git-commit";
-    case 139 : 
-        return "ios-git-compare";
-    case 140 : 
-        return "ios-git-merge";
-    case 141 : 
-        return "ios-git-network";
-    case 142 : 
-        return "ios-git-pull-request";
-    case 143 : 
-        return "ios-glasses";
-    case 144 : 
-        return "ios-globe";
-    case 145 : 
-        return "ios-grid";
-    case 146 : 
-        return "ios-hammer";
-    case 147 : 
-        return "ios-hand";
-    case 148 : 
-        return "ios-happy";
-    case 149 : 
-        return "ios-headset";
-    case 150 : 
-        return "ios-heart";
-    case 151 : 
-        return "ios-heart-dislike";
-    case 152 : 
-        return "ios-heart-empty";
-    case 153 : 
-        return "ios-heart-half";
-    case 154 : 
-        return "ios-help";
-    case 155 : 
-        return "ios-help-buoy";
-    case 156 : 
-        return "ios-help-circle";
-    case 157 : 
-        return "ios-help-circle-outline";
-    case 158 : 
-        return "ios-home";
-    case 159 : 
-        return "ios-hourglass";
-    case 160 : 
-        return "ios-ice-cream";
-    case 161 : 
-        return "ios-image";
-    case 162 : 
-        return "ios-images";
-    case 163 : 
-        return "ios-infinite";
-    case 164 : 
-        return "ios-information";
-    case 165 : 
-        return "ios-information-circle";
-    case 166 : 
-        return "ios-information-circle-outline";
-    case 167 : 
-        return "ios-jet";
-    case 168 : 
-        return "ios-journal";
-    case 169 : 
-        return "ios-key";
-    case 170 : 
-        return "ios-keypad";
-    case 171 : 
-        return "ios-laptop";
-    case 172 : 
-        return "ios-leaf";
-    case 173 : 
-        return "ios-link";
-    case 174 : 
-        return "ios-list";
-    case 175 : 
-        return "ios-list-box";
-    case 176 : 
-        return "ios-locate";
-    case 177 : 
-        return "ios-lock";
-    case 178 : 
-        return "ios-log-in";
-    case 179 : 
-        return "ios-log-out";
-    case 180 : 
-        return "ios-magnet";
-    case 181 : 
-        return "ios-mail";
-    case 182 : 
-        return "ios-mail-open";
-    case 183 : 
-        return "ios-mail-unread";
-    case 184 : 
-        return "ios-male";
-    case 185 : 
-        return "ios-man";
-    case 186 : 
-        return "ios-map";
-    case 187 : 
-        return "ios-medal";
-    case 188 : 
-        return "ios-medical";
-    case 189 : 
-        return "ios-medkit";
-    case 190 : 
-        return "ios-megaphone";
-    case 191 : 
-        return "ios-menu";
-    case 192 : 
-        return "ios-mic";
-    case 193 : 
-        return "ios-mic-off";
-    case 194 : 
-        return "ios-microphone";
-    case 195 : 
-        return "ios-moon";
-    case 196 : 
-        return "ios-more";
-    case 197 : 
-        return "ios-move";
-    case 198 : 
-        return "ios-musical-note";
-    case 199 : 
-        return "ios-musical-notes";
-    case 200 : 
-        return "ios-navigate";
-    case 201 : 
-        return "ios-notifications";
-    case 202 : 
-        return "ios-notifications-off";
-    case 203 : 
-        return "ios-notifications-outline";
-    case 204 : 
-        return "ios-nuclear";
-    case 205 : 
-        return "ios-nutrition";
-    case 206 : 
-        return "ios-open";
-    case 207 : 
-        return "ios-options";
-    case 208 : 
-        return "ios-outlet";
-    case 209 : 
-        return "ios-paper";
-    case 210 : 
-        return "ios-paper-plane";
-    case 211 : 
-        return "ios-partly-sunny";
-    case 212 : 
-        return "ios-pause";
-    case 213 : 
-        return "ios-paw";
-    case 214 : 
-        return "ios-people";
-    case 215 : 
-        return "ios-person";
-    case 216 : 
-        return "ios-person-add";
-    case 217 : 
-        return "ios-phone-landscape";
-    case 218 : 
-        return "ios-phone-portrait";
-    case 219 : 
-        return "ios-photos";
-    case 220 : 
-        return "ios-pie";
-    case 221 : 
-        return "ios-pin";
-    case 222 : 
-        return "ios-pint";
-    case 223 : 
-        return "ios-pizza";
-    case 224 : 
-        return "ios-planet";
-    case 225 : 
-        return "ios-play";
-    case 226 : 
-        return "ios-play-circle";
-    case 227 : 
-        return "ios-podium";
-    case 228 : 
-        return "ios-power";
-    case 229 : 
-        return "ios-pricetag";
-    case 230 : 
-        return "ios-pricetags";
-    case 231 : 
-        return "ios-print";
-    case 232 : 
-        return "ios-pulse";
-    case 233 : 
-        return "ios-qr-scanner";
-    case 234 : 
-        return "ios-quote";
-    case 235 : 
-        return "ios-radio";
-    case 236 : 
-        return "ios-radio-button-off";
-    case 237 : 
-        return "ios-radio-button-on";
-    case 238 : 
-        return "ios-rainy";
-    case 239 : 
-        return "ios-recording";
-    case 240 : 
-        return "ios-redo";
-    case 241 : 
-        return "ios-refresh";
-    case 242 : 
-        return "ios-refresh-circle";
-    case 243 : 
-        return "ios-remove";
-    case 244 : 
-        return "ios-remove-circle";
-    case 245 : 
-        return "ios-remove-circle-outline";
-    case 246 : 
-        return "ios-reorder";
-    case 247 : 
-        return "ios-repeat";
-    case 248 : 
-        return "ios-resize";
-    case 249 : 
-        return "ios-restaurant";
-    case 250 : 
-        return "ios-return-left";
-    case 251 : 
-        return "ios-return-right";
-    case 252 : 
-        return "ios-reverse-camera";
-    case 253 : 
-        return "ios-rewind";
-    case 254 : 
-        return "ios-ribbon";
-    case 255 : 
-        return "ios-rocket";
-    case 256 : 
-        return "ios-rose";
-    case 257 : 
-        return "ios-sad";
-    case 258 : 
-        return "ios-save";
-    case 259 : 
-        return "ios-school";
-    case 260 : 
-        return "ios-search";
-    case 261 : 
-        return "ios-send";
-    case 262 : 
-        return "ios-settings";
-    case 263 : 
-        return "ios-share";
-    case 264 : 
-        return "ios-share-alt";
-    case 265 : 
-        return "ios-shirt";
-    case 266 : 
-        return "ios-shuffle";
-    case 267 : 
-        return "ios-skip-backward";
-    case 268 : 
-        return "ios-skip-forward";
-    case 269 : 
-        return "ios-snow";
-    case 270 : 
-        return "ios-speedometer";
-    case 271 : 
-        return "ios-square";
-    case 272 : 
-        return "ios-square-outline";
-    case 273 : 
-        return "ios-star";
-    case 274 : 
-        return "ios-star-half";
-    case 275 : 
-        return "ios-star-outline";
-    case 276 : 
-        return "ios-stats";
-    case 277 : 
-        return "ios-stopwatch";
-    case 278 : 
-        return "ios-subway";
-    case 279 : 
-        return "ios-sunny";
-    case 280 : 
-        return "ios-swap";
-    case 281 : 
-        return "ios-switch";
-    case 282 : 
-        return "ios-sync";
-    case 283 : 
-        return "ios-tablet-landscape";
-    case 284 : 
-        return "ios-tablet-portrait";
-    case 285 : 
-        return "ios-tennisball";
-    case 286 : 
-        return "ios-text";
-    case 287 : 
-        return "ios-thermometer";
-    case 288 : 
-        return "ios-thumbs-down";
-    case 289 : 
-        return "ios-thumbs-up";
-    case 290 : 
-        return "ios-thunderstorm";
-    case 291 : 
-        return "ios-time";
-    case 292 : 
-        return "ios-timer";
-    case 293 : 
-        return "ios-today";
-    case 294 : 
-        return "ios-train";
-    case 295 : 
-        return "ios-transgender";
-    case 296 : 
-        return "ios-trash";
-    case 297 : 
-        return "ios-trending-down";
-    case 298 : 
-        return "ios-trending-up";
-    case 299 : 
-        return "ios-trophy";
-    case 300 : 
-        return "ios-tv";
-    case 301 : 
-        return "ios-umbrella";
-    case 302 : 
-        return "ios-undo";
-    case 303 : 
-        return "ios-unlock";
-    case 304 : 
-        return "ios-videocam";
-    case 305 : 
-        return "ios-volume-high";
-    case 306 : 
-        return "ios-volume-low";
-    case 307 : 
-        return "ios-volume-mute";
-    case 308 : 
-        return "ios-volume-off";
-    case 309 : 
-        return "ios-walk";
-    case 310 : 
-        return "ios-wallet";
-    case 311 : 
-        return "ios-warning";
-    case 312 : 
-        return "ios-watch";
-    case 313 : 
-        return "ios-water";
-    case 314 : 
-        return "ios-wifi";
-    case 315 : 
-        return "ios-wine";
-    case 316 : 
-        return "ios-woman";
-    case 317 : 
-        return "logo-android";
-    case 318 : 
-        return "logo-angular";
-    case 319 : 
-        return "logo-apple";
-    case 320 : 
-        return "logo-bitbucket";
-    case 321 : 
-        return "logo-bitcoin";
-    case 322 : 
-        return "logo-buffer";
-    case 323 : 
-        return "logo-chrome";
-    case 324 : 
-        return "logo-closed-captioning";
-    case 325 : 
-        return "logo-codepen";
-    case 326 : 
-        return "logo-css-3";
-    case 327 : 
-        return "logo-designernews";
-    case 328 : 
-        return "logo-dribbble";
-    case 329 : 
-        return "logo-dropbox";
-    case 330 : 
-        return "logo-euro";
-    case 331 : 
-        return "logo-facebook";
-    case 332 : 
-        return "logo-flickr";
-    case 333 : 
-        return "logo-foursquare";
-    case 334 : 
-        return "logo-freebsd-devil";
-    case 335 : 
-        return "logo-game-controller-a";
-    case 336 : 
-        return "logo-game-controller-b";
-    case 337 : 
-        return "logo-github";
-    case 338 : 
-        return "logo-google";
-    case 339 : 
-        return "logo-googleplus";
-    case 340 : 
-        return "logo-hackernews";
-    case 341 : 
-        return "logo-html-5";
-    case 342 : 
-        return "logo-instagram";
-    case 343 : 
-        return "logo-ionic";
-    case 344 : 
-        return "logo-ionitron";
-    case 345 : 
-        return "logo-javascript";
-    case 346 : 
-        return "logo-linkedin";
-    case 347 : 
-        return "logo-markdown";
-    case 348 : 
-        return "logo-model-s";
-    case 349 : 
-        return "logo-no-smoking";
-    case 350 : 
-        return "logo-nodejs";
-    case 351 : 
-        return "logo-npm";
-    case 352 : 
-        return "logo-octocat";
-    case 353 : 
-        return "logo-pinterest";
-    case 354 : 
-        return "logo-playstation";
-    case 355 : 
-        return "logo-polymer";
-    case 356 : 
-        return "logo-python";
-    case 357 : 
-        return "logo-reddit";
-    case 358 : 
-        return "logo-rss";
-    case 359 : 
-        return "logo-sass";
-    case 360 : 
-        return "logo-skype";
-    case 361 : 
-        return "logo-slack";
-    case 362 : 
-        return "logo-snapchat";
-    case 363 : 
-        return "logo-steam";
-    case 364 : 
-        return "logo-tumblr";
-    case 365 : 
-        return "logo-tux";
-    case 366 : 
-        return "logo-twitch";
-    case 367 : 
-        return "logo-twitter";
-    case 368 : 
-        return "logo-usd";
-    case 369 : 
-        return "logo-vimeo";
-    case 370 : 
-        return "logo-vk";
-    case 371 : 
-        return "logo-whatsapp";
-    case 372 : 
-        return "logo-windows";
-    case 373 : 
-        return "logo-wordpress";
-    case 374 : 
-        return "logo-xbox";
-    case 375 : 
-        return "logo-xing";
-    case 376 : 
-        return "logo-yahoo";
-    case 377 : 
-        return "logo-yen";
-    case 378 : 
-        return "logo-youtube";
-    case 379 : 
-        return "md-add";
-    case 380 : 
-        return "md-add-circle";
-    case 381 : 
-        return "md-add-circle-outline";
-    case 382 : 
-        return "md-airplane";
-    case 383 : 
-        return "md-alarm";
-    case 384 : 
-        return "md-albums";
-    case 385 : 
-        return "md-alert";
-    case 386 : 
-        return "md-american-football";
-    case 387 : 
-        return "md-analytics";
-    case 388 : 
-        return "md-aperture";
-    case 389 : 
-        return "md-apps";
-    case 390 : 
-        return "md-appstore";
-    case 391 : 
-        return "md-archive";
-    case 392 : 
-        return "md-arrow-back";
-    case 393 : 
-        return "md-arrow-down";
-    case 394 : 
-        return "md-arrow-dropdown";
-    case 395 : 
-        return "md-arrow-dropdown-circle";
-    case 396 : 
-        return "md-arrow-dropleft";
-    case 397 : 
-        return "md-arrow-dropleft-circle";
-    case 398 : 
-        return "md-arrow-dropright";
-    case 399 : 
-        return "md-arrow-dropright-circle";
-    case 400 : 
-        return "md-arrow-dropup";
-    case 401 : 
-        return "md-arrow-dropup-circle";
-    case 402 : 
-        return "md-arrow-forward";
-    case 403 : 
-        return "md-arrow-round-back";
-    case 404 : 
-        return "md-arrow-round-down";
-    case 405 : 
-        return "md-arrow-round-forward";
-    case 406 : 
-        return "md-arrow-round-up";
-    case 407 : 
-        return "md-arrow-up";
-    case 408 : 
-        return "md-at";
-    case 409 : 
-        return "md-attach";
-    case 410 : 
-        return "md-backspace";
-    case 411 : 
-        return "md-barcode";
-    case 412 : 
-        return "md-baseball";
-    case 413 : 
-        return "md-basket";
-    case 414 : 
-        return "md-basketball";
-    case 415 : 
-        return "md-battery-charging";
-    case 416 : 
-        return "md-battery-dead";
-    case 417 : 
-        return "md-battery-full";
-    case 418 : 
-        return "md-beaker";
-    case 419 : 
-        return "md-bed";
-    case 420 : 
-        return "md-beer";
-    case 421 : 
-        return "md-bicycle";
-    case 422 : 
-        return "md-bluetooth";
-    case 423 : 
-        return "md-boat";
-    case 424 : 
-        return "md-body";
-    case 425 : 
-        return "md-bonfire";
-    case 426 : 
-        return "md-book";
-    case 427 : 
-        return "md-bookmark";
-    case 428 : 
-        return "md-bookmarks";
-    case 429 : 
-        return "md-bowtie";
-    case 430 : 
-        return "md-briefcase";
-    case 431 : 
-        return "md-browsers";
-    case 432 : 
-        return "md-brush";
-    case 433 : 
-        return "md-bug";
-    case 434 : 
-        return "md-build";
-    case 435 : 
-        return "md-bulb";
-    case 436 : 
-        return "md-bus";
-    case 437 : 
-        return "md-business";
-    case 438 : 
-        return "md-cafe";
-    case 439 : 
-        return "md-calculator";
-    case 440 : 
-        return "md-calendar";
-    case 441 : 
-        return "md-call";
-    case 442 : 
-        return "md-camera";
-    case 443 : 
-        return "md-car";
-    case 444 : 
-        return "md-card";
-    case 445 : 
-        return "md-cart";
-    case 446 : 
-        return "md-cash";
-    case 447 : 
-        return "md-cellular";
-    case 448 : 
-        return "md-chatboxes";
-    case 449 : 
-        return "md-chatbubbles";
-    case 450 : 
-        return "md-checkbox";
-    case 451 : 
-        return "md-checkbox-outline";
-    case 452 : 
-        return "md-checkmark";
-    case 453 : 
-        return "md-checkmark-circle";
-    case 454 : 
-        return "md-checkmark-circle-outline";
-    case 455 : 
-        return "md-clipboard";
-    case 456 : 
-        return "md-clock";
-    case 457 : 
-        return "md-close";
-    case 458 : 
-        return "md-close-circle";
-    case 459 : 
-        return "md-close-circle-outline";
-    case 460 : 
-        return "md-cloud";
-    case 461 : 
-        return "md-cloud-circle";
-    case 462 : 
-        return "md-cloud-done";
-    case 463 : 
-        return "md-cloud-download";
-    case 464 : 
-        return "md-cloud-outline";
-    case 465 : 
-        return "md-cloud-upload";
-    case 466 : 
-        return "md-cloudy";
-    case 467 : 
-        return "md-cloudy-night";
-    case 468 : 
-        return "md-code";
-    case 469 : 
-        return "md-code-download";
-    case 470 : 
-        return "md-code-working";
-    case 471 : 
-        return "md-cog";
-    case 472 : 
-        return "md-color-fill";
-    case 473 : 
-        return "md-color-filter";
-    case 474 : 
-        return "md-color-palette";
-    case 475 : 
-        return "md-color-wand";
-    case 476 : 
-        return "md-compass";
-    case 477 : 
-        return "md-construct";
-    case 478 : 
-        return "md-contact";
-    case 479 : 
-        return "md-contacts";
-    case 480 : 
-        return "md-contract";
-    case 481 : 
-        return "md-contrast";
-    case 482 : 
-        return "md-copy";
-    case 483 : 
-        return "md-create";
-    case 484 : 
-        return "md-crop";
-    case 485 : 
-        return "md-cube";
-    case 486 : 
-        return "md-cut";
-    case 487 : 
-        return "md-desktop";
-    case 488 : 
-        return "md-disc";
-    case 489 : 
-        return "md-document";
-    case 490 : 
-        return "md-done-all";
-    case 491 : 
-        return "md-download";
-    case 492 : 
-        return "md-easel";
-    case 493 : 
-        return "md-egg";
-    case 494 : 
-        return "md-exit";
-    case 495 : 
-        return "md-expand";
-    case 496 : 
-        return "md-eye";
-    case 497 : 
-        return "md-eye-off";
-    case 498 : 
-        return "md-fastforward";
-    case 499 : 
-        return "md-female";
-    case 500 : 
-        return "md-filing";
-    case 501 : 
-        return "md-film";
-    case 502 : 
-        return "md-finger-print";
-    case 503 : 
-        return "md-fitness";
-    case 504 : 
-        return "md-flag";
-    case 505 : 
-        return "md-flame";
-    case 506 : 
-        return "md-flash";
-    case 507 : 
-        return "md-flash-off";
-    case 508 : 
-        return "md-flashlight";
-    case 509 : 
-        return "md-flask";
-    case 510 : 
-        return "md-flower";
-    case 511 : 
-        return "md-folder";
-    case 512 : 
-        return "md-folder-open";
-    case 513 : 
-        return "md-football";
-    case 514 : 
-        return "md-funnel";
-    case 515 : 
-        return "md-gift";
-    case 516 : 
-        return "md-git-branch";
-    case 517 : 
-        return "md-git-commit";
-    case 518 : 
-        return "md-git-compare";
-    case 519 : 
-        return "md-git-merge";
-    case 520 : 
-        return "md-git-network";
-    case 521 : 
-        return "md-git-pull-request";
-    case 522 : 
-        return "md-glasses";
-    case 523 : 
-        return "md-globe";
-    case 524 : 
-        return "md-grid";
-    case 525 : 
-        return "md-hammer";
-    case 526 : 
-        return "md-hand";
-    case 527 : 
-        return "md-happy";
-    case 528 : 
-        return "md-headset";
-    case 529 : 
-        return "md-heart";
-    case 530 : 
-        return "md-heart-dislike";
-    case 531 : 
-        return "md-heart-empty";
-    case 532 : 
-        return "md-heart-half";
-    case 533 : 
-        return "md-help";
-    case 534 : 
-        return "md-help-buoy";
-    case 535 : 
-        return "md-help-circle";
-    case 536 : 
-        return "md-help-circle-outline";
-    case 537 : 
-        return "md-home";
-    case 538 : 
-        return "md-hourglass";
-    case 539 : 
-        return "md-ice-cream";
-    case 540 : 
-        return "md-image";
-    case 541 : 
-        return "md-images";
-    case 542 : 
-        return "md-infinite";
-    case 543 : 
-        return "md-information";
-    case 544 : 
-        return "md-information-circle";
-    case 545 : 
-        return "md-information-circle-outline";
-    case 546 : 
-        return "md-jet";
-    case 547 : 
-        return "md-journal";
-    case 548 : 
-        return "md-key";
-    case 549 : 
-        return "md-keypad";
-    case 550 : 
-        return "md-laptop";
-    case 551 : 
-        return "md-leaf";
-    case 552 : 
-        return "md-link";
-    case 553 : 
-        return "md-list";
-    case 554 : 
-        return "md-list-box";
-    case 555 : 
-        return "md-locate";
-    case 556 : 
-        return "md-lock";
-    case 557 : 
-        return "md-log-in";
-    case 558 : 
-        return "md-log-out";
-    case 559 : 
-        return "md-magnet";
-    case 560 : 
-        return "md-mail";
-    case 561 : 
-        return "md-mail-open";
-    case 562 : 
-        return "md-mail-unread";
-    case 563 : 
-        return "md-male";
-    case 564 : 
-        return "md-man";
-    case 565 : 
-        return "md-map";
-    case 566 : 
-        return "md-medal";
-    case 567 : 
-        return "md-medical";
-    case 568 : 
-        return "md-medkit";
-    case 569 : 
-        return "md-megaphone";
-    case 570 : 
-        return "md-menu";
-    case 571 : 
-        return "md-mic";
-    case 572 : 
-        return "md-mic-off";
-    case 573 : 
-        return "md-microphone";
-    case 574 : 
-        return "md-moon";
-    case 575 : 
-        return "md-more";
-    case 576 : 
-        return "md-move";
-    case 577 : 
-        return "md-musical-note";
-    case 578 : 
-        return "md-musical-notes";
-    case 579 : 
-        return "md-navigate";
-    case 580 : 
-        return "md-notifications";
-    case 581 : 
-        return "md-notifications-off";
-    case 582 : 
-        return "md-notifications-outline";
-    case 583 : 
-        return "md-nuclear";
-    case 584 : 
-        return "md-nutrition";
-    case 585 : 
-        return "md-open";
-    case 586 : 
-        return "md-options";
-    case 587 : 
-        return "md-outlet";
-    case 588 : 
-        return "md-paper";
-    case 589 : 
-        return "md-paper-plane";
-    case 590 : 
-        return "md-partly-sunny";
-    case 591 : 
-        return "md-pause";
-    case 592 : 
-        return "md-paw";
-    case 593 : 
-        return "md-people";
-    case 594 : 
-        return "md-person";
-    case 595 : 
-        return "md-person-add";
-    case 596 : 
-        return "md-phone-landscape";
-    case 597 : 
-        return "md-phone-portrait";
-    case 598 : 
-        return "md-photos";
-    case 599 : 
-        return "md-pie";
-    case 600 : 
-        return "md-pin";
-    case 601 : 
-        return "md-pint";
-    case 602 : 
-        return "md-pizza";
-    case 603 : 
-        return "md-planet";
-    case 604 : 
-        return "md-play";
-    case 605 : 
-        return "md-play-circle";
-    case 606 : 
-        return "md-podium";
-    case 607 : 
-        return "md-power";
-    case 608 : 
-        return "md-pricetag";
-    case 609 : 
-        return "md-pricetags";
-    case 610 : 
-        return "md-print";
-    case 611 : 
-        return "md-pulse";
-    case 612 : 
-        return "md-qr-scanner";
-    case 613 : 
-        return "md-quote";
-    case 614 : 
-        return "md-radio";
-    case 615 : 
-        return "md-radio-button-off";
-    case 616 : 
-        return "md-radio-button-on";
-    case 617 : 
-        return "md-rainy";
-    case 618 : 
-        return "md-recording";
-    case 619 : 
-        return "md-redo";
-    case 620 : 
-        return "md-refresh";
-    case 621 : 
-        return "md-refresh-circle";
-    case 622 : 
-        return "md-remove";
-    case 623 : 
-        return "md-remove-circle";
-    case 624 : 
-        return "md-remove-circle-outline";
-    case 625 : 
-        return "md-reorder";
-    case 626 : 
-        return "md-repeat";
-    case 627 : 
-        return "md-resize";
-    case 628 : 
-        return "md-restaurant";
-    case 629 : 
-        return "md-return-left";
-    case 630 : 
-        return "md-return-right";
-    case 631 : 
-        return "md-reverse-camera";
-    case 632 : 
-        return "md-rewind";
-    case 633 : 
-        return "md-ribbon";
-    case 634 : 
-        return "md-rocket";
-    case 635 : 
-        return "md-rose";
-    case 636 : 
-        return "md-sad";
-    case 637 : 
-        return "md-save";
-    case 638 : 
-        return "md-school";
-    case 639 : 
-        return "md-search";
-    case 640 : 
-        return "md-send";
-    case 641 : 
-        return "md-settings";
-    case 642 : 
-        return "md-share";
-    case 643 : 
-        return "md-share-alt";
-    case 644 : 
-        return "md-shirt";
-    case 645 : 
-        return "md-shuffle";
-    case 646 : 
-        return "md-skip-backward";
-    case 647 : 
-        return "md-skip-forward";
-    case 648 : 
-        return "md-snow";
-    case 649 : 
-        return "md-speedometer";
-    case 650 : 
-        return "md-square";
-    case 651 : 
-        return "md-square-outline";
-    case 652 : 
-        return "md-star";
-    case 653 : 
-        return "md-star-half";
-    case 654 : 
-        return "md-star-outline";
-    case 655 : 
-        return "md-stats";
-    case 656 : 
-        return "md-stopwatch";
-    case 657 : 
-        return "md-subway";
-    case 658 : 
-        return "md-sunny";
-    case 659 : 
-        return "md-swap";
-    case 660 : 
-        return "md-switch";
-    case 661 : 
-        return "md-sync";
-    case 662 : 
-        return "md-tablet-landscape";
-    case 663 : 
-        return "md-tablet-portrait";
-    case 664 : 
-        return "md-tennisball";
-    case 665 : 
-        return "md-text";
-    case 666 : 
-        return "md-thermometer";
-    case 667 : 
-        return "md-thumbs-down";
-    case 668 : 
-        return "md-thumbs-up";
-    case 669 : 
-        return "md-thunderstorm";
-    case 670 : 
-        return "md-time";
-    case 671 : 
-        return "md-timer";
-    case 672 : 
-        return "md-today";
-    case 673 : 
-        return "md-train";
-    case 674 : 
-        return "md-transgender";
-    case 675 : 
-        return "md-trash";
-    case 676 : 
-        return "md-trending-down";
-    case 677 : 
-        return "md-trending-up";
-    case 678 : 
-        return "md-trophy";
-    case 679 : 
-        return "md-tv";
-    case 680 : 
-        return "md-umbrella";
-    case 681 : 
-        return "md-undo";
-    case 682 : 
-        return "md-unlock";
-    case 683 : 
-        return "md-videocam";
-    case 684 : 
-        return "md-volume-high";
-    case 685 : 
-        return "md-volume-low";
-    case 686 : 
-        return "md-volume-mute";
-    case 687 : 
-        return "md-volume-off";
-    case 688 : 
-        return "md-walk";
-    case 689 : 
-        return "md-wallet";
-    case 690 : 
-        return "md-warning";
-    case 691 : 
-        return "md-watch";
-    case 692 : 
-        return "md-water";
-    case 693 : 
-        return "md-wifi";
-    case 694 : 
-        return "md-wine";
-    case 695 : 
-        return "md-woman";
-    
-  }
+var jsMapperConstantArray = /* array */[
+  /* tuple */[
+    487210640,
+    "ios-add"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-add-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-add-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-airplane"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-alarm"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-albums"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-alert"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-american-football"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-analytics"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-aperture"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-apps"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-appstore"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-archive"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-back"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-down"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-dropdown"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-dropdown-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-dropleft"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-dropleft-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-dropright"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-dropright-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-dropup"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-dropup-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-forward"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-round-back"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-round-down"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-round-forward"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-round-up"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-arrow-up"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-at"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-attach"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-backspace"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-barcode"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-baseball"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-basket"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-basketball"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-battery-charging"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-battery-dead"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-battery-full"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-beaker"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bed"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-beer"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bicycle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bluetooth"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-boat"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-body"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bonfire"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-book"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bookmark"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bookmarks"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bowtie"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-briefcase"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-browsers"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-brush"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bug"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-build"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bulb"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-bus"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-business"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cafe"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-calculator"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-calendar"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-call"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-camera"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-car"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-card"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cart"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cash"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cellular"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-chatboxes"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-chatbubbles"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-checkbox"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-checkbox-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-checkmark"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-checkmark-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-checkmark-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-clipboard"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-clock"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-close"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-close-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-close-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cloud"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cloud-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cloud-done"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cloud-download"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cloud-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cloud-upload"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cloudy"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cloudy-night"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-code"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-code-download"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-code-working"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cog"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-color-fill"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-color-filter"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-color-palette"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-color-wand"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-compass"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-construct"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-contact"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-contacts"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-contract"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-contrast"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-copy"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-create"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-crop"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cube"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-cut"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-desktop"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-disc"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-document"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-done-all"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-download"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-easel"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-egg"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-exit"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-expand"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-eye"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-eye-off"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-fastforward"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-female"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-filing"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-film"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-finger-print"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-fitness"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-flag"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-flame"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-flash"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-flash-off"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-flashlight"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-flask"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-flower"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-folder"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-folder-open"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-football"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-funnel"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-gift"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-git-branch"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-git-commit"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-git-compare"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-git-merge"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-git-network"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-git-pull-request"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-glasses"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-globe"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-grid"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-hammer"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-hand"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-happy"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-headset"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-heart"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-heart-dislike"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-heart-empty"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-heart-half"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-help"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-help-buoy"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-help-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-help-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-home"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-hourglass"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-ice-cream"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-image"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-images"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-infinite"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-information"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-information-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-information-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-jet"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-journal"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-key"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-keypad"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-laptop"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-leaf"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-link"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-list"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-list-box"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-locate"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-lock"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-log-in"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-log-out"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-magnet"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-mail"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-mail-open"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-mail-unread"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-male"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-man"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-map"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-medal"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-medical"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-medkit"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-megaphone"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-menu"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-mic"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-mic-off"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-microphone"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-moon"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-more"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-move"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-musical-note"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-musical-notes"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-navigate"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-notifications"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-notifications-off"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-notifications-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-nuclear"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-nutrition"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-open"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-options"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-outlet"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-paper"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-paper-plane"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-partly-sunny"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-pause"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-paw"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-people"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-person"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-person-add"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-phone-landscape"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-phone-portrait"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-photos"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-pie"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-pin"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-pint"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-pizza"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-planet"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-play"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-play-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-podium"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-power"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-pricetag"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-pricetags"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-print"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-pulse"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-qr-scanner"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-quote"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-radio"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-radio-button-off"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-radio-button-on"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-rainy"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-recording"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-redo"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-refresh"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-refresh-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-remove"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-remove-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-remove-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-reorder"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-repeat"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-resize"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-restaurant"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-return-left"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-return-right"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-reverse-camera"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-rewind"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-ribbon"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-rocket"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-rose"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-sad"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-save"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-school"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-search"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-send"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-settings"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-share"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-share-alt"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-shirt"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-shuffle"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-skip-backward"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-skip-forward"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-snow"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-speedometer"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-square"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-square-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-star"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-star-half"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-star-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-stats"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-stopwatch"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-subway"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-sunny"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-swap"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-switch"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-sync"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-tablet-landscape"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-tablet-portrait"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-tennisball"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-text"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-thermometer"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-thumbs-down"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-thumbs-up"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-thunderstorm"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-time"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-timer"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-today"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-train"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-transgender"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-trash"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-trending-down"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-trending-up"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-trophy"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-tv"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-umbrella"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-undo"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-unlock"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-videocam"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-volume-high"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-volume-low"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-volume-mute"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-volume-off"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-walk"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-wallet"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-warning"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-watch"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-water"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-wifi"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-wine"
+  ],
+  /* tuple */[
+    487210640,
+    "ios-woman"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-android"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-angular"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-apple"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-bitbucket"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-bitcoin"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-buffer"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-chrome"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-closed-captioning"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-codepen"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-css3"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-designernews"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-dribbble"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-dropbox"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-euro"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-facebook"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-flickr"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-foursquare"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-freebsd-devil"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-game-controller-a"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-game-controller-b"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-github"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-google"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-googleplus"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-hackernews"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-html5"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-instagram"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-ionic"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-ionitron"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-javascript"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-linkedin"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-markdown"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-model-s"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-no-smoking"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-nodejs"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-npm"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-octocat"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-pinterest"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-playstation"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-polymer"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-python"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-reddit"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-rss"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-sass"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-skype"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-slack"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-snapchat"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-steam"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-tumblr"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-tux"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-twitch"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-twitter"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-usd"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-vimeo"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-vk"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-whatsapp"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-windows"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-wordpress"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-xbox"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-xing"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-yahoo"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-yen"
+  ],
+  /* tuple */[
+    487210640,
+    "logo-youtube"
+  ],
+  /* tuple */[
+    487210640,
+    "md-add"
+  ],
+  /* tuple */[
+    487210640,
+    "md-add-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-add-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-airplane"
+  ],
+  /* tuple */[
+    487210640,
+    "md-alarm"
+  ],
+  /* tuple */[
+    487210640,
+    "md-albums"
+  ],
+  /* tuple */[
+    487210640,
+    "md-alert"
+  ],
+  /* tuple */[
+    487210640,
+    "md-american-football"
+  ],
+  /* tuple */[
+    487210640,
+    "md-analytics"
+  ],
+  /* tuple */[
+    487210640,
+    "md-aperture"
+  ],
+  /* tuple */[
+    487210640,
+    "md-apps"
+  ],
+  /* tuple */[
+    487210640,
+    "md-appstore"
+  ],
+  /* tuple */[
+    487210640,
+    "md-archive"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-back"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-down"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-dropdown"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-dropdown-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-dropleft"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-dropleft-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-dropright"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-dropright-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-dropup"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-dropup-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-forward"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-round-back"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-round-down"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-round-forward"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-round-up"
+  ],
+  /* tuple */[
+    487210640,
+    "md-arrow-up"
+  ],
+  /* tuple */[
+    487210640,
+    "md-at"
+  ],
+  /* tuple */[
+    487210640,
+    "md-attach"
+  ],
+  /* tuple */[
+    487210640,
+    "md-backspace"
+  ],
+  /* tuple */[
+    487210640,
+    "md-barcode"
+  ],
+  /* tuple */[
+    487210640,
+    "md-baseball"
+  ],
+  /* tuple */[
+    487210640,
+    "md-basket"
+  ],
+  /* tuple */[
+    487210640,
+    "md-basketball"
+  ],
+  /* tuple */[
+    487210640,
+    "md-battery-charging"
+  ],
+  /* tuple */[
+    487210640,
+    "md-battery-dead"
+  ],
+  /* tuple */[
+    487210640,
+    "md-battery-full"
+  ],
+  /* tuple */[
+    487210640,
+    "md-beaker"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bed"
+  ],
+  /* tuple */[
+    487210640,
+    "md-beer"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bicycle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bluetooth"
+  ],
+  /* tuple */[
+    487210640,
+    "md-boat"
+  ],
+  /* tuple */[
+    487210640,
+    "md-body"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bonfire"
+  ],
+  /* tuple */[
+    487210640,
+    "md-book"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bookmark"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bookmarks"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bowtie"
+  ],
+  /* tuple */[
+    487210640,
+    "md-briefcase"
+  ],
+  /* tuple */[
+    487210640,
+    "md-browsers"
+  ],
+  /* tuple */[
+    487210640,
+    "md-brush"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bug"
+  ],
+  /* tuple */[
+    487210640,
+    "md-build"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bulb"
+  ],
+  /* tuple */[
+    487210640,
+    "md-bus"
+  ],
+  /* tuple */[
+    487210640,
+    "md-business"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cafe"
+  ],
+  /* tuple */[
+    487210640,
+    "md-calculator"
+  ],
+  /* tuple */[
+    487210640,
+    "md-calendar"
+  ],
+  /* tuple */[
+    487210640,
+    "md-call"
+  ],
+  /* tuple */[
+    487210640,
+    "md-camera"
+  ],
+  /* tuple */[
+    487210640,
+    "md-car"
+  ],
+  /* tuple */[
+    487210640,
+    "md-card"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cart"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cash"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cellular"
+  ],
+  /* tuple */[
+    487210640,
+    "md-chatboxes"
+  ],
+  /* tuple */[
+    487210640,
+    "md-chatbubbles"
+  ],
+  /* tuple */[
+    487210640,
+    "md-checkbox"
+  ],
+  /* tuple */[
+    487210640,
+    "md-checkbox-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-checkmark"
+  ],
+  /* tuple */[
+    487210640,
+    "md-checkmark-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-checkmark-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-clipboard"
+  ],
+  /* tuple */[
+    487210640,
+    "md-clock"
+  ],
+  /* tuple */[
+    487210640,
+    "md-close"
+  ],
+  /* tuple */[
+    487210640,
+    "md-close-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-close-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cloud"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cloud-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cloud-done"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cloud-download"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cloud-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cloud-upload"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cloudy"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cloudy-night"
+  ],
+  /* tuple */[
+    487210640,
+    "md-code"
+  ],
+  /* tuple */[
+    487210640,
+    "md-code-download"
+  ],
+  /* tuple */[
+    487210640,
+    "md-code-working"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cog"
+  ],
+  /* tuple */[
+    487210640,
+    "md-color-fill"
+  ],
+  /* tuple */[
+    487210640,
+    "md-color-filter"
+  ],
+  /* tuple */[
+    487210640,
+    "md-color-palette"
+  ],
+  /* tuple */[
+    487210640,
+    "md-color-wand"
+  ],
+  /* tuple */[
+    487210640,
+    "md-compass"
+  ],
+  /* tuple */[
+    487210640,
+    "md-construct"
+  ],
+  /* tuple */[
+    487210640,
+    "md-contact"
+  ],
+  /* tuple */[
+    487210640,
+    "md-contacts"
+  ],
+  /* tuple */[
+    487210640,
+    "md-contract"
+  ],
+  /* tuple */[
+    487210640,
+    "md-contrast"
+  ],
+  /* tuple */[
+    487210640,
+    "md-copy"
+  ],
+  /* tuple */[
+    487210640,
+    "md-create"
+  ],
+  /* tuple */[
+    487210640,
+    "md-crop"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cube"
+  ],
+  /* tuple */[
+    487210640,
+    "md-cut"
+  ],
+  /* tuple */[
+    487210640,
+    "md-desktop"
+  ],
+  /* tuple */[
+    487210640,
+    "md-disc"
+  ],
+  /* tuple */[
+    487210640,
+    "md-document"
+  ],
+  /* tuple */[
+    487210640,
+    "md-done-all"
+  ],
+  /* tuple */[
+    487210640,
+    "md-download"
+  ],
+  /* tuple */[
+    487210640,
+    "md-easel"
+  ],
+  /* tuple */[
+    487210640,
+    "md-egg"
+  ],
+  /* tuple */[
+    487210640,
+    "md-exit"
+  ],
+  /* tuple */[
+    487210640,
+    "md-expand"
+  ],
+  /* tuple */[
+    487210640,
+    "md-eye"
+  ],
+  /* tuple */[
+    487210640,
+    "md-eye-off"
+  ],
+  /* tuple */[
+    487210640,
+    "md-fastforward"
+  ],
+  /* tuple */[
+    487210640,
+    "md-female"
+  ],
+  /* tuple */[
+    487210640,
+    "md-filing"
+  ],
+  /* tuple */[
+    487210640,
+    "md-film"
+  ],
+  /* tuple */[
+    487210640,
+    "md-finger-print"
+  ],
+  /* tuple */[
+    487210640,
+    "md-fitness"
+  ],
+  /* tuple */[
+    487210640,
+    "md-flag"
+  ],
+  /* tuple */[
+    487210640,
+    "md-flame"
+  ],
+  /* tuple */[
+    487210640,
+    "md-flash"
+  ],
+  /* tuple */[
+    487210640,
+    "md-flash-off"
+  ],
+  /* tuple */[
+    487210640,
+    "md-flashlight"
+  ],
+  /* tuple */[
+    487210640,
+    "md-flask"
+  ],
+  /* tuple */[
+    487210640,
+    "md-flower"
+  ],
+  /* tuple */[
+    487210640,
+    "md-folder"
+  ],
+  /* tuple */[
+    487210640,
+    "md-folder-open"
+  ],
+  /* tuple */[
+    487210640,
+    "md-football"
+  ],
+  /* tuple */[
+    487210640,
+    "md-funnel"
+  ],
+  /* tuple */[
+    487210640,
+    "md-gift"
+  ],
+  /* tuple */[
+    487210640,
+    "md-git-branch"
+  ],
+  /* tuple */[
+    487210640,
+    "md-git-commit"
+  ],
+  /* tuple */[
+    487210640,
+    "md-git-compare"
+  ],
+  /* tuple */[
+    487210640,
+    "md-git-merge"
+  ],
+  /* tuple */[
+    487210640,
+    "md-git-network"
+  ],
+  /* tuple */[
+    487210640,
+    "md-git-pull-request"
+  ],
+  /* tuple */[
+    487210640,
+    "md-glasses"
+  ],
+  /* tuple */[
+    487210640,
+    "md-globe"
+  ],
+  /* tuple */[
+    487210640,
+    "md-grid"
+  ],
+  /* tuple */[
+    487210640,
+    "md-hammer"
+  ],
+  /* tuple */[
+    487210640,
+    "md-hand"
+  ],
+  /* tuple */[
+    487210640,
+    "md-happy"
+  ],
+  /* tuple */[
+    487210640,
+    "md-headset"
+  ],
+  /* tuple */[
+    487210640,
+    "md-heart"
+  ],
+  /* tuple */[
+    487210640,
+    "md-heart-dislike"
+  ],
+  /* tuple */[
+    487210640,
+    "md-heart-empty"
+  ],
+  /* tuple */[
+    487210640,
+    "md-heart-half"
+  ],
+  /* tuple */[
+    487210640,
+    "md-help"
+  ],
+  /* tuple */[
+    487210640,
+    "md-help-buoy"
+  ],
+  /* tuple */[
+    487210640,
+    "md-help-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-help-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-home"
+  ],
+  /* tuple */[
+    487210640,
+    "md-hourglass"
+  ],
+  /* tuple */[
+    487210640,
+    "md-ice-cream"
+  ],
+  /* tuple */[
+    487210640,
+    "md-image"
+  ],
+  /* tuple */[
+    487210640,
+    "md-images"
+  ],
+  /* tuple */[
+    487210640,
+    "md-infinite"
+  ],
+  /* tuple */[
+    487210640,
+    "md-information"
+  ],
+  /* tuple */[
+    487210640,
+    "md-information-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-information-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-jet"
+  ],
+  /* tuple */[
+    487210640,
+    "md-journal"
+  ],
+  /* tuple */[
+    487210640,
+    "md-key"
+  ],
+  /* tuple */[
+    487210640,
+    "md-keypad"
+  ],
+  /* tuple */[
+    487210640,
+    "md-laptop"
+  ],
+  /* tuple */[
+    487210640,
+    "md-leaf"
+  ],
+  /* tuple */[
+    487210640,
+    "md-link"
+  ],
+  /* tuple */[
+    487210640,
+    "md-list"
+  ],
+  /* tuple */[
+    487210640,
+    "md-list-box"
+  ],
+  /* tuple */[
+    487210640,
+    "md-locate"
+  ],
+  /* tuple */[
+    487210640,
+    "md-lock"
+  ],
+  /* tuple */[
+    487210640,
+    "md-log-in"
+  ],
+  /* tuple */[
+    487210640,
+    "md-log-out"
+  ],
+  /* tuple */[
+    487210640,
+    "md-magnet"
+  ],
+  /* tuple */[
+    487210640,
+    "md-mail"
+  ],
+  /* tuple */[
+    487210640,
+    "md-mail-open"
+  ],
+  /* tuple */[
+    487210640,
+    "md-mail-unread"
+  ],
+  /* tuple */[
+    487210640,
+    "md-male"
+  ],
+  /* tuple */[
+    487210640,
+    "md-man"
+  ],
+  /* tuple */[
+    487210640,
+    "md-map"
+  ],
+  /* tuple */[
+    487210640,
+    "md-medal"
+  ],
+  /* tuple */[
+    487210640,
+    "md-medical"
+  ],
+  /* tuple */[
+    487210640,
+    "md-medkit"
+  ],
+  /* tuple */[
+    487210640,
+    "md-megaphone"
+  ],
+  /* tuple */[
+    487210640,
+    "md-menu"
+  ],
+  /* tuple */[
+    487210640,
+    "md-mic"
+  ],
+  /* tuple */[
+    487210640,
+    "md-mic-off"
+  ],
+  /* tuple */[
+    487210640,
+    "md-microphone"
+  ],
+  /* tuple */[
+    487210640,
+    "md-moon"
+  ],
+  /* tuple */[
+    487210640,
+    "md-more"
+  ],
+  /* tuple */[
+    487210640,
+    "md-move"
+  ],
+  /* tuple */[
+    487210640,
+    "md-musical-note"
+  ],
+  /* tuple */[
+    487210640,
+    "md-musical-notes"
+  ],
+  /* tuple */[
+    487210640,
+    "md-navigate"
+  ],
+  /* tuple */[
+    487210640,
+    "md-notifications"
+  ],
+  /* tuple */[
+    487210640,
+    "md-notifications-off"
+  ],
+  /* tuple */[
+    487210640,
+    "md-notifications-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-nuclear"
+  ],
+  /* tuple */[
+    487210640,
+    "md-nutrition"
+  ],
+  /* tuple */[
+    487210640,
+    "md-open"
+  ],
+  /* tuple */[
+    487210640,
+    "md-options"
+  ],
+  /* tuple */[
+    487210640,
+    "md-outlet"
+  ],
+  /* tuple */[
+    487210640,
+    "md-paper"
+  ],
+  /* tuple */[
+    487210640,
+    "md-paper-plane"
+  ],
+  /* tuple */[
+    487210640,
+    "md-partly-sunny"
+  ],
+  /* tuple */[
+    487210640,
+    "md-pause"
+  ],
+  /* tuple */[
+    487210640,
+    "md-paw"
+  ],
+  /* tuple */[
+    487210640,
+    "md-people"
+  ],
+  /* tuple */[
+    487210640,
+    "md-person"
+  ],
+  /* tuple */[
+    487210640,
+    "md-person-add"
+  ],
+  /* tuple */[
+    487210640,
+    "md-phone-landscape"
+  ],
+  /* tuple */[
+    487210640,
+    "md-phone-portrait"
+  ],
+  /* tuple */[
+    487210640,
+    "md-photos"
+  ],
+  /* tuple */[
+    487210640,
+    "md-pie"
+  ],
+  /* tuple */[
+    487210640,
+    "md-pin"
+  ],
+  /* tuple */[
+    487210640,
+    "md-pint"
+  ],
+  /* tuple */[
+    487210640,
+    "md-pizza"
+  ],
+  /* tuple */[
+    487210640,
+    "md-planet"
+  ],
+  /* tuple */[
+    487210640,
+    "md-play"
+  ],
+  /* tuple */[
+    487210640,
+    "md-play-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-podium"
+  ],
+  /* tuple */[
+    487210640,
+    "md-power"
+  ],
+  /* tuple */[
+    487210640,
+    "md-pricetag"
+  ],
+  /* tuple */[
+    487210640,
+    "md-pricetags"
+  ],
+  /* tuple */[
+    487210640,
+    "md-print"
+  ],
+  /* tuple */[
+    487210640,
+    "md-pulse"
+  ],
+  /* tuple */[
+    487210640,
+    "md-qr-scanner"
+  ],
+  /* tuple */[
+    487210640,
+    "md-quote"
+  ],
+  /* tuple */[
+    487210640,
+    "md-radio"
+  ],
+  /* tuple */[
+    487210640,
+    "md-radio-button-off"
+  ],
+  /* tuple */[
+    487210640,
+    "md-radio-button-on"
+  ],
+  /* tuple */[
+    487210640,
+    "md-rainy"
+  ],
+  /* tuple */[
+    487210640,
+    "md-recording"
+  ],
+  /* tuple */[
+    487210640,
+    "md-redo"
+  ],
+  /* tuple */[
+    487210640,
+    "md-refresh"
+  ],
+  /* tuple */[
+    487210640,
+    "md-refresh-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-remove"
+  ],
+  /* tuple */[
+    487210640,
+    "md-remove-circle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-remove-circle-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-reorder"
+  ],
+  /* tuple */[
+    487210640,
+    "md-repeat"
+  ],
+  /* tuple */[
+    487210640,
+    "md-resize"
+  ],
+  /* tuple */[
+    487210640,
+    "md-restaurant"
+  ],
+  /* tuple */[
+    487210640,
+    "md-return-left"
+  ],
+  /* tuple */[
+    487210640,
+    "md-return-right"
+  ],
+  /* tuple */[
+    487210640,
+    "md-reverse-camera"
+  ],
+  /* tuple */[
+    487210640,
+    "md-rewind"
+  ],
+  /* tuple */[
+    487210640,
+    "md-ribbon"
+  ],
+  /* tuple */[
+    487210640,
+    "md-rocket"
+  ],
+  /* tuple */[
+    487210640,
+    "md-rose"
+  ],
+  /* tuple */[
+    487210640,
+    "md-sad"
+  ],
+  /* tuple */[
+    487210640,
+    "md-save"
+  ],
+  /* tuple */[
+    487210640,
+    "md-school"
+  ],
+  /* tuple */[
+    487210640,
+    "md-search"
+  ],
+  /* tuple */[
+    487210640,
+    "md-send"
+  ],
+  /* tuple */[
+    487210640,
+    "md-settings"
+  ],
+  /* tuple */[
+    487210640,
+    "md-share"
+  ],
+  /* tuple */[
+    487210640,
+    "md-share-alt"
+  ],
+  /* tuple */[
+    487210640,
+    "md-shirt"
+  ],
+  /* tuple */[
+    487210640,
+    "md-shuffle"
+  ],
+  /* tuple */[
+    487210640,
+    "md-skip-backward"
+  ],
+  /* tuple */[
+    487210640,
+    "md-skip-forward"
+  ],
+  /* tuple */[
+    487210640,
+    "md-snow"
+  ],
+  /* tuple */[
+    487210640,
+    "md-speedometer"
+  ],
+  /* tuple */[
+    487210640,
+    "md-square"
+  ],
+  /* tuple */[
+    487210640,
+    "md-square-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-star"
+  ],
+  /* tuple */[
+    487210640,
+    "md-star-half"
+  ],
+  /* tuple */[
+    487210640,
+    "md-star-outline"
+  ],
+  /* tuple */[
+    487210640,
+    "md-stats"
+  ],
+  /* tuple */[
+    487210640,
+    "md-stopwatch"
+  ],
+  /* tuple */[
+    487210640,
+    "md-subway"
+  ],
+  /* tuple */[
+    487210640,
+    "md-sunny"
+  ],
+  /* tuple */[
+    487210640,
+    "md-swap"
+  ],
+  /* tuple */[
+    487210640,
+    "md-switch"
+  ],
+  /* tuple */[
+    487210640,
+    "md-sync"
+  ],
+  /* tuple */[
+    487210640,
+    "md-tablet-landscape"
+  ],
+  /* tuple */[
+    487210640,
+    "md-tablet-portrait"
+  ],
+  /* tuple */[
+    487210640,
+    "md-tennisball"
+  ],
+  /* tuple */[
+    487210640,
+    "md-text"
+  ],
+  /* tuple */[
+    487210640,
+    "md-thermometer"
+  ],
+  /* tuple */[
+    487210640,
+    "md-thumbs-down"
+  ],
+  /* tuple */[
+    487210640,
+    "md-thumbs-up"
+  ],
+  /* tuple */[
+    487210640,
+    "md-thunderstorm"
+  ],
+  /* tuple */[
+    487210640,
+    "md-time"
+  ],
+  /* tuple */[
+    487210640,
+    "md-timer"
+  ],
+  /* tuple */[
+    487210640,
+    "md-today"
+  ],
+  /* tuple */[
+    487210640,
+    "md-train"
+  ],
+  /* tuple */[
+    487210640,
+    "md-transgender"
+  ],
+  /* tuple */[
+    487210640,
+    "md-trash"
+  ],
+  /* tuple */[
+    487210640,
+    "md-trending-down"
+  ],
+  /* tuple */[
+    487210640,
+    "md-trending-up"
+  ],
+  /* tuple */[
+    487210640,
+    "md-trophy"
+  ],
+  /* tuple */[
+    487210640,
+    "md-tv"
+  ],
+  /* tuple */[
+    487210640,
+    "md-umbrella"
+  ],
+  /* tuple */[
+    487210640,
+    "md-undo"
+  ],
+  /* tuple */[
+    487210640,
+    "md-unlock"
+  ],
+  /* tuple */[
+    487210640,
+    "md-videocam"
+  ],
+  /* tuple */[
+    487210640,
+    "md-volume-high"
+  ],
+  /* tuple */[
+    487210640,
+    "md-volume-low"
+  ],
+  /* tuple */[
+    487210640,
+    "md-volume-mute"
+  ],
+  /* tuple */[
+    487210640,
+    "md-volume-off"
+  ],
+  /* tuple */[
+    487210640,
+    "md-walk"
+  ],
+  /* tuple */[
+    487210640,
+    "md-wallet"
+  ],
+  /* tuple */[
+    487210640,
+    "md-warning"
+  ],
+  /* tuple */[
+    487210640,
+    "md-watch"
+  ],
+  /* tuple */[
+    487210640,
+    "md-water"
+  ],
+  /* tuple */[
+    487210640,
+    "md-wifi"
+  ],
+  /* tuple */[
+    487210640,
+    "md-wine"
+  ],
+  /* tuple */[
+    487210640,
+    "md-woman"
+  ]
+];
+
+function nameToJs(param) {
+  return Js_mapperRt.binarySearch(696, param, jsMapperConstantArray);
+}
+
+function nameFromJs(param) {
+  return Js_mapperRt.revSearch(696, jsMapperConstantArray, param);
 }
 
 function make($staropt$star, $staropt$star$1, $staropt$star$2, $staropt$star$3, $staropt$star$4, children) {
   var allowFontScaling = $staropt$star !== undefined ? $staropt$star : false;
-  var name = $staropt$star$1 !== undefined ? $staropt$star$1 : /* IosAdd */0;
+  var name = $staropt$star$1 !== undefined ? $staropt$star$1 : /* undefined */487210640;
   var color = $staropt$star$2 !== undefined ? $staropt$star$2 : "black";
   var size = $staropt$star$3 !== undefined ? $staropt$star$3 : 12;
   var style = $staropt$star$4 !== undefined ? Caml_option.valFromOption($staropt$star$4) : Style$BsReactNative.style(/* [] */0);
   return ReasonReact.wrapJsForReason(VectorIcons.Ionicons, {
               allowFontScaling: allowFontScaling,
-              name: getIcon(name),
+              name: name,
               size: size,
               color: color,
               style: style
@@ -1420,7 +2818,8 @@ function make($staropt$star, $staropt$star$1, $staropt$star$2, $staropt$star$3, 
 }
 
 var Ionicons = /* module */[
-  /* getIcon */getIcon,
+  /* nameFromJs */nameFromJs,
+  /* nameToJs */nameToJs,
   /* make */make
 ];
 

@@ -4,76 +4,76 @@ module EvilIcons = {
 
   [@bs.deriving jsConverter]
   type name = [
-    | [@bs.as "archive"] `archive
-    | [@bs.as "arrow-down"] `arrowDown
-    | [@bs.as "arrow-left"] `arrowLeft
-    | [@bs.as "arrow-right"] `arrowRight
-    | [@bs.as "arrow-up"] `arrowUp
-    | [@bs.as "bell"] `bell
-    | [@bs.as "calendar"] `calendar
-    | [@bs.as "camera"] `camera
-    | [@bs.as "cart"] `cart
-    | [@bs.as "chart"] `chart
-    | [@bs.as "check"] `check
-    | [@bs.as "chevron-down"] `chevronDown
-    | [@bs.as "chevron-left"] `chevronLeft
-    | [@bs.as "chevron-right"] `chevronRight
-    | [@bs.as "chevron-up"] `chevronUp
-    | [@bs.as "clock"] `clock
-    | [@bs.as "close"] `close
-    | [@bs.as "close-o"] `closeO
-    | [@bs.as "comment"] `comment
-    | [@bs.as "credit-card"] `creditCard
-    | [@bs.as "envelope"] `envelope
-    | [@bs.as "exclamation"] `exclamation
-    | [@bs.as "external-link"] `externalLink
-    | [@bs.as "eye"] `eye
-    | [@bs.as "gear"] `gear
-    | [@bs.as "heart"] `heart
-    | [@bs.as "image"] `image
-    | [@bs.as "like"] `like
-    | [@bs.as "link"] `link
-    | [@bs.as "location"] `location
-    | [@bs.as "lock"] `lock
-    | [@bs.as "minus"] `minus
-    | [@bs.as "navicon"] `navicon
-    | [@bs.as "paperclip"] `paperclip
-    | [@bs.as "pencil"] `pencil
-    | [@bs.as "play"] `play
-    | [@bs.as "plus"] `plus
-    | [@bs.as "pointer"] `pointer
-    | [@bs.as "question"] `question
-    | [@bs.as "redo"] `redo
-    | [@bs.as "refresh"] `refresh
-    | [@bs.as "retweet"] `retweet
-    | [@bs.as "sc-facebook"] `scFacebook
-    | [@bs.as "sc-github"] `scGithub
-    | [@bs.as "sc-google-plus"] `scGooglePlus
-    | [@bs.as "sc-instagram"] `scInstagram
-    | [@bs.as "sc-linkedin"] `scLinkedin
-    | [@bs.as "sc-odnoklassniki"] `scOdnoklassniki
-    | [@bs.as "sc-pinterest"] `scPinterest
-    | [@bs.as "sc-skype"] `scSkype
-    | [@bs.as "sc-soundcloud"] `scSoundcloud
-    | [@bs.as "sc-telegram"] `scTelegram
-    | [@bs.as "sc-tumblr"] `scTumblr
-    | [@bs.as "sc-twitter"] `scTwitter
-    | [@bs.as "sc-vimeo"] `scVimeo
-    | [@bs.as "sc-vk"] `scVk
-    | [@bs.as "sc-youtube"] `scYoutube
-    | [@bs.as "search"] `search
-    | [@bs.as "share-apple"] `shareApple
-    | [@bs.as "share-google"] `shareGoogle
-    | [@bs.as "spinner"] `spinner
-    | [@bs.as "spinner-2"] `spinner2
-    | [@bs.as "spinner-3"] `spinner3
-    | [@bs.as "star"] `star
-    | [@bs.as "tag"] `tag
-    | [@bs.as "trash"] `trash
-    | [@bs.as "trophy"] `trophy
-    | [@bs.as "undo"] `undo
-    | [@bs.as "unlock"] `unlock
-    | [@bs.as "user"] `user
+    | [@bs.as "archive"] `undefined
+    | [@bs.as "arrow-down"] `undefined
+    | [@bs.as "arrow-left"] `undefined
+    | [@bs.as "arrow-right"] `undefined
+    | [@bs.as "arrow-up"] `undefined
+    | [@bs.as "bell"] `undefined
+    | [@bs.as "calendar"] `undefined
+    | [@bs.as "camera"] `undefined
+    | [@bs.as "cart"] `undefined
+    | [@bs.as "chart"] `undefined
+    | [@bs.as "check"] `undefined
+    | [@bs.as "chevron-down"] `undefined
+    | [@bs.as "chevron-left"] `undefined
+    | [@bs.as "chevron-right"] `undefined
+    | [@bs.as "chevron-up"] `undefined
+    | [@bs.as "clock"] `undefined
+    | [@bs.as "close"] `undefined
+    | [@bs.as "close-o"] `undefined
+    | [@bs.as "comment"] `undefined
+    | [@bs.as "credit-card"] `undefined
+    | [@bs.as "envelope"] `undefined
+    | [@bs.as "exclamation"] `undefined
+    | [@bs.as "external-link"] `undefined
+    | [@bs.as "eye"] `undefined
+    | [@bs.as "gear"] `undefined
+    | [@bs.as "heart"] `undefined
+    | [@bs.as "image"] `undefined
+    | [@bs.as "like"] `undefined
+    | [@bs.as "link"] `undefined
+    | [@bs.as "location"] `undefined
+    | [@bs.as "lock"] `undefined
+    | [@bs.as "minus"] `undefined
+    | [@bs.as "navicon"] `undefined
+    | [@bs.as "paperclip"] `undefined
+    | [@bs.as "pencil"] `undefined
+    | [@bs.as "play"] `undefined
+    | [@bs.as "plus"] `undefined
+    | [@bs.as "pointer"] `undefined
+    | [@bs.as "question"] `undefined
+    | [@bs.as "redo"] `undefined
+    | [@bs.as "refresh"] `undefined
+    | [@bs.as "retweet"] `undefined
+    | [@bs.as "sc-facebook"] `undefined
+    | [@bs.as "sc-github"] `undefined
+    | [@bs.as "sc-google-plus"] `undefined
+    | [@bs.as "sc-instagram"] `undefined
+    | [@bs.as "sc-linkedin"] `undefined
+    | [@bs.as "sc-odnoklassniki"] `undefined
+    | [@bs.as "sc-pinterest"] `undefined
+    | [@bs.as "sc-skype"] `undefined
+    | [@bs.as "sc-soundcloud"] `undefined
+    | [@bs.as "sc-telegram"] `undefined
+    | [@bs.as "sc-tumblr"] `undefined
+    | [@bs.as "sc-twitter"] `undefined
+    | [@bs.as "sc-vimeo"] `undefined
+    | [@bs.as "sc-vk"] `undefined
+    | [@bs.as "sc-youtube"] `undefined
+    | [@bs.as "search"] `undefined
+    | [@bs.as "share-apple"] `undefined
+    | [@bs.as "share-google"] `undefined
+    | [@bs.as "spinner"] `undefined
+    | [@bs.as "spinner-2"] `undefined
+    | [@bs.as "spinner-3"] `undefined
+    | [@bs.as "star"] `undefined
+    | [@bs.as "tag"] `undefined
+    | [@bs.as "trash"] `undefined
+    | [@bs.as "trophy"] `undefined
+    | [@bs.as "undo"] `undefined
+    | [@bs.as "unlock"] `undefined
+    | [@bs.as "user"] `undefined
   ]
   let nameToJs = nameToJs;
 
@@ -94,7 +94,7 @@ module EvilIcons = {
   let make =
     (
       ~allowFontScaling=false,
-      ~name=`archive,
+      ~name=`undefined,
       ~color="black",
       ~size=12,
       ~style=BsReactNative.Style.style([]),
@@ -105,7 +105,7 @@ module EvilIcons = {
     ~props=
       props(
         ~allowFontScaling,
-        ~name=getIcon(name),
+        ~name,
         ~size,
         ~color,
         ~style,

@@ -108,7 +108,7 @@ module ${name} = {
     ~props=
       props(
         ~allowFontScaling,
-        ~name=getIcon(name),
+        ~name,
         ~size,
         ~color,
         ~style,
@@ -120,9 +120,17 @@ module ${name} = {
 }
 `;
 
+const handleKeywordCollisions = x => {
+  if (x === "function") {
+    return `${x}_`;
+  }
+};
+
+const makeReasonIdent = x => handleKeywordCollisions(camelCase(x));
+
 const generateVariantFromIconsSet = icons => [
   Object.keys(icons)
-    .map(icon => `| [@bs.as "${icon}"] \`${camelCase(icon)}`)
+    .map(icon => `| [@bs.as "${icon}"] \`${makeReasonIdent(icon)}`)
     .join("\n    "),
   Object.keys(icons)[0]
 ];
@@ -137,7 +145,11 @@ function generate() {
         .then(res => res.json())
         .then(generateVariantFromIconsSet)
         .then(([variant, defaultIcon]) =>
-          moduleTemplate({ name, variant, defaultIcon: camelCase(defaultIcon) })
+          moduleTemplate({
+            name,
+            variant,
+            defaultIcon: makeReasonIdent(defaultIcon)
+          })
         )
         .then(file => {
           fs.writeFileSync(path.join(__dirname, "src", `${name}.re`), file);
