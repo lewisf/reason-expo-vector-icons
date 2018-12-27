@@ -1,18 +1,15 @@
-# Basic Reason Template
+# Reason @expo/vector-icons
 
-Hello! This project allows you to quickly get started with Reason and BuckleScript. If you wanted a more sophisticated version, try the `react` template (`bsb -theme react -init .`).
+This library is the bindings for @expo/vector-icons which is a compatibility layer around @oblador/react-native-vector-icons to work with the Expo asset system. If you're using Javascript/Typescript, you have no need for this library -- carry on! (or maybe check out [@expo/vector-icons](https://github.com/expo/vector-icons)).
 
-# Build
+# Usage
+
+```reasonml
+let component = ReasonReact.statelessComponent("IconExample");
+let make = (_children) => {
+  ...component,
+  render: (_self) => {
+    <Ionicons name="md-checkmark-circle" size=32 color="green" />
+  }
+}
 ```
-npm run build
-```
-
-# Build + Watch
-
-```
-npm run start
-```
-
-
-# Editor
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically
