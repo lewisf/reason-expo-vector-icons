@@ -10,6 +10,27 @@ If you're not using Expo, then check out [Astrocoders/bs-react-native-vector-ico
   ![Screenshot of website](https://raw.githubusercontent.com/expo/vector-icons/master/website-screenshot.png)
 - [Expo documentation](https://docs.expo.io/)
 
+# Installation
+
+With yarn
+
+`yarn add reason-expo-vector-icons`
+
+With npm
+
+`npm i reason-expo-vector-icons`
+
+Then add it to your `bsconfig.json`
+
+```
+  ...
+  "bs-dependencies": [
+    ...,
+    "reason-expo-vector-icons"
+  ],
+  ...
+```
+
 # Usage
 
 ```reasonml
@@ -17,7 +38,7 @@ let component = ReasonReact.statelessComponent("IconExample");
 let make = (_children) => {
   ...component,
   render: (_self) => {
-    <Ionicons name="md-checkmark-circle" size=32 color="green" />
+    <Ionicons name=`md-checkmark-circle size=32 color="green" />
   }
 }
 ```
