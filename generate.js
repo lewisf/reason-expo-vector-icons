@@ -123,6 +123,8 @@ module ${name} = {
 const handleKeywordCollisions = x => {
   if (x === "function") {
     return `${x}_`;
+  } else {
+    return x;
   }
 };
 
