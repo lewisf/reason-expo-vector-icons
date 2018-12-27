@@ -17,11 +17,14 @@ let make = _children => {
     <SafeAreaView
       style={StyleSheet.flatten([Styles.container, Styles.profileContainer])}>
       <View>
-        <Icons.Ionicons name=`iosAddCircle size=32 />
-        <Icons.Ionicons name=`iosAdd size=32 />
-        <Icons.AntDesign name=`stepforward size=32 />
+        <Icons.Ionicons name=`iosAddCircle size=32 color="magenta" />
+        <Icons.Ionicons name=`iosAdd size=32 color="green" />
         <Icons.AntDesign name=`stepforward size=32 color="red" />
-        <Icons.AntDesign name=`stepforward size=32 color="blue" />
+        <Icons.Feather name=`airplay size=32 color="yellow" />
+        <Icons.Foundation name=`dieThree size=32 color="yellow" />
+        <Icons.Octicons name=`flame size=32 color="orange" />
+        <Icons.SimpleLineIcons name=`eyeglass size=32 color="aqua" />
+        <Icons.Zocial name=`twitter size=32 color="lightblue" />
       </View>
     </SafeAreaView>,
 };
