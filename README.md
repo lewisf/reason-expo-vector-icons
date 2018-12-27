@@ -34,13 +34,15 @@ Then add it to your `bsconfig.json`
 # Usage
 
 ```reasonml
+open ReasonExpoVectorIcons;
+
 let component = ReasonReact.statelessComponent("IconExample");
 let make = (_children) => {
   ...component,
   render: (_self) => {
     <Ionicons name=`md-checkmark-circle size=32 color="green" />
   }
-}
+};
 ```
 
 # Credits
