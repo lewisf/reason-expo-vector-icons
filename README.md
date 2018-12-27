@@ -2,6 +2,8 @@
 
 This library is the bindings for @expo/vector-icons which is a compatibility layer around @oblador/react-native-vector-icons to work with the Expo asset system. If you're using Javascript/Typescript, you have no need for this library -- carry on! (or maybe check out [@expo/vector-icons](https://github.com/expo/vector-icons)).
 
+If you're not using Expo, then check out [Astrocoders/bs-react-native-vector-icons](https://github.com/Astrocoders/bs-react-native-vector-icons) instead.
+
 # Usage
 
 ```reasonml
@@ -13,3 +15,8 @@ let make = (_children) => {
   }
 }
 ```
+
+# Credits
+
+Thanks to [Astrocoders/bs-react-native-vector-icons](https://github.com/Astrocoders/bs-react-native-vector-icons) for
+providing an example of how to generate this from glyphmap files.
