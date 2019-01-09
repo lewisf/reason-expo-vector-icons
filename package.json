@@ -1,6 +1,6 @@
 {
   "name": "reason-expo-vector-icons",
-  "version": "31.0.0",
+  "version": "31.0.1",
   "description": "Bucklescript bindings for @expo/vector-icons, the standard way to use icons with Expo.",
   "scripts": {
     "build": "bsb -make-world",
@@ -9,16 +9,11 @@
     "install::dev": "yarn && install-self-peers -- --ignore-scripts",
     "pub": "npx np --yolo"
   },
-  "keywords": [
-    "BuckleScript",
-    "Expo",
-    "React Native",
-    "React"
-  ],
+  "keywords": ["BuckleScript", "Expo", "React Native", "React"],
   "author": "Lewis Chung<@_lewisf>",
-  "repository": "https: //github.com/lewisf/reason-expo-vector-icons",
-  "homepage": "https: //github.com/lewisf/reason-expo-vector-icons",
-  "bugs": "https: //github.com/lewisf/reason-expo-vector-icons",
+  "repository": "https://github.com/lewisf/reason-expo-vector-icons",
+  "homepage": "https://github.com/lewisf/reason-expo-vector-icons",
+  "bugs": "https://github.com/lewisf/reason-expo-vector-icons",
   "license": "MIT",
   "devDependencies": {
     "@team-griffin/install-self-peers": "^1.1.1",
