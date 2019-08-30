@@ -1,10 +1,7 @@
 module AntDesign = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "AntDesign";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "stepforward"] `stepforward
+  [@bs.module ("@expo/vector-icons", "AntDesign")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "stepforward"] `stepforward
     | [@bs.as "stepbackward"] `stepbackward
     | [@bs.as "forward"] `forward
     | [@bs.as "banckward"] `banckward
@@ -301,45 +298,6 @@ module AntDesign = {
     | [@bs.as "instagram"] `instagram
     | [@bs.as "yuque"] `yuque
     | [@bs.as "slack"] `slack
-    | [@bs.as "slack-square"] `slackSquare
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "slack-square"] `slackSquare  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "AntDesign";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`stepforward,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=AntDesign.js,
-  ~props=
-    AntDesign.props(
-      ~allowFontScaling,
-      ~name=AntDesign.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

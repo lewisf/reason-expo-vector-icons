@@ -1,54 +1,74 @@
 module MaterialCommunityIcons = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "MaterialCommunityIcons";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "access-point"] `accessPoint
+  [@bs.module ("@expo/vector-icons", "MaterialCommunityIcons")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "access-point"] `accessPoint
     | [@bs.as "access-point-network"] `accessPointNetwork
+    | [@bs.as "access-point-network-off"] `accessPointNetworkOff
     | [@bs.as "account"] `account
     | [@bs.as "account-alert"] `accountAlert
+    | [@bs.as "account-alert-outline"] `accountAlertOutline
+    | [@bs.as "account-arrow-left"] `accountArrowLeft
+    | [@bs.as "account-arrow-left-outline"] `accountArrowLeftOutline
+    | [@bs.as "account-arrow-right"] `accountArrowRight
+    | [@bs.as "account-arrow-right-outline"] `accountArrowRightOutline
     | [@bs.as "account-box"] `accountBox
     | [@bs.as "account-box-multiple"] `accountBoxMultiple
     | [@bs.as "account-box-outline"] `accountBoxOutline
     | [@bs.as "account-card-details"] `accountCardDetails
     | [@bs.as "account-check"] `accountCheck
+    | [@bs.as "account-check-outline"] `accountCheckOutline
     | [@bs.as "account-child"] `accountChild
     | [@bs.as "account-child-circle"] `accountChildCircle
     | [@bs.as "account-circle"] `accountCircle
+    | [@bs.as "account-circle-outline"] `accountCircleOutline
+    | [@bs.as "account-clock"] `accountClock
+    | [@bs.as "account-clock-outline"] `accountClockOutline
     | [@bs.as "account-convert"] `accountConvert
     | [@bs.as "account-details"] `accountDetails
     | [@bs.as "account-edit"] `accountEdit
     | [@bs.as "account-group"] `accountGroup
+    | [@bs.as "account-group-outline"] `accountGroupOutline
     | [@bs.as "account-heart"] `accountHeart
+    | [@bs.as "account-heart-outline"] `accountHeartOutline
     | [@bs.as "account-key"] `accountKey
-    | [@bs.as "account-location"] `accountLocation
+    | [@bs.as "account-key-outline"] `accountKeyOutline
     | [@bs.as "account-minus"] `accountMinus
     | [@bs.as "account-minus-outline"] `accountMinusOutline
     | [@bs.as "account-multiple"] `accountMultiple
     | [@bs.as "account-multiple-check"] `accountMultipleCheck
     | [@bs.as "account-multiple-minus"] `accountMultipleMinus
+    | [@bs.as "account-multiple-minus-outline"] `accountMultipleMinusOutline
     | [@bs.as "account-multiple-outline"] `accountMultipleOutline
     | [@bs.as "account-multiple-plus"] `accountMultiplePlus
     | [@bs.as "account-multiple-plus-outline"] `accountMultiplePlusOutline
     | [@bs.as "account-network"] `accountNetwork
+    | [@bs.as "account-network-outline"] `accountNetworkOutline
     | [@bs.as "account-off"] `accountOff
+    | [@bs.as "account-off-outline"] `accountOffOutline
     | [@bs.as "account-outline"] `accountOutline
     | [@bs.as "account-plus"] `accountPlus
     | [@bs.as "account-plus-outline"] `accountPlusOutline
+    | [@bs.as "account-question"] `accountQuestion
+    | [@bs.as "account-question-outline"] `accountQuestionOutline
     | [@bs.as "account-remove"] `accountRemove
     | [@bs.as "account-remove-outline"] `accountRemoveOutline
     | [@bs.as "account-search"] `accountSearch
     | [@bs.as "account-search-outline"] `accountSearchOutline
     | [@bs.as "account-settings"] `accountSettings
     | [@bs.as "account-star"] `accountStar
+    | [@bs.as "account-star-outline"] `accountStarOutline
     | [@bs.as "account-supervisor"] `accountSupervisor
     | [@bs.as "account-supervisor-circle"] `accountSupervisorCircle
     | [@bs.as "account-switch"] `accountSwitch
+    | [@bs.as "account-tie"] `accountTie
     | [@bs.as "accusoft"] `accusoft
+    | [@bs.as "adchoices"] `adchoices
     | [@bs.as "adjust"] `adjust
     | [@bs.as "adobe"] `adobe
     | [@bs.as "air-conditioner"] `airConditioner
+    | [@bs.as "air-filter"] `airFilter
+    | [@bs.as "air-purifier"] `airPurifier
+    | [@bs.as "airbag"] `airbag
     | [@bs.as "airballoon"] `airballoon
     | [@bs.as "airplane"] `airplane
     | [@bs.as "airplane-landing"] `airplaneLanding
@@ -60,6 +80,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "alarm-bell"] `alarmBell
     | [@bs.as "alarm-check"] `alarmCheck
     | [@bs.as "alarm-light"] `alarmLight
+    | [@bs.as "alarm-light-outline"] `alarmLightOutline
     | [@bs.as "alarm-multiple"] `alarmMultiple
     | [@bs.as "alarm-off"] `alarmOff
     | [@bs.as "alarm-plus"] `alarmPlus
@@ -67,73 +88,156 @@ module MaterialCommunityIcons = {
     | [@bs.as "album"] `album
     | [@bs.as "alert"] `alert
     | [@bs.as "alert-box"] `alertBox
+    | [@bs.as "alert-box-outline"] `alertBoxOutline
     | [@bs.as "alert-circle"] `alertCircle
     | [@bs.as "alert-circle-outline"] `alertCircleOutline
     | [@bs.as "alert-decagram"] `alertDecagram
+    | [@bs.as "alert-decagram-outline"] `alertDecagramOutline
     | [@bs.as "alert-octagon"] `alertOctagon
+    | [@bs.as "alert-octagon-outline"] `alertOctagonOutline
     | [@bs.as "alert-octagram"] `alertOctagram
+    | [@bs.as "alert-octagram-outline"] `alertOctagramOutline
     | [@bs.as "alert-outline"] `alertOutline
     | [@bs.as "alien"] `alien
     | [@bs.as "all-inclusive"] `allInclusive
     | [@bs.as "alpha"] `alpha
     | [@bs.as "alpha-a"] `alphaA
     | [@bs.as "alpha-a-box"] `alphaABox
+    | [@bs.as "alpha-a-box-outline"] `alphaABoxOutline
+    | [@bs.as "alpha-a-circle"] `alphaACircle
+    | [@bs.as "alpha-a-circle-outline"] `alphaACircleOutline
     | [@bs.as "alpha-b"] `alphaB
     | [@bs.as "alpha-b-box"] `alphaBBox
+    | [@bs.as "alpha-b-box-outline"] `alphaBBoxOutline
+    | [@bs.as "alpha-b-circle"] `alphaBCircle
+    | [@bs.as "alpha-b-circle-outline"] `alphaBCircleOutline
     | [@bs.as "alpha-c"] `alphaC
     | [@bs.as "alpha-c-box"] `alphaCBox
+    | [@bs.as "alpha-c-box-outline"] `alphaCBoxOutline
+    | [@bs.as "alpha-c-circle"] `alphaCCircle
+    | [@bs.as "alpha-c-circle-outline"] `alphaCCircleOutline
     | [@bs.as "alpha-d"] `alphaD
     | [@bs.as "alpha-d-box"] `alphaDBox
+    | [@bs.as "alpha-d-box-outline"] `alphaDBoxOutline
+    | [@bs.as "alpha-d-circle"] `alphaDCircle
+    | [@bs.as "alpha-d-circle-outline"] `alphaDCircleOutline
     | [@bs.as "alpha-e"] `alphaE
     | [@bs.as "alpha-e-box"] `alphaEBox
+    | [@bs.as "alpha-e-box-outline"] `alphaEBoxOutline
+    | [@bs.as "alpha-e-circle"] `alphaECircle
+    | [@bs.as "alpha-e-circle-outline"] `alphaECircleOutline
     | [@bs.as "alpha-f"] `alphaF
     | [@bs.as "alpha-f-box"] `alphaFBox
+    | [@bs.as "alpha-f-box-outline"] `alphaFBoxOutline
+    | [@bs.as "alpha-f-circle"] `alphaFCircle
+    | [@bs.as "alpha-f-circle-outline"] `alphaFCircleOutline
     | [@bs.as "alpha-g"] `alphaG
     | [@bs.as "alpha-g-box"] `alphaGBox
+    | [@bs.as "alpha-g-box-outline"] `alphaGBoxOutline
+    | [@bs.as "alpha-g-circle"] `alphaGCircle
+    | [@bs.as "alpha-g-circle-outline"] `alphaGCircleOutline
     | [@bs.as "alpha-h"] `alphaH
     | [@bs.as "alpha-h-box"] `alphaHBox
+    | [@bs.as "alpha-h-box-outline"] `alphaHBoxOutline
+    | [@bs.as "alpha-h-circle"] `alphaHCircle
+    | [@bs.as "alpha-h-circle-outline"] `alphaHCircleOutline
     | [@bs.as "alpha-i"] `alphaI
     | [@bs.as "alpha-i-box"] `alphaIBox
+    | [@bs.as "alpha-i-box-outline"] `alphaIBoxOutline
+    | [@bs.as "alpha-i-circle"] `alphaICircle
+    | [@bs.as "alpha-i-circle-outline"] `alphaICircleOutline
     | [@bs.as "alpha-j"] `alphaJ
     | [@bs.as "alpha-j-box"] `alphaJBox
+    | [@bs.as "alpha-j-box-outline"] `alphaJBoxOutline
+    | [@bs.as "alpha-j-circle"] `alphaJCircle
+    | [@bs.as "alpha-j-circle-outline"] `alphaJCircleOutline
     | [@bs.as "alpha-k"] `alphaK
     | [@bs.as "alpha-k-box"] `alphaKBox
+    | [@bs.as "alpha-k-box-outline"] `alphaKBoxOutline
+    | [@bs.as "alpha-k-circle"] `alphaKCircle
+    | [@bs.as "alpha-k-circle-outline"] `alphaKCircleOutline
     | [@bs.as "alpha-l"] `alphaL
     | [@bs.as "alpha-l-box"] `alphaLBox
+    | [@bs.as "alpha-l-box-outline"] `alphaLBoxOutline
+    | [@bs.as "alpha-l-circle"] `alphaLCircle
+    | [@bs.as "alpha-l-circle-outline"] `alphaLCircleOutline
     | [@bs.as "alpha-m"] `alphaM
     | [@bs.as "alpha-m-box"] `alphaMBox
+    | [@bs.as "alpha-m-box-outline"] `alphaMBoxOutline
+    | [@bs.as "alpha-m-circle"] `alphaMCircle
+    | [@bs.as "alpha-m-circle-outline"] `alphaMCircleOutline
     | [@bs.as "alpha-n"] `alphaN
     | [@bs.as "alpha-n-box"] `alphaNBox
+    | [@bs.as "alpha-n-box-outline"] `alphaNBoxOutline
+    | [@bs.as "alpha-n-circle"] `alphaNCircle
+    | [@bs.as "alpha-n-circle-outline"] `alphaNCircleOutline
     | [@bs.as "alpha-o"] `alphaO
     | [@bs.as "alpha-o-box"] `alphaOBox
+    | [@bs.as "alpha-o-box-outline"] `alphaOBoxOutline
+    | [@bs.as "alpha-o-circle"] `alphaOCircle
+    | [@bs.as "alpha-o-circle-outline"] `alphaOCircleOutline
     | [@bs.as "alpha-p"] `alphaP
     | [@bs.as "alpha-p-box"] `alphaPBox
+    | [@bs.as "alpha-p-box-outline"] `alphaPBoxOutline
+    | [@bs.as "alpha-p-circle"] `alphaPCircle
+    | [@bs.as "alpha-p-circle-outline"] `alphaPCircleOutline
     | [@bs.as "alpha-q"] `alphaQ
     | [@bs.as "alpha-q-box"] `alphaQBox
+    | [@bs.as "alpha-q-box-outline"] `alphaQBoxOutline
+    | [@bs.as "alpha-q-circle"] `alphaQCircle
+    | [@bs.as "alpha-q-circle-outline"] `alphaQCircleOutline
     | [@bs.as "alpha-r"] `alphaR
     | [@bs.as "alpha-r-box"] `alphaRBox
+    | [@bs.as "alpha-r-box-outline"] `alphaRBoxOutline
+    | [@bs.as "alpha-r-circle"] `alphaRCircle
+    | [@bs.as "alpha-r-circle-outline"] `alphaRCircleOutline
     | [@bs.as "alpha-s"] `alphaS
     | [@bs.as "alpha-s-box"] `alphaSBox
+    | [@bs.as "alpha-s-box-outline"] `alphaSBoxOutline
+    | [@bs.as "alpha-s-circle"] `alphaSCircle
+    | [@bs.as "alpha-s-circle-outline"] `alphaSCircleOutline
     | [@bs.as "alpha-t"] `alphaT
     | [@bs.as "alpha-t-box"] `alphaTBox
+    | [@bs.as "alpha-t-box-outline"] `alphaTBoxOutline
+    | [@bs.as "alpha-t-circle"] `alphaTCircle
+    | [@bs.as "alpha-t-circle-outline"] `alphaTCircleOutline
     | [@bs.as "alpha-u"] `alphaU
     | [@bs.as "alpha-u-box"] `alphaUBox
+    | [@bs.as "alpha-u-box-outline"] `alphaUBoxOutline
+    | [@bs.as "alpha-u-circle"] `alphaUCircle
+    | [@bs.as "alpha-u-circle-outline"] `alphaUCircleOutline
     | [@bs.as "alpha-v"] `alphaV
     | [@bs.as "alpha-v-box"] `alphaVBox
+    | [@bs.as "alpha-v-box-outline"] `alphaVBoxOutline
+    | [@bs.as "alpha-v-circle"] `alphaVCircle
+    | [@bs.as "alpha-v-circle-outline"] `alphaVCircleOutline
     | [@bs.as "alpha-w"] `alphaW
     | [@bs.as "alpha-w-box"] `alphaWBox
+    | [@bs.as "alpha-w-box-outline"] `alphaWBoxOutline
+    | [@bs.as "alpha-w-circle"] `alphaWCircle
+    | [@bs.as "alpha-w-circle-outline"] `alphaWCircleOutline
     | [@bs.as "alpha-x"] `alphaX
     | [@bs.as "alpha-x-box"] `alphaXBox
+    | [@bs.as "alpha-x-box-outline"] `alphaXBoxOutline
+    | [@bs.as "alpha-x-circle"] `alphaXCircle
+    | [@bs.as "alpha-x-circle-outline"] `alphaXCircleOutline
     | [@bs.as "alpha-y"] `alphaY
     | [@bs.as "alpha-y-box"] `alphaYBox
+    | [@bs.as "alpha-y-box-outline"] `alphaYBoxOutline
+    | [@bs.as "alpha-y-circle"] `alphaYCircle
+    | [@bs.as "alpha-y-circle-outline"] `alphaYCircleOutline
     | [@bs.as "alpha-z"] `alphaZ
     | [@bs.as "alpha-z-box"] `alphaZBox
+    | [@bs.as "alpha-z-box-outline"] `alphaZBoxOutline
+    | [@bs.as "alpha-z-circle"] `alphaZCircle
+    | [@bs.as "alpha-z-circle-outline"] `alphaZCircleOutline
     | [@bs.as "alphabetical"] `alphabetical
     | [@bs.as "altimeter"] `altimeter
     | [@bs.as "amazon"] `amazon
     | [@bs.as "amazon-alexa"] `amazonAlexa
     | [@bs.as "amazon-drive"] `amazonDrive
     | [@bs.as "ambulance"] `ambulance
+    | [@bs.as "ammunition"] `ammunition
     | [@bs.as "ampersand"] `ampersand
     | [@bs.as "amplifier"] `amplifier
     | [@bs.as "anchor"] `anchor
@@ -141,6 +245,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "android-auto"] `androidAuto
     | [@bs.as "android-debug-bridge"] `androidDebugBridge
     | [@bs.as "android-head"] `androidHead
+    | [@bs.as "android-messages"] `androidMessages
     | [@bs.as "android-studio"] `androidStudio
     | [@bs.as "angle-acute"] `angleAcute
     | [@bs.as "angle-obtuse"] `angleObtuse
@@ -164,6 +269,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "apple-safari"] `appleSafari
     | [@bs.as "application"] `application
     | [@bs.as "apps"] `apps
+    | [@bs.as "apps-box"] `appsBox
     | [@bs.as "arch"] `arch
     | [@bs.as "archive"] `archive
     | [@bs.as "arrange-bring-forward"] `arrangeBringForward
@@ -198,6 +304,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "arrow-down-bold-hexagon-outline"] `arrowDownBoldHexagonOutline
     | [@bs.as "arrow-down-bold-outline"] `arrowDownBoldOutline
     | [@bs.as "arrow-down-box"] `arrowDownBox
+    | [@bs.as "arrow-down-circle"] `arrowDownCircle
+    | [@bs.as "arrow-down-circle-outline"] `arrowDownCircleOutline
     | [@bs.as "arrow-down-drop-circle"] `arrowDownDropCircle
     | [@bs.as "arrow-down-drop-circle-outline"] `arrowDownDropCircleOutline
     | [@bs.as "arrow-down-thick"] `arrowDownThick
@@ -218,6 +326,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "arrow-left-bold-hexagon-outline"] `arrowLeftBoldHexagonOutline
     | [@bs.as "arrow-left-bold-outline"] `arrowLeftBoldOutline
     | [@bs.as "arrow-left-box"] `arrowLeftBox
+    | [@bs.as "arrow-left-circle"] `arrowLeftCircle
+    | [@bs.as "arrow-left-circle-outline"] `arrowLeftCircleOutline
     | [@bs.as "arrow-left-drop-circle"] `arrowLeftDropCircle
     | [@bs.as "arrow-left-drop-circle-outline"] `arrowLeftDropCircleOutline
     | [@bs.as "arrow-left-right-bold-outline"] `arrowLeftRightBoldOutline
@@ -231,6 +341,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "arrow-right-bold-hexagon-outline"] `arrowRightBoldHexagonOutline
     | [@bs.as "arrow-right-bold-outline"] `arrowRightBoldOutline
     | [@bs.as "arrow-right-box"] `arrowRightBox
+    | [@bs.as "arrow-right-circle"] `arrowRightCircle
+    | [@bs.as "arrow-right-circle-outline"] `arrowRightCircleOutline
     | [@bs.as "arrow-right-drop-circle"] `arrowRightDropCircle
     | [@bs.as "arrow-right-drop-circle-outline"] `arrowRightDropCircleOutline
     | [@bs.as "arrow-right-thick"] `arrowRightThick
@@ -251,16 +363,21 @@ module MaterialCommunityIcons = {
     | [@bs.as "arrow-up-bold-hexagon-outline"] `arrowUpBoldHexagonOutline
     | [@bs.as "arrow-up-bold-outline"] `arrowUpBoldOutline
     | [@bs.as "arrow-up-box"] `arrowUpBox
+    | [@bs.as "arrow-up-circle"] `arrowUpCircle
+    | [@bs.as "arrow-up-circle-outline"] `arrowUpCircleOutline
     | [@bs.as "arrow-up-down-bold-outline"] `arrowUpDownBoldOutline
     | [@bs.as "arrow-up-drop-circle"] `arrowUpDropCircle
     | [@bs.as "arrow-up-drop-circle-outline"] `arrowUpDropCircleOutline
     | [@bs.as "arrow-up-thick"] `arrowUpThick
     | [@bs.as "artist"] `artist
+    | [@bs.as "artist-outline"] `artistOutline
+    | [@bs.as "artstation"] `artstation
     | [@bs.as "aspect-ratio"] `aspectRatio
     | [@bs.as "assistant"] `assistant
     | [@bs.as "asterisk"] `asterisk
     | [@bs.as "at"] `at
     | [@bs.as "atlassian"] `atlassian
+    | [@bs.as "atm"] `atm
     | [@bs.as "atom"] `atom
     | [@bs.as "attachment"] `attachment
     | [@bs.as "audio-video"] `audioVideo
@@ -271,17 +388,37 @@ module MaterialCommunityIcons = {
     | [@bs.as "autorenew"] `autorenew
     | [@bs.as "av-timer"] `avTimer
     | [@bs.as "axe"] `axe
+    | [@bs.as "axis"] `axis
+    | [@bs.as "axis-arrow"] `axisArrow
+    | [@bs.as "axis-arrow-lock"] `axisArrowLock
+    | [@bs.as "axis-lock"] `axisLock
+    | [@bs.as "axis-x-arrow"] `axisXArrow
+    | [@bs.as "axis-x-arrow-lock"] `axisXArrowLock
+    | [@bs.as "axis-x-rotate-clockwise"] `axisXRotateClockwise
+    | [@bs.as "axis-x-rotate-counterclockwise"] `axisXRotateCounterclockwise
+    | [@bs.as "axis-x-y-arrow-lock"] `axisXYArrowLock
+    | [@bs.as "axis-y-arrow"] `axisYArrow
+    | [@bs.as "axis-y-arrow-lock"] `axisYArrowLock
+    | [@bs.as "axis-y-rotate-clockwise"] `axisYRotateClockwise
+    | [@bs.as "axis-y-rotate-counterclockwise"] `axisYRotateCounterclockwise
+    | [@bs.as "axis-z-arrow"] `axisZArrow
+    | [@bs.as "axis-z-arrow-lock"] `axisZArrowLock
+    | [@bs.as "axis-z-rotate-clockwise"] `axisZRotateClockwise
+    | [@bs.as "axis-z-rotate-counterclockwise"] `axisZRotateCounterclockwise
     | [@bs.as "azure"] `azure
     | [@bs.as "babel"] `babel
     | [@bs.as "baby"] `baby
     | [@bs.as "baby-buggy"] `babyBuggy
     | [@bs.as "backburger"] `backburger
     | [@bs.as "backspace"] `backspace
+    | [@bs.as "backspace-outline"] `backspaceOutline
     | [@bs.as "backup-restore"] `backupRestore
     | [@bs.as "badminton"] `badminton
     | [@bs.as "balloon"] `balloon
     | [@bs.as "ballot"] `ballot
     | [@bs.as "ballot-outline"] `ballotOutline
+    | [@bs.as "ballot-recount"] `ballotRecount
+    | [@bs.as "ballot-recount-outline"] `ballotRecountOutline
     | [@bs.as "bandcamp"] `bandcamp
     | [@bs.as "bank"] `bank
     | [@bs.as "bank-transfer"] `bankTransfer
@@ -290,6 +427,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "barcode"] `barcode
     | [@bs.as "barcode-scan"] `barcodeScan
     | [@bs.as "barley"] `barley
+    | [@bs.as "barley-off"] `barleyOff
+    | [@bs.as "barn"] `barn
     | [@bs.as "barrel"] `barrel
     | [@bs.as "baseball"] `baseball
     | [@bs.as "baseball-bat"] `baseballBat
@@ -298,6 +437,9 @@ module MaterialCommunityIcons = {
     | [@bs.as "basket-fill"] `basketFill
     | [@bs.as "basket-unfill"] `basketUnfill
     | [@bs.as "basketball"] `basketball
+    | [@bs.as "basketball-hoop"] `basketballHoop
+    | [@bs.as "basketball-hoop-outline"] `basketballHoopOutline
+    | [@bs.as "bat"] `bat
     | [@bs.as "battery"] `battery
     | [@bs.as "battery-10"] `battery10
     | [@bs.as "battery-10-bluetooth"] `battery10Bluetooth
@@ -352,13 +494,18 @@ module MaterialCommunityIcons = {
     | [@bs.as "battery-positive"] `batteryPositive
     | [@bs.as "battery-unknown"] `batteryUnknown
     | [@bs.as "battery-unknown-bluetooth"] `batteryUnknownBluetooth
+    | [@bs.as "battlenet"] `battlenet
     | [@bs.as "beach"] `beach
     | [@bs.as "beaker"] `beaker
+    | [@bs.as "beaker-outline"] `beakerOutline
     | [@bs.as "beats"] `beats
     | [@bs.as "bed-empty"] `bedEmpty
     | [@bs.as "beer"] `beer
     | [@bs.as "behance"] `behance
     | [@bs.as "bell"] `bell
+    | [@bs.as "bell-alert"] `bellAlert
+    | [@bs.as "bell-circle"] `bellCircle
+    | [@bs.as "bell-circle-outline"] `bellCircleOutline
     | [@bs.as "bell-off"] `bellOff
     | [@bs.as "bell-off-outline"] `bellOffOutline
     | [@bs.as "bell-outline"] `bellOutline
@@ -372,6 +519,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "betamax"] `betamax
     | [@bs.as "bible"] `bible
     | [@bs.as "bike"] `bike
+    | [@bs.as "billiards"] `billiards
+    | [@bs.as "billiards-rack"] `billiardsRack
     | [@bs.as "bing"] `bing
     | [@bs.as "binoculars"] `binoculars
     | [@bs.as "bio"] `bio
@@ -381,9 +530,11 @@ module MaterialCommunityIcons = {
     | [@bs.as "black-mesa"] `blackMesa
     | [@bs.as "blackberry"] `blackberry
     | [@bs.as "blender"] `blender
+    | [@bs.as "blender-software"] `blenderSoftware
     | [@bs.as "blinds"] `blinds
     | [@bs.as "block-helper"] `blockHelper
     | [@bs.as "blogger"] `blogger
+    | [@bs.as "blood-bag"] `bloodBag
     | [@bs.as "bluetooth"] `bluetooth
     | [@bs.as "bluetooth-audio"] `bluetoothAudio
     | [@bs.as "bluetooth-connect"] `bluetoothConnect
@@ -394,6 +545,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "blur-linear"] `blurLinear
     | [@bs.as "blur-off"] `blurOff
     | [@bs.as "blur-radial"] `blurRadial
+    | [@bs.as "bolnisi-cross"] `bolnisiCross
     | [@bs.as "bomb"] `bomb
     | [@bs.as "bomb-off"] `bombOff
     | [@bs.as "bone"] `bone
@@ -407,8 +559,10 @@ module MaterialCommunityIcons = {
     | [@bs.as "book-multiple-remove"] `bookMultipleRemove
     | [@bs.as "book-multiple-variant"] `bookMultipleVariant
     | [@bs.as "book-open"] `bookOpen
+    | [@bs.as "book-open-outline"] `bookOpenOutline
     | [@bs.as "book-open-page-variant"] `bookOpenPageVariant
     | [@bs.as "book-open-variant"] `bookOpenVariant
+    | [@bs.as "book-outline"] `bookOutline
     | [@bs.as "book-plus"] `bookPlus
     | [@bs.as "book-remove"] `bookRemove
     | [@bs.as "book-variant"] `bookVariant
@@ -450,19 +604,31 @@ module MaterialCommunityIcons = {
     | [@bs.as "box"] `box
     | [@bs.as "box-cutter"] `boxCutter
     | [@bs.as "box-shadow"] `boxShadow
+    | [@bs.as "boxing-glove"] `boxingGlove
     | [@bs.as "braille"] `braille
     | [@bs.as "brain"] `brain
+    | [@bs.as "bread-slice"] `breadSlice
+    | [@bs.as "bread-slice-outline"] `breadSliceOutline
     | [@bs.as "bridge"] `bridge
     | [@bs.as "briefcase"] `briefcase
+    | [@bs.as "briefcase-account"] `briefcaseAccount
+    | [@bs.as "briefcase-account-outline"] `briefcaseAccountOutline
     | [@bs.as "briefcase-check"] `briefcaseCheck
     | [@bs.as "briefcase-download"] `briefcaseDownload
+    | [@bs.as "briefcase-download-outline"] `briefcaseDownloadOutline
     | [@bs.as "briefcase-edit"] `briefcaseEdit
+    | [@bs.as "briefcase-edit-outline"] `briefcaseEditOutline
     | [@bs.as "briefcase-minus"] `briefcaseMinus
+    | [@bs.as "briefcase-minus-outline"] `briefcaseMinusOutline
     | [@bs.as "briefcase-outline"] `briefcaseOutline
     | [@bs.as "briefcase-plus"] `briefcasePlus
+    | [@bs.as "briefcase-plus-outline"] `briefcasePlusOutline
     | [@bs.as "briefcase-remove"] `briefcaseRemove
+    | [@bs.as "briefcase-remove-outline"] `briefcaseRemoveOutline
     | [@bs.as "briefcase-search"] `briefcaseSearch
+    | [@bs.as "briefcase-search-outline"] `briefcaseSearchOutline
     | [@bs.as "briefcase-upload"] `briefcaseUpload
+    | [@bs.as "briefcase-upload-outline"] `briefcaseUploadOutline
     | [@bs.as "brightness-1"] `brightness1
     | [@bs.as "brightness-2"] `brightness2
     | [@bs.as "brightness-3"] `brightness3
@@ -471,6 +637,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "brightness-6"] `brightness6
     | [@bs.as "brightness-7"] `brightness7
     | [@bs.as "brightness-auto"] `brightnessAuto
+    | [@bs.as "brightness-percent"] `brightnessPercent
     | [@bs.as "broom"] `broom
     | [@bs.as "brush"] `brush
     | [@bs.as "buddhism"] `buddhism
@@ -480,6 +647,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "bug-check-outline"] `bugCheckOutline
     | [@bs.as "bug-outline"] `bugOutline
     | [@bs.as "bulldozer"] `bulldozer
+    | [@bs.as "bullet"] `bullet
     | [@bs.as "bulletin-board"] `bulletinBoard
     | [@bs.as "bullhorn"] `bullhorn
     | [@bs.as "bullhorn-outline"] `bullhornOutline
@@ -502,22 +670,29 @@ module MaterialCommunityIcons = {
     | [@bs.as "calendar"] `calendar
     | [@bs.as "calendar-alert"] `calendarAlert
     | [@bs.as "calendar-blank"] `calendarBlank
+    | [@bs.as "calendar-blank-outline"] `calendarBlankOutline
     | [@bs.as "calendar-check"] `calendarCheck
+    | [@bs.as "calendar-check-outline"] `calendarCheckOutline
     | [@bs.as "calendar-clock"] `calendarClock
     | [@bs.as "calendar-edit"] `calendarEdit
     | [@bs.as "calendar-export"] `calendarExport
     | [@bs.as "calendar-heart"] `calendarHeart
     | [@bs.as "calendar-import"] `calendarImport
+    | [@bs.as "calendar-minus"] `calendarMinus
     | [@bs.as "calendar-multiple"] `calendarMultiple
     | [@bs.as "calendar-multiple-check"] `calendarMultipleCheck
     | [@bs.as "calendar-multiselect"] `calendarMultiselect
+    | [@bs.as "calendar-outline"] `calendarOutline
     | [@bs.as "calendar-plus"] `calendarPlus
     | [@bs.as "calendar-question"] `calendarQuestion
     | [@bs.as "calendar-range"] `calendarRange
+    | [@bs.as "calendar-range-outline"] `calendarRangeOutline
     | [@bs.as "calendar-remove"] `calendarRemove
+    | [@bs.as "calendar-remove-outline"] `calendarRemoveOutline
     | [@bs.as "calendar-search"] `calendarSearch
     | [@bs.as "calendar-star"] `calendarStar
     | [@bs.as "calendar-text"] `calendarText
+    | [@bs.as "calendar-text-outline"] `calendarTextOutline
     | [@bs.as "calendar-today"] `calendarToday
     | [@bs.as "calendar-week"] `calendarWeek
     | [@bs.as "calendar-week-begin"] `calendarWeekBegin
@@ -533,7 +708,9 @@ module MaterialCommunityIcons = {
     | [@bs.as "camera"] `camera
     | [@bs.as "camera-account"] `cameraAccount
     | [@bs.as "camera-burst"] `cameraBurst
+    | [@bs.as "camera-control"] `cameraControl
     | [@bs.as "camera-enhance"] `cameraEnhance
+    | [@bs.as "camera-enhance-outline"] `cameraEnhanceOutline
     | [@bs.as "camera-front"] `cameraFront
     | [@bs.as "camera-front-variant"] `cameraFrontVariant
     | [@bs.as "camera-gopro"] `cameraGopro
@@ -544,6 +721,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "camera-metering-partial"] `cameraMeteringPartial
     | [@bs.as "camera-metering-spot"] `cameraMeteringSpot
     | [@bs.as "camera-off"] `cameraOff
+    | [@bs.as "camera-outline"] `cameraOutline
     | [@bs.as "camera-party-mode"] `cameraPartyMode
     | [@bs.as "camera-rear"] `cameraRear
     | [@bs.as "camera-rear-variant"] `cameraRearVariant
@@ -556,16 +734,44 @@ module MaterialCommunityIcons = {
     | [@bs.as "caps-lock"] `capsLock
     | [@bs.as "car"] `car
     | [@bs.as "car-battery"] `carBattery
+    | [@bs.as "car-brake-abs"] `carBrakeAbs
+    | [@bs.as "car-brake-alert"] `carBrakeAlert
+    | [@bs.as "car-brake-hold"] `carBrakeHold
+    | [@bs.as "car-brake-parking"] `carBrakeParking
     | [@bs.as "car-connected"] `carConnected
     | [@bs.as "car-convertible"] `carConvertible
+    | [@bs.as "car-cruise-control"] `carCruiseControl
+    | [@bs.as "car-defrost-front"] `carDefrostFront
+    | [@bs.as "car-defrost-rear"] `carDefrostRear
+    | [@bs.as "car-door"] `carDoor
+    | [@bs.as "car-electric"] `carElectric
+    | [@bs.as "car-esp"] `carEsp
     | [@bs.as "car-estate"] `carEstate
     | [@bs.as "car-hatchback"] `carHatchback
+    | [@bs.as "car-key"] `carKey
+    | [@bs.as "car-light-dimmed"] `carLightDimmed
+    | [@bs.as "car-light-fog"] `carLightFog
+    | [@bs.as "car-light-high"] `carLightHigh
     | [@bs.as "car-limousine"] `carLimousine
+    | [@bs.as "car-multiple"] `carMultiple
+    | [@bs.as "car-parking-lights"] `carParkingLights
     | [@bs.as "car-pickup"] `carPickup
     | [@bs.as "car-side"] `carSide
     | [@bs.as "car-sports"] `carSports
+    | [@bs.as "car-tire-alert"] `carTireAlert
+    | [@bs.as "car-traction-control"] `carTractionControl
     | [@bs.as "car-wash"] `carWash
     | [@bs.as "caravan"] `caravan
+    | [@bs.as "card"] `card
+    | [@bs.as "card-bulleted"] `cardBulleted
+    | [@bs.as "card-bulleted-off"] `cardBulletedOff
+    | [@bs.as "card-bulleted-off-outline"] `cardBulletedOffOutline
+    | [@bs.as "card-bulleted-outline"] `cardBulletedOutline
+    | [@bs.as "card-bulleted-settings"] `cardBulletedSettings
+    | [@bs.as "card-bulleted-settings-outline"] `cardBulletedSettingsOutline
+    | [@bs.as "card-outline"] `cardOutline
+    | [@bs.as "card-text"] `cardText
+    | [@bs.as "card-text-outline"] `cardTextOutline
     | [@bs.as "cards"] `cards
     | [@bs.as "cards-club"] `cardsClub
     | [@bs.as "cards-diamond"] `cardsDiamond
@@ -575,15 +781,22 @@ module MaterialCommunityIcons = {
     | [@bs.as "cards-spade"] `cardsSpade
     | [@bs.as "cards-variant"] `cardsVariant
     | [@bs.as "carrot"] `carrot
+    | [@bs.as "carry-on-bag-check"] `carryOnBagCheck
     | [@bs.as "cart"] `cart
+    | [@bs.as "cart-arrow-down"] `cartArrowDown
+    | [@bs.as "cart-arrow-right"] `cartArrowRight
+    | [@bs.as "cart-arrow-up"] `cartArrowUp
+    | [@bs.as "cart-minus"] `cartMinus
     | [@bs.as "cart-off"] `cartOff
     | [@bs.as "cart-outline"] `cartOutline
     | [@bs.as "cart-plus"] `cartPlus
+    | [@bs.as "cart-remove"] `cartRemove
     | [@bs.as "case-sensitive-alt"] `caseSensitiveAlt
     | [@bs.as "cash"] `cash
     | [@bs.as "cash-100"] `cash100
     | [@bs.as "cash-multiple"] `cashMultiple
     | [@bs.as "cash-refund"] `cashRefund
+    | [@bs.as "cash-register"] `cashRegister
     | [@bs.as "cash-usd"] `cashUsd
     | [@bs.as "cassette"] `cassette
     | [@bs.as "cast"] `cast
@@ -612,12 +825,15 @@ module MaterialCommunityIcons = {
     | [@bs.as "cellphone-sound"] `cellphoneSound
     | [@bs.as "cellphone-text"] `cellphoneText
     | [@bs.as "cellphone-wireless"] `cellphoneWireless
+    | [@bs.as "celtic-cross"] `celticCross
     | [@bs.as "certificate"] `certificate
     | [@bs.as "chair-school"] `chairSchool
+    | [@bs.as "charity"] `charity
     | [@bs.as "chart-arc"] `chartArc
     | [@bs.as "chart-areaspline"] `chartAreaspline
     | [@bs.as "chart-bar"] `chartBar
     | [@bs.as "chart-bar-stacked"] `chartBarStacked
+    | [@bs.as "chart-bell-curve"] `chartBellCurve
     | [@bs.as "chart-bubble"] `chartBubble
     | [@bs.as "chart-donut"] `chartDonut
     | [@bs.as "chart-donut-variant"] `chartDonutVariant
@@ -630,11 +846,18 @@ module MaterialCommunityIcons = {
     | [@bs.as "chart-pie"] `chartPie
     | [@bs.as "chart-scatterplot-hexbin"] `chartScatterplotHexbin
     | [@bs.as "chart-timeline"] `chartTimeline
+    | [@bs.as "chat"] `chat
+    | [@bs.as "chat-alert"] `chatAlert
+    | [@bs.as "chat-processing"] `chatProcessing
     | [@bs.as "check"] `check
     | [@bs.as "check-all"] `checkAll
+    | [@bs.as "check-box-multiple-outline"] `checkBoxMultipleOutline
+    | [@bs.as "check-box-outline"] `checkBoxOutline
     | [@bs.as "check-circle"] `checkCircle
     | [@bs.as "check-circle-outline"] `checkCircleOutline
     | [@bs.as "check-decagram"] `checkDecagram
+    | [@bs.as "check-network"] `checkNetwork
+    | [@bs.as "check-network-outline"] `checkNetworkOutline
     | [@bs.as "check-outline"] `checkOutline
     | [@bs.as "checkbook"] `checkbook
     | [@bs.as "checkbox-blank"] `checkboxBlank
@@ -655,6 +878,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "checkbox-multiple-marked-circle-outline"] `checkboxMultipleMarkedCircleOutline
     | [@bs.as "checkbox-multiple-marked-outline"] `checkboxMultipleMarkedOutline
     | [@bs.as "checkerboard"] `checkerboard
+    | [@bs.as "chef-hat"] `chefHat
     | [@bs.as "chemical-weapon"] `chemicalWeapon
     | [@bs.as "chess-bishop"] `chessBishop
     | [@bs.as "chess-king"] `chessKing
@@ -691,6 +915,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "chili-mild"] `chiliMild
     | [@bs.as "chip"] `chip
     | [@bs.as "christianity"] `christianity
+    | [@bs.as "christianity-outline"] `christianityOutline
     | [@bs.as "church"] `church
     | [@bs.as "circle"] `circle
     | [@bs.as "circle-edit-outline"] `circleEditOutline
@@ -711,18 +936,30 @@ module MaterialCommunityIcons = {
     | [@bs.as "city-variant-outline"] `cityVariantOutline
     | [@bs.as "clipboard"] `clipboard
     | [@bs.as "clipboard-account"] `clipboardAccount
+    | [@bs.as "clipboard-account-outline"] `clipboardAccountOutline
     | [@bs.as "clipboard-alert"] `clipboardAlert
+    | [@bs.as "clipboard-alert-outline"] `clipboardAlertOutline
     | [@bs.as "clipboard-arrow-down"] `clipboardArrowDown
+    | [@bs.as "clipboard-arrow-down-outline"] `clipboardArrowDownOutline
     | [@bs.as "clipboard-arrow-left"] `clipboardArrowLeft
+    | [@bs.as "clipboard-arrow-left-outline"] `clipboardArrowLeftOutline
+    | [@bs.as "clipboard-arrow-right"] `clipboardArrowRight
+    | [@bs.as "clipboard-arrow-right-outline"] `clipboardArrowRightOutline
+    | [@bs.as "clipboard-arrow-up"] `clipboardArrowUp
+    | [@bs.as "clipboard-arrow-up-outline"] `clipboardArrowUpOutline
     | [@bs.as "clipboard-check"] `clipboardCheck
     | [@bs.as "clipboard-check-outline"] `clipboardCheckOutline
     | [@bs.as "clipboard-flow"] `clipboardFlow
     | [@bs.as "clipboard-outline"] `clipboardOutline
+    | [@bs.as "clipboard-play"] `clipboardPlay
+    | [@bs.as "clipboard-play-outline"] `clipboardPlayOutline
     | [@bs.as "clipboard-plus"] `clipboardPlus
     | [@bs.as "clipboard-pulse"] `clipboardPulse
     | [@bs.as "clipboard-pulse-outline"] `clipboardPulseOutline
     | [@bs.as "clipboard-text"] `clipboardText
     | [@bs.as "clipboard-text-outline"] `clipboardTextOutline
+    | [@bs.as "clipboard-text-play"] `clipboardTextPlay
+    | [@bs.as "clipboard-text-play-outline"] `clipboardTextPlayOutline
     | [@bs.as "clippy"] `clippy
     | [@bs.as "clock"] `clock
     | [@bs.as "clock-alert"] `clockAlert
@@ -735,10 +972,13 @@ module MaterialCommunityIcons = {
     | [@bs.as "clock-start"] `clockStart
     | [@bs.as "close"] `close
     | [@bs.as "close-box"] `closeBox
+    | [@bs.as "close-box-multiple"] `closeBoxMultiple
+    | [@bs.as "close-box-multiple-outline"] `closeBoxMultipleOutline
     | [@bs.as "close-box-outline"] `closeBoxOutline
     | [@bs.as "close-circle"] `closeCircle
     | [@bs.as "close-circle-outline"] `closeCircleOutline
     | [@bs.as "close-network"] `closeNetwork
+    | [@bs.as "close-network-outline"] `closeNetworkOutline
     | [@bs.as "close-octagon"] `closeOctagon
     | [@bs.as "close-octagon-outline"] `closeOctagonOutline
     | [@bs.as "close-outline"] `closeOutline
@@ -749,6 +989,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "cloud-check"] `cloudCheck
     | [@bs.as "cloud-circle"] `cloudCircle
     | [@bs.as "cloud-download"] `cloudDownload
+    | [@bs.as "cloud-download-outline"] `cloudDownloadOutline
     | [@bs.as "cloud-off-outline"] `cloudOffOutline
     | [@bs.as "cloud-outline"] `cloudOutline
     | [@bs.as "cloud-print"] `cloudPrint
@@ -759,6 +1000,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "cloud-sync"] `cloudSync
     | [@bs.as "cloud-tags"] `cloudTags
     | [@bs.as "cloud-upload"] `cloudUpload
+    | [@bs.as "cloud-upload-outline"] `cloudUploadOutline
     | [@bs.as "clover"] `clover
     | [@bs.as "code-array"] `codeArray
     | [@bs.as "code-braces"] `codeBraces
@@ -778,6 +1020,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "coffee"] `coffee
     | [@bs.as "coffee-outline"] `coffeeOutline
     | [@bs.as "coffee-to-go"] `coffeeToGo
+    | [@bs.as "coffin"] `coffin
     | [@bs.as "cogs"] `cogs
     | [@bs.as "coin"] `coin
     | [@bs.as "coins"] `coins
@@ -817,11 +1060,15 @@ module MaterialCommunityIcons = {
     | [@bs.as "comment-text-outline"] `commentTextOutline
     | [@bs.as "compare"] `compare
     | [@bs.as "compass"] `compass
+    | [@bs.as "compass-off"] `compassOff
+    | [@bs.as "compass-off-outline"] `compassOffOutline
     | [@bs.as "compass-outline"] `compassOutline
     | [@bs.as "console"] `console
     | [@bs.as "console-line"] `consoleLine
     | [@bs.as "console-network"] `consoleNetwork
+    | [@bs.as "console-network-outline"] `consoleNetworkOutline
     | [@bs.as "contact-mail"] `contactMail
+    | [@bs.as "contactless-payment"] `contactlessPayment
     | [@bs.as "contacts"] `contacts
     | [@bs.as "contain"] `contain
     | [@bs.as "contain-end"] `containEnd
@@ -832,12 +1079,16 @@ module MaterialCommunityIcons = {
     | [@bs.as "content-paste"] `contentPaste
     | [@bs.as "content-save"] `contentSave
     | [@bs.as "content-save-all"] `contentSaveAll
+    | [@bs.as "content-save-edit"] `contentSaveEdit
+    | [@bs.as "content-save-edit-outline"] `contentSaveEditOutline
     | [@bs.as "content-save-outline"] `contentSaveOutline
     | [@bs.as "content-save-settings"] `contentSaveSettings
     | [@bs.as "content-save-settings-outline"] `contentSaveSettingsOutline
     | [@bs.as "contrast"] `contrast
     | [@bs.as "contrast-box"] `contrastBox
     | [@bs.as "contrast-circle"] `contrastCircle
+    | [@bs.as "controller-classic"] `controllerClassic
+    | [@bs.as "controller-classic-outline"] `controllerClassicOutline
     | [@bs.as "cookie"] `cookie
     | [@bs.as "copyright"] `copyright
     | [@bs.as "cordova"] `cordova
@@ -846,6 +1097,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "cow"] `cow
     | [@bs.as "crane"] `crane
     | [@bs.as "creation"] `creation
+    | [@bs.as "creative-commons"] `creativeCommons
     | [@bs.as "credit-card"] `creditCard
     | [@bs.as "credit-card-multiple"] `creditCardMultiple
     | [@bs.as "credit-card-off"] `creditCardOff
@@ -853,6 +1105,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "credit-card-refund"] `creditCardRefund
     | [@bs.as "credit-card-scan"] `creditCardScan
     | [@bs.as "credit-card-settings"] `creditCardSettings
+    | [@bs.as "credit-card-wireless"] `creditCardWireless
+    | [@bs.as "cricket"] `cricket
     | [@bs.as "crop"] `crop
     | [@bs.as "crop-free"] `cropFree
     | [@bs.as "crop-landscape"] `cropLandscape
@@ -866,6 +1120,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "crystal-ball"] `crystalBall
     | [@bs.as "cube"] `cube
     | [@bs.as "cube-outline"] `cubeOutline
+    | [@bs.as "cube-scan"] `cubeScan
     | [@bs.as "cube-send"] `cubeSend
     | [@bs.as "cube-unfolded"] `cubeUnfolded
     | [@bs.as "cup"] `cup
@@ -874,12 +1129,14 @@ module MaterialCommunityIcons = {
     | [@bs.as "cupcake"] `cupcake
     | [@bs.as "curling"] `curling
     | [@bs.as "currency-bdt"] `currencyBdt
+    | [@bs.as "currency-brl"] `currencyBrl
     | [@bs.as "currency-btc"] `currencyBtc
     | [@bs.as "currency-chf"] `currencyChf
     | [@bs.as "currency-cny"] `currencyCny
     | [@bs.as "currency-eth"] `currencyEth
     | [@bs.as "currency-eur"] `currencyEur
     | [@bs.as "currency-gbp"] `currencyGbp
+    | [@bs.as "currency-ils"] `currencyIls
     | [@bs.as "currency-inr"] `currencyInr
     | [@bs.as "currency-jpy"] `currencyJpy
     | [@bs.as "currency-krw"] `currencyKrw
@@ -895,20 +1152,27 @@ module MaterialCommunityIcons = {
     | [@bs.as "current-ac"] `currentAc
     | [@bs.as "current-dc"] `currentDc
     | [@bs.as "cursor-default"] `cursorDefault
+    | [@bs.as "cursor-default-click"] `cursorDefaultClick
+    | [@bs.as "cursor-default-click-outline"] `cursorDefaultClickOutline
     | [@bs.as "cursor-default-outline"] `cursorDefaultOutline
     | [@bs.as "cursor-move"] `cursorMove
     | [@bs.as "cursor-pointer"] `cursorPointer
     | [@bs.as "cursor-text"] `cursorText
     | [@bs.as "database"] `database
     | [@bs.as "database-check"] `databaseCheck
+    | [@bs.as "database-edit"] `databaseEdit
     | [@bs.as "database-export"] `databaseExport
     | [@bs.as "database-import"] `databaseImport
     | [@bs.as "database-lock"] `databaseLock
     | [@bs.as "database-minus"] `databaseMinus
     | [@bs.as "database-plus"] `databasePlus
+    | [@bs.as "database-refresh"] `databaseRefresh
+    | [@bs.as "database-remove"] `databaseRemove
     | [@bs.as "database-search"] `databaseSearch
+    | [@bs.as "database-settings"] `databaseSettings
     | [@bs.as "death-star"] `deathStar
     | [@bs.as "death-star-variant"] `deathStarVariant
+    | [@bs.as "deathly-hallows"] `deathlyHallows
     | [@bs.as "debian"] `debian
     | [@bs.as "debug-step-into"] `debugStepInto
     | [@bs.as "debug-step-out"] `debugStepOut
@@ -919,11 +1183,14 @@ module MaterialCommunityIcons = {
     | [@bs.as "decimal-increase"] `decimalIncrease
     | [@bs.as "delete"] `delete
     | [@bs.as "delete-circle"] `deleteCircle
+    | [@bs.as "delete-circle-outline"] `deleteCircleOutline
     | [@bs.as "delete-empty"] `deleteEmpty
     | [@bs.as "delete-forever"] `deleteForever
+    | [@bs.as "delete-forever-outline"] `deleteForeverOutline
     | [@bs.as "delete-outline"] `deleteOutline
     | [@bs.as "delete-restore"] `deleteRestore
     | [@bs.as "delete-sweep"] `deleteSweep
+    | [@bs.as "delete-sweep-outline"] `deleteSweepOutline
     | [@bs.as "delete-variant"] `deleteVariant
     | [@bs.as "delta"] `delta
     | [@bs.as "desk-lamp"] `deskLamp
@@ -934,10 +1201,16 @@ module MaterialCommunityIcons = {
     | [@bs.as "desktop-tower"] `desktopTower
     | [@bs.as "desktop-tower-monitor"] `desktopTowerMonitor
     | [@bs.as "details"] `details
+    | [@bs.as "dev-to"] `devTo
     | [@bs.as "developer-board"] `developerBoard
     | [@bs.as "deviantart"] `deviantart
     | [@bs.as "dialpad"] `dialpad
+    | [@bs.as "diameter"] `diameter
+    | [@bs.as "diameter-outline"] `diameterOutline
+    | [@bs.as "diameter-variant"] `diameterVariant
     | [@bs.as "diamond"] `diamond
+    | [@bs.as "diamond-outline"] `diamondOutline
+    | [@bs.as "diamond-stone"] `diamondStone
     | [@bs.as "dice-1"] `dice1
     | [@bs.as "dice-2"] `dice2
     | [@bs.as "dice-3"] `dice3
@@ -967,6 +1240,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "dlna"] `dlna
     | [@bs.as "dna"] `dna
     | [@bs.as "dns"] `dns
+    | [@bs.as "dns-outline"] `dnsOutline
     | [@bs.as "do-not-disturb"] `doNotDisturb
     | [@bs.as "do-not-disturb-off"] `doNotDisturbOff
     | [@bs.as "docker"] `docker
@@ -976,6 +1250,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "dog-side"] `dogSide
     | [@bs.as "dolby"] `dolby
     | [@bs.as "domain"] `domain
+    | [@bs.as "domain-off"] `domainOff
     | [@bs.as "donkey"] `donkey
     | [@bs.as "door"] `door
     | [@bs.as "door-closed"] `doorClosed
@@ -984,15 +1259,21 @@ module MaterialCommunityIcons = {
     | [@bs.as "dot-net"] `dotNet
     | [@bs.as "dots-horizontal"] `dotsHorizontal
     | [@bs.as "dots-horizontal-circle"] `dotsHorizontalCircle
+    | [@bs.as "dots-horizontal-circle-outline"] `dotsHorizontalCircleOutline
     | [@bs.as "dots-vertical"] `dotsVertical
     | [@bs.as "dots-vertical-circle"] `dotsVerticalCircle
+    | [@bs.as "dots-vertical-circle-outline"] `dotsVerticalCircleOutline
     | [@bs.as "douban"] `douban
     | [@bs.as "download"] `download
     | [@bs.as "download-multiple"] `downloadMultiple
     | [@bs.as "download-network"] `downloadNetwork
+    | [@bs.as "download-network-outline"] `downloadNetworkOutline
+    | [@bs.as "download-outline"] `downloadOutline
     | [@bs.as "drag"] `drag
     | [@bs.as "drag-horizontal"] `dragHorizontal
+    | [@bs.as "drag-variant"] `dragVariant
     | [@bs.as "drag-vertical"] `dragVertical
+    | [@bs.as "drama-masks"] `dramaMasks
     | [@bs.as "drawing"] `drawing
     | [@bs.as "drawing-box"] `drawingBox
     | [@bs.as "dribbble"] `dribbble
@@ -1002,6 +1283,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "drupal"] `drupal
     | [@bs.as "duck"] `duck
     | [@bs.as "dumbbell"] `dumbbell
+    | [@bs.as "dump-truck"] `dumpTruck
     | [@bs.as "ear-hearing"] `earHearing
     | [@bs.as "ear-hearing-off"] `earHearingOff
     | [@bs.as "earth"] `earth
@@ -1013,15 +1295,18 @@ module MaterialCommunityIcons = {
     | [@bs.as "egg-easter"] `eggEaster
     | [@bs.as "eight-track"] `eightTrack
     | [@bs.as "eject"] `eject
+    | [@bs.as "eject-outline"] `ejectOutline
     | [@bs.as "elephant"] `elephant
     | [@bs.as "elevation-decline"] `elevationDecline
     | [@bs.as "elevation-rise"] `elevationRise
     | [@bs.as "elevator"] `elevator
     | [@bs.as "email"] `email
     | [@bs.as "email-alert"] `emailAlert
+    | [@bs.as "email-box"] `emailBox
     | [@bs.as "email-check"] `emailCheck
     | [@bs.as "email-check-outline"] `emailCheckOutline
     | [@bs.as "email-lock"] `emailLock
+    | [@bs.as "email-mark-as-unread"] `emailMarkAsUnread
     | [@bs.as "email-open"] `emailOpen
     | [@bs.as "email-open-outline"] `emailOpenOutline
     | [@bs.as "email-outline"] `emailOutline
@@ -1033,15 +1318,33 @@ module MaterialCommunityIcons = {
     | [@bs.as "ember"] `ember
     | [@bs.as "emby"] `emby
     | [@bs.as "emoticon"] `emoticon
+    | [@bs.as "emoticon-angry"] `emoticonAngry
+    | [@bs.as "emoticon-angry-outline"] `emoticonAngryOutline
     | [@bs.as "emoticon-cool"] `emoticonCool
+    | [@bs.as "emoticon-cool-outline"] `emoticonCoolOutline
+    | [@bs.as "emoticon-cry"] `emoticonCry
+    | [@bs.as "emoticon-cry-outline"] `emoticonCryOutline
     | [@bs.as "emoticon-dead"] `emoticonDead
+    | [@bs.as "emoticon-dead-outline"] `emoticonDeadOutline
     | [@bs.as "emoticon-devil"] `emoticonDevil
+    | [@bs.as "emoticon-devil-outline"] `emoticonDevilOutline
     | [@bs.as "emoticon-excited"] `emoticonExcited
+    | [@bs.as "emoticon-excited-outline"] `emoticonExcitedOutline
     | [@bs.as "emoticon-happy"] `emoticonHappy
+    | [@bs.as "emoticon-happy-outline"] `emoticonHappyOutline
+    | [@bs.as "emoticon-kiss"] `emoticonKiss
+    | [@bs.as "emoticon-kiss-outline"] `emoticonKissOutline
     | [@bs.as "emoticon-neutral"] `emoticonNeutral
+    | [@bs.as "emoticon-neutral-outline"] `emoticonNeutralOutline
+    | [@bs.as "emoticon-outline"] `emoticonOutline
     | [@bs.as "emoticon-poop"] `emoticonPoop
+    | [@bs.as "emoticon-poop-outline"] `emoticonPoopOutline
     | [@bs.as "emoticon-sad"] `emoticonSad
+    | [@bs.as "emoticon-sad-outline"] `emoticonSadOutline
     | [@bs.as "emoticon-tongue"] `emoticonTongue
+    | [@bs.as "emoticon-tongue-outline"] `emoticonTongueOutline
+    | [@bs.as "emoticon-wink"] `emoticonWink
+    | [@bs.as "emoticon-wink-outline"] `emoticonWinkOutline
     | [@bs.as "engine"] `engine
     | [@bs.as "engine-off"] `engineOff
     | [@bs.as "engine-off-outline"] `engineOffOutline
@@ -1051,6 +1354,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "eraser"] `eraser
     | [@bs.as "eraser-variant"] `eraserVariant
     | [@bs.as "escalator"] `escalator
+    | [@bs.as "eslint"] `eslint
     | [@bs.as "et"] `et
     | [@bs.as "ethereum"] `ethereum
     | [@bs.as "ethernet"] `ethernet
@@ -1068,7 +1372,12 @@ module MaterialCommunityIcons = {
     | [@bs.as "exponent"] `exponent
     | [@bs.as "exponent-box"] `exponentBox
     | [@bs.as "export"] `export
+    | [@bs.as "export-variant"] `exportVariant
     | [@bs.as "eye"] `eye
+    | [@bs.as "eye-check"] `eyeCheck
+    | [@bs.as "eye-check-outline"] `eyeCheckOutline
+    | [@bs.as "eye-circle"] `eyeCircle
+    | [@bs.as "eye-circle-outline"] `eyeCircleOutline
     | [@bs.as "eye-off"] `eyeOff
     | [@bs.as "eye-off-outline"] `eyeOffOutline
     | [@bs.as "eye-outline"] `eyeOutline
@@ -1079,7 +1388,10 @@ module MaterialCommunityIcons = {
     | [@bs.as "eyedropper"] `eyedropper
     | [@bs.as "eyedropper-variant"] `eyedropperVariant
     | [@bs.as "face"] `face
+    | [@bs.as "face-agent"] `faceAgent
+    | [@bs.as "face-outline"] `faceOutline
     | [@bs.as "face-profile"] `faceProfile
+    | [@bs.as "face-recognition"] `faceRecognition
     | [@bs.as "facebook"] `facebook
     | [@bs.as "facebook-box"] `facebookBox
     | [@bs.as "facebook-messenger"] `facebookMessenger
@@ -1088,6 +1400,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "fan"] `fan
     | [@bs.as "fan-off"] `fanOff
     | [@bs.as "fast-forward"] `fastForward
+    | [@bs.as "fast-forward-10"] `fastForward10
+    | [@bs.as "fast-forward-30"] `fastForward30
     | [@bs.as "fast-forward-outline"] `fastForwardOutline
     | [@bs.as "fax"] `fax
     | [@bs.as "feather"] `feather
@@ -1117,6 +1431,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "file-excel-box"] `fileExcelBox
     | [@bs.as "file-export"] `fileExport
     | [@bs.as "file-find"] `fileFind
+    | [@bs.as "file-find-outline"] `fileFindOutline
     | [@bs.as "file-hidden"] `fileHidden
     | [@bs.as "file-image"] `fileImage
     | [@bs.as "file-import"] `fileImport
@@ -1133,10 +1448,15 @@ module MaterialCommunityIcons = {
     | [@bs.as "file-powerpoint-box"] `filePowerpointBox
     | [@bs.as "file-presentation-box"] `filePresentationBox
     | [@bs.as "file-question"] `fileQuestion
+    | [@bs.as "file-remove"] `fileRemove
     | [@bs.as "file-replace"] `fileReplace
     | [@bs.as "file-replace-outline"] `fileReplaceOutline
     | [@bs.as "file-restore"] `fileRestore
+    | [@bs.as "file-search"] `fileSearch
+    | [@bs.as "file-search-outline"] `fileSearchOutline
     | [@bs.as "file-send"] `fileSend
+    | [@bs.as "file-table"] `fileTable
+    | [@bs.as "file-table-outline"] `fileTableOutline
     | [@bs.as "file-tree"] `fileTree
     | [@bs.as "file-undo"] `fileUndo
     | [@bs.as "file-upload"] `fileUpload
@@ -1163,10 +1483,14 @@ module MaterialCommunityIcons = {
     | [@bs.as "fish"] `fish
     | [@bs.as "flag"] `flag
     | [@bs.as "flag-checkered"] `flagCheckered
+    | [@bs.as "flag-minus"] `flagMinus
     | [@bs.as "flag-outline"] `flagOutline
+    | [@bs.as "flag-plus"] `flagPlus
+    | [@bs.as "flag-remove"] `flagRemove
     | [@bs.as "flag-triangle"] `flagTriangle
     | [@bs.as "flag-variant"] `flagVariant
     | [@bs.as "flag-variant-outline"] `flagVariantOutline
+    | [@bs.as "flare"] `flare
     | [@bs.as "flash"] `flash
     | [@bs.as "flash-auto"] `flashAuto
     | [@bs.as "flash-circle"] `flashCircle
@@ -1180,6 +1504,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "flask-empty-outline"] `flaskEmptyOutline
     | [@bs.as "flask-outline"] `flaskOutline
     | [@bs.as "flattr"] `flattr
+    | [@bs.as "flickr"] `flickr
     | [@bs.as "flip-to-back"] `flipToBack
     | [@bs.as "flip-to-front"] `flipToFront
     | [@bs.as "floor-lamp"] `floorLamp
@@ -1188,10 +1513,12 @@ module MaterialCommunityIcons = {
     | [@bs.as "floppy-variant"] `floppyVariant
     | [@bs.as "flower"] `flower
     | [@bs.as "flower-outline"] `flowerOutline
+    | [@bs.as "flower-poppy"] `flowerPoppy
     | [@bs.as "flower-tulip"] `flowerTulip
     | [@bs.as "flower-tulip-outline"] `flowerTulipOutline
     | [@bs.as "folder"] `folder
     | [@bs.as "folder-account"] `folderAccount
+    | [@bs.as "folder-account-outline"] `folderAccountOutline
     | [@bs.as "folder-clock"] `folderClock
     | [@bs.as "folder-clock-outline"] `folderClockOutline
     | [@bs.as "folder-download"] `folderDownload
@@ -1200,6 +1527,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "folder-image"] `folderImage
     | [@bs.as "folder-key"] `folderKey
     | [@bs.as "folder-key-network"] `folderKeyNetwork
+    | [@bs.as "folder-key-network-outline"] `folderKeyNetworkOutline
     | [@bs.as "folder-lock"] `folderLock
     | [@bs.as "folder-lock-open"] `folderLockOpen
     | [@bs.as "folder-move"] `folderMove
@@ -1207,17 +1535,28 @@ module MaterialCommunityIcons = {
     | [@bs.as "folder-multiple-image"] `folderMultipleImage
     | [@bs.as "folder-multiple-outline"] `folderMultipleOutline
     | [@bs.as "folder-network"] `folderNetwork
+    | [@bs.as "folder-network-outline"] `folderNetworkOutline
     | [@bs.as "folder-open"] `folderOpen
     | [@bs.as "folder-outline"] `folderOutline
     | [@bs.as "folder-plus"] `folderPlus
+    | [@bs.as "folder-plus-outline"] `folderPlusOutline
+    | [@bs.as "folder-pound"] `folderPound
+    | [@bs.as "folder-pound-outline"] `folderPoundOutline
     | [@bs.as "folder-remove"] `folderRemove
+    | [@bs.as "folder-remove-outline"] `folderRemoveOutline
     | [@bs.as "folder-search"] `folderSearch
     | [@bs.as "folder-search-outline"] `folderSearchOutline
     | [@bs.as "folder-star"] `folderStar
+    | [@bs.as "folder-star-outline"] `folderStarOutline
+    | [@bs.as "folder-sync"] `folderSync
+    | [@bs.as "folder-sync-outline"] `folderSyncOutline
+    | [@bs.as "folder-text"] `folderText
+    | [@bs.as "folder-text-outline"] `folderTextOutline
     | [@bs.as "folder-upload"] `folderUpload
     | [@bs.as "font-awesome"] `fontAwesome
     | [@bs.as "food"] `food
     | [@bs.as "food-apple"] `foodApple
+    | [@bs.as "food-apple-outline"] `foodAppleOutline
     | [@bs.as "food-croissant"] `foodCroissant
     | [@bs.as "food-fork-drink"] `foodForkDrink
     | [@bs.as "food-off"] `foodOff
@@ -1273,7 +1612,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "format-list-bulleted-type"] `formatListBulletedType
     | [@bs.as "format-list-checkbox"] `formatListCheckbox
     | [@bs.as "format-list-checks"] `formatListChecks
-    | [@bs.as "format-list-numbers"] `formatListNumbers
+    | [@bs.as "format-list-numbered"] `formatListNumbered
+    | [@bs.as "format-list-numbered-rtl"] `formatListNumberedRtl
     | [@bs.as "format-page-break"] `formatPageBreak
     | [@bs.as "format-paint"] `formatPaint
     | [@bs.as "format-paragraph"] `formatParagraph
@@ -1288,6 +1628,12 @@ module MaterialCommunityIcons = {
     | [@bs.as "format-subscript"] `formatSubscript
     | [@bs.as "format-superscript"] `formatSuperscript
     | [@bs.as "format-text"] `formatText
+    | [@bs.as "format-text-rotation-down"] `formatTextRotationDown
+    | [@bs.as "format-text-rotation-none"] `formatTextRotationNone
+    | [@bs.as "format-text-wrapping-clip"] `formatTextWrappingClip
+    | [@bs.as "format-text-wrapping-overflow"] `formatTextWrappingOverflow
+    | [@bs.as "format-text-wrapping-wrap"] `formatTextWrappingWrap
+    | [@bs.as "format-textbox"] `formatTextbox
     | [@bs.as "format-textdirection-l-to-r"] `formatTextdirectionLToR
     | [@bs.as "format-textdirection-r-to-l"] `formatTextdirectionRToL
     | [@bs.as "format-title"] `formatTitle
@@ -1302,18 +1648,23 @@ module MaterialCommunityIcons = {
     | [@bs.as "forum"] `forum
     | [@bs.as "forum-outline"] `forumOutline
     | [@bs.as "forward"] `forward
+    | [@bs.as "forwardburger"] `forwardburger
     | [@bs.as "fountain"] `fountain
+    | [@bs.as "fountain-pen"] `fountainPen
+    | [@bs.as "fountain-pen-tip"] `fountainPenTip
     | [@bs.as "foursquare"] `foursquare
     | [@bs.as "freebsd"] `freebsd
     | [@bs.as "fridge"] `fridge
-    | [@bs.as "fridge-filled"] `fridgeFilled
-    | [@bs.as "fridge-filled-bottom"] `fridgeFilledBottom
-    | [@bs.as "fridge-filled-top"] `fridgeFilledTop
+    | [@bs.as "fridge-bottom"] `fridgeBottom
+    | [@bs.as "fridge-outline"] `fridgeOutline
+    | [@bs.as "fridge-top"] `fridgeTop
     | [@bs.as "fuel"] `fuel
     | [@bs.as "fullscreen"] `fullscreen
     | [@bs.as "fullscreen-exit"] `fullscreenExit
     | [@bs.as "function"] `function_
     | [@bs.as "function-variant"] `functionVariant
+    | [@bs.as "fuse"] `fuse
+    | [@bs.as "fuse-blade"] `fuseBlade
     | [@bs.as "gamepad"] `gamepad
     | [@bs.as "gamepad-variant"] `gamepadVariant
     | [@bs.as "garage"] `garage
@@ -1343,6 +1694,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "gesture-double-tap"] `gestureDoubleTap
     | [@bs.as "gesture-pinch"] `gesturePinch
     | [@bs.as "gesture-spread"] `gestureSpread
+    | [@bs.as "gesture-swipe"] `gestureSwipe
     | [@bs.as "gesture-swipe-down"] `gestureSwipeDown
     | [@bs.as "gesture-swipe-horizontal"] `gestureSwipeHorizontal
     | [@bs.as "gesture-swipe-left"] `gestureSwipeLeft
@@ -1350,15 +1702,18 @@ module MaterialCommunityIcons = {
     | [@bs.as "gesture-swipe-up"] `gestureSwipeUp
     | [@bs.as "gesture-swipe-vertical"] `gestureSwipeVertical
     | [@bs.as "gesture-tap"] `gestureTap
+    | [@bs.as "gesture-tap-hold"] `gestureTapHold
     | [@bs.as "gesture-two-double-tap"] `gestureTwoDoubleTap
     | [@bs.as "gesture-two-tap"] `gestureTwoTap
     | [@bs.as "ghost"] `ghost
     | [@bs.as "ghost-off"] `ghostOff
+    | [@bs.as "gif"] `gif
     | [@bs.as "gift"] `gift
     | [@bs.as "git"] `git
     | [@bs.as "github-box"] `githubBox
     | [@bs.as "github-circle"] `githubCircle
     | [@bs.as "github-face"] `githubFace
+    | [@bs.as "gitlab"] `gitlab
     | [@bs.as "glass-cocktail"] `glassCocktail
     | [@bs.as "glass-flute"] `glassFlute
     | [@bs.as "glass-mug"] `glassMug
@@ -1370,9 +1725,14 @@ module MaterialCommunityIcons = {
     | [@bs.as "globe-model"] `globeModel
     | [@bs.as "gmail"] `gmail
     | [@bs.as "gnome"] `gnome
+    | [@bs.as "go-kart"] `goKart
+    | [@bs.as "go-kart-track"] `goKartTrack
+    | [@bs.as "gog"] `gog
     | [@bs.as "golf"] `golf
     | [@bs.as "gondola"] `gondola
+    | [@bs.as "goodreads"] `goodreads
     | [@bs.as "google"] `google
+    | [@bs.as "google-adwords"] `googleAdwords
     | [@bs.as "google-allo"] `googleAllo
     | [@bs.as "google-analytics"] `googleAnalytics
     | [@bs.as "google-assistant"] `googleAssistant
@@ -1382,6 +1742,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "google-circles-communities"] `googleCirclesCommunities
     | [@bs.as "google-circles-extended"] `googleCirclesExtended
     | [@bs.as "google-circles-group"] `googleCirclesGroup
+    | [@bs.as "google-classroom"] `googleClassroom
     | [@bs.as "google-controller"] `googleController
     | [@bs.as "google-controller-off"] `googleControllerOff
     | [@bs.as "google-drive"] `googleDrive
@@ -1401,11 +1762,13 @@ module MaterialCommunityIcons = {
     | [@bs.as "google-plus"] `googlePlus
     | [@bs.as "google-plus-box"] `googlePlusBox
     | [@bs.as "google-spreadsheet"] `googleSpreadsheet
+    | [@bs.as "google-street-view"] `googleStreetView
     | [@bs.as "google-translate"] `googleTranslate
-    | [@bs.as "google-wallet"] `googleWallet
     | [@bs.as "gpu"] `gpu
     | [@bs.as "gradient"] `gradient
+    | [@bs.as "grain"] `grain
     | [@bs.as "graphql"] `graphql
+    | [@bs.as "grave-stone"] `graveStone
     | [@bs.as "grease-pencil"] `greasePencil
     | [@bs.as "greater-than"] `greaterThan
     | [@bs.as "greater-than-or-equal"] `greaterThanOrEqual
@@ -1420,6 +1783,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "guy-fawkes-mask"] `guyFawkesMask
     | [@bs.as "hackernews"] `hackernews
     | [@bs.as "hail"] `hail
+    | [@bs.as "halloween"] `halloween
     | [@bs.as "hamburger"] `hamburger
     | [@bs.as "hammer"] `hammer
     | [@bs.as "hand"] `hand
@@ -1433,6 +1797,10 @@ module MaterialCommunityIcons = {
     | [@bs.as "hanger"] `hanger
     | [@bs.as "hard-hat"] `hardHat
     | [@bs.as "harddisk"] `harddisk
+    | [@bs.as "hat-fedora"] `hatFedora
+    | [@bs.as "hazard-lights"] `hazardLights
+    | [@bs.as "hdr"] `hdr
+    | [@bs.as "hdr-off"] `hdrOff
     | [@bs.as "headphones"] `headphones
     | [@bs.as "headphones-bluetooth"] `headphonesBluetooth
     | [@bs.as "headphones-box"] `headphonesBox
@@ -1445,6 +1813,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "heart-box"] `heartBox
     | [@bs.as "heart-box-outline"] `heartBoxOutline
     | [@bs.as "heart-broken"] `heartBroken
+    | [@bs.as "heart-broken-outline"] `heartBrokenOutline
     | [@bs.as "heart-circle"] `heartCircle
     | [@bs.as "heart-circle-outline"] `heartCircleOutline
     | [@bs.as "heart-half"] `heartHalf
@@ -1461,6 +1830,9 @@ module MaterialCommunityIcons = {
     | [@bs.as "help-circle"] `helpCircle
     | [@bs.as "help-circle-outline"] `helpCircleOutline
     | [@bs.as "help-network"] `helpNetwork
+    | [@bs.as "help-network-outline"] `helpNetworkOutline
+    | [@bs.as "help-rhombus"] `helpRhombus
+    | [@bs.as "help-rhombus-outline"] `helpRhombusOutline
     | [@bs.as "hexagon"] `hexagon
     | [@bs.as "hexagon-multiple"] `hexagonMultiple
     | [@bs.as "hexagon-outline"] `hexagonOutline
@@ -1475,6 +1847,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "high-definition"] `highDefinition
     | [@bs.as "high-definition-box"] `highDefinitionBox
     | [@bs.as "highway"] `highway
+    | [@bs.as "hiking"] `hiking
     | [@bs.as "hinduism"] `hinduism
     | [@bs.as "history"] `history
     | [@bs.as "hockey-puck"] `hockeyPuck
@@ -1486,7 +1859,16 @@ module MaterialCommunityIcons = {
     | [@bs.as "home-assistant"] `homeAssistant
     | [@bs.as "home-automation"] `homeAutomation
     | [@bs.as "home-circle"] `homeCircle
+    | [@bs.as "home-city"] `homeCity
+    | [@bs.as "home-city-outline"] `homeCityOutline
     | [@bs.as "home-currency-usd"] `homeCurrencyUsd
+    | [@bs.as "home-floor-1"] `homeFloor1
+    | [@bs.as "home-floor-2"] `homeFloor2
+    | [@bs.as "home-floor-3"] `homeFloor3
+    | [@bs.as "home-floor-a"] `homeFloorA
+    | [@bs.as "home-floor-b"] `homeFloorB
+    | [@bs.as "home-floor-g"] `homeFloorG
+    | [@bs.as "home-floor-l"] `homeFloorL
     | [@bs.as "home-heart"] `homeHeart
     | [@bs.as "home-lock"] `homeLock
     | [@bs.as "home-lock-open"] `homeLockOpen
@@ -1496,6 +1878,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "home-outline"] `homeOutline
     | [@bs.as "home-plus"] `homePlus
     | [@bs.as "home-variant"] `homeVariant
+    | [@bs.as "home-variant-outline"] `homeVariantOutline
     | [@bs.as "hook"] `hook
     | [@bs.as "hook-off"] `hookOff
     | [@bs.as "hops"] `hops
@@ -1507,6 +1890,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "hotel"] `hotel
     | [@bs.as "houzz"] `houzz
     | [@bs.as "houzz-box"] `houzzBox
+    | [@bs.as "hubspot"] `hubspot
     | [@bs.as "hulu"] `hulu
     | [@bs.as "human"] `human
     | [@bs.as "human-child"] `humanChild
@@ -1525,6 +1909,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "human-pregnant"] `humanPregnant
     | [@bs.as "humble-bundle"] `humbleBundle
     | [@bs.as "ice-cream"] `iceCream
+    | [@bs.as "iframe"] `iframe
+    | [@bs.as "iframe-outline"] `iframeOutline
     | [@bs.as "image"] `image
     | [@bs.as "image-album"] `imageAlbum
     | [@bs.as "image-area"] `imageArea
@@ -1548,11 +1934,15 @@ module MaterialCommunityIcons = {
     | [@bs.as "image-plus"] `imagePlus
     | [@bs.as "image-search"] `imageSearch
     | [@bs.as "image-search-outline"] `imageSearchOutline
+    | [@bs.as "image-size-select-actual"] `imageSizeSelectActual
+    | [@bs.as "image-size-select-large"] `imageSizeSelectLarge
+    | [@bs.as "image-size-select-small"] `imageSizeSelectSmall
     | [@bs.as "import"] `import
     | [@bs.as "inbox"] `inbox
     | [@bs.as "inbox-arrow-down"] `inboxArrowDown
     | [@bs.as "inbox-arrow-up"] `inboxArrowUp
     | [@bs.as "inbox-multiple"] `inboxMultiple
+    | [@bs.as "inbox-multiple-outline"] `inboxMultipleOutline
     | [@bs.as "incognito"] `incognito
     | [@bs.as "infinity"] `infinity
     | [@bs.as "information"] `information
@@ -1564,6 +1954,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "invert-colors"] `invertColors
     | [@bs.as "ip"] `ip
     | [@bs.as "ip-network"] `ipNetwork
+    | [@bs.as "ip-network-outline"] `ipNetworkOutline
+    | [@bs.as "ipod"] `ipod
     | [@bs.as "islam"] `islam
     | [@bs.as "itunes"] `itunes
     | [@bs.as "jeepney"] `jeepney
@@ -1572,6 +1964,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "jsfiddle"] `jsfiddle
     | [@bs.as "json"] `json
     | [@bs.as "judaism"] `judaism
+    | [@bs.as "kabaddi"] `kabaddi
     | [@bs.as "karate"] `karate
     | [@bs.as "keg"] `keg
     | [@bs.as "kettle"] `kettle
@@ -1614,6 +2007,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "language-csharp"] `languageCsharp
     | [@bs.as "language-css3"] `languageCss3
     | [@bs.as "language-go"] `languageGo
+    | [@bs.as "language-haskell"] `languageHaskell
     | [@bs.as "language-html5"] `languageHtml5
     | [@bs.as "language-java"] `languageJava
     | [@bs.as "language-javascript"] `languageJavascript
@@ -1641,6 +2035,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "layers-outline"] `layersOutline
     | [@bs.as "lead-pencil"] `leadPencil
     | [@bs.as "leaf"] `leaf
+    | [@bs.as "leaf-maple"] `leafMaple
     | [@bs.as "led-off"] `ledOff
     | [@bs.as "led-on"] `ledOn
     | [@bs.as "led-outline"] `ledOutline
@@ -1652,8 +2047,11 @@ module MaterialCommunityIcons = {
     | [@bs.as "less-than-or-equal"] `lessThanOrEqual
     | [@bs.as "library"] `library
     | [@bs.as "library-books"] `libraryBooks
+    | [@bs.as "library-movie"] `libraryMovie
     | [@bs.as "library-music"] `libraryMusic
     | [@bs.as "library-plus"] `libraryPlus
+    | [@bs.as "library-shelves"] `libraryShelves
+    | [@bs.as "library-video"] `libraryVideo
     | [@bs.as "lifebuoy"] `lifebuoy
     | [@bs.as "light-switch"] `lightSwitch
     | [@bs.as "lightbulb"] `lightbulb
@@ -1663,7 +2061,12 @@ module MaterialCommunityIcons = {
     | [@bs.as "lighthouse"] `lighthouse
     | [@bs.as "lighthouse-on"] `lighthouseOn
     | [@bs.as "link"] `link
+    | [@bs.as "link-box"] `linkBox
+    | [@bs.as "link-box-outline"] `linkBoxOutline
+    | [@bs.as "link-box-variant"] `linkBoxVariant
+    | [@bs.as "link-box-variant-outline"] `linkBoxVariantOutline
     | [@bs.as "link-off"] `linkOff
+    | [@bs.as "link-plus"] `linkPlus
     | [@bs.as "link-variant"] `linkVariant
     | [@bs.as "link-variant-off"] `linkVariantOff
     | [@bs.as "linkedin"] `linkedin
@@ -1706,15 +2109,26 @@ module MaterialCommunityIcons = {
     | [@bs.as "magnify-plus-outline"] `magnifyPlusOutline
     | [@bs.as "mail-ru"] `mailRu
     | [@bs.as "mailbox"] `mailbox
+    | [@bs.as "mailbox-open"] `mailboxOpen
+    | [@bs.as "mailbox-open-outline"] `mailboxOpenOutline
+    | [@bs.as "mailbox-open-up"] `mailboxOpenUp
+    | [@bs.as "mailbox-open-up-outline"] `mailboxOpenUpOutline
+    | [@bs.as "mailbox-outline"] `mailboxOutline
+    | [@bs.as "mailbox-up"] `mailboxUp
+    | [@bs.as "mailbox-up-outline"] `mailboxUpOutline
     | [@bs.as "map"] `map
+    | [@bs.as "map-clock"] `mapClock
+    | [@bs.as "map-clock-outline"] `mapClockOutline
     | [@bs.as "map-legend"] `mapLegend
     | [@bs.as "map-marker"] `mapMarker
+    | [@bs.as "map-marker-check"] `mapMarkerCheck
     | [@bs.as "map-marker-circle"] `mapMarkerCircle
     | [@bs.as "map-marker-distance"] `mapMarkerDistance
     | [@bs.as "map-marker-minus"] `mapMarkerMinus
     | [@bs.as "map-marker-multiple"] `mapMarkerMultiple
     | [@bs.as "map-marker-off"] `mapMarkerOff
     | [@bs.as "map-marker-outline"] `mapMarkerOutline
+    | [@bs.as "map-marker-path"] `mapMarkerPath
     | [@bs.as "map-marker-plus"] `mapMarkerPlus
     | [@bs.as "map-marker-radius"] `mapMarkerRadius
     | [@bs.as "map-minus"] `mapMinus
@@ -1722,6 +2136,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "map-plus"] `mapPlus
     | [@bs.as "map-search"] `mapSearch
     | [@bs.as "map-search-outline"] `mapSearchOutline
+    | [@bs.as "mapbox"] `mapbox
     | [@bs.as "margin"] `margin
     | [@bs.as "markdown"] `markdown
     | [@bs.as "marker"] `marker
@@ -1731,6 +2146,9 @@ module MaterialCommunityIcons = {
     | [@bs.as "material-design"] `materialDesign
     | [@bs.as "material-ui"] `materialUi
     | [@bs.as "math-compass"] `mathCompass
+    | [@bs.as "math-cos"] `mathCos
+    | [@bs.as "math-sin"] `mathSin
+    | [@bs.as "math-tan"] `mathTan
     | [@bs.as "matrix"] `matrix
     | [@bs.as "maxcdn"] `maxcdn
     | [@bs.as "medal"] `medal
@@ -1743,6 +2161,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "menu-down-outline"] `menuDownOutline
     | [@bs.as "menu-left"] `menuLeft
     | [@bs.as "menu-left-outline"] `menuLeftOutline
+    | [@bs.as "menu-open"] `menuOpen
     | [@bs.as "menu-right"] `menuRight
     | [@bs.as "menu-right-outline"] `menuRightOutline
     | [@bs.as "menu-swap"] `menuSwap
@@ -1781,6 +2200,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "microscope"] `microscope
     | [@bs.as "microsoft"] `microsoft
     | [@bs.as "microsoft-dynamics"] `microsoftDynamics
+    | [@bs.as "microwave"] `microwave
     | [@bs.as "midi"] `midi
     | [@bs.as "midi-port"] `midiPort
     | [@bs.as "minecraft"] `minecraft
@@ -1792,15 +2212,21 @@ module MaterialCommunityIcons = {
     | [@bs.as "minus-circle"] `minusCircle
     | [@bs.as "minus-circle-outline"] `minusCircleOutline
     | [@bs.as "minus-network"] `minusNetwork
+    | [@bs.as "minus-network-outline"] `minusNetworkOutline
     | [@bs.as "mixcloud"] `mixcloud
+    | [@bs.as "mixed-martial-arts"] `mixedMartialArts
     | [@bs.as "mixed-reality"] `mixedReality
     | [@bs.as "mixer"] `mixer
+    | [@bs.as "molecule"] `molecule
     | [@bs.as "monitor"] `monitor
     | [@bs.as "monitor-cellphone"] `monitorCellphone
     | [@bs.as "monitor-cellphone-star"] `monitorCellphoneStar
     | [@bs.as "monitor-dashboard"] `monitorDashboard
     | [@bs.as "monitor-multiple"] `monitorMultiple
+    | [@bs.as "monitor-off"] `monitorOff
     | [@bs.as "more"] `more
+    | [@bs.as "mother-nurse"] `motherNurse
+    | [@bs.as "motion-sensor"] `motionSensor
     | [@bs.as "motorbike"] `motorbike
     | [@bs.as "mouse"] `mouse
     | [@bs.as "mouse-bluetooth"] `mouseBluetooth
@@ -1840,6 +2266,9 @@ module MaterialCommunityIcons = {
     | [@bs.as "needle"] `needle
     | [@bs.as "netflix"] `netflix
     | [@bs.as "network"] `network
+    | [@bs.as "network-off"] `networkOff
+    | [@bs.as "network-off-outline"] `networkOffOutline
+    | [@bs.as "network-outline"] `networkOutline
     | [@bs.as "network-strength-1"] `networkStrength1
     | [@bs.as "network-strength-1-alert"] `networkStrength1Alert
     | [@bs.as "network-strength-2"] `networkStrength2
@@ -1880,45 +2309,67 @@ module MaterialCommunityIcons = {
     | [@bs.as "numeric-0-box"] `numeric0Box
     | [@bs.as "numeric-0-box-multiple-outline"] `numeric0BoxMultipleOutline
     | [@bs.as "numeric-0-box-outline"] `numeric0BoxOutline
+    | [@bs.as "numeric-0-circle"] `numeric0Circle
+    | [@bs.as "numeric-0-circle-outline"] `numeric0CircleOutline
     | [@bs.as "numeric-1"] `numeric1
     | [@bs.as "numeric-1-box"] `numeric1Box
     | [@bs.as "numeric-1-box-multiple-outline"] `numeric1BoxMultipleOutline
     | [@bs.as "numeric-1-box-outline"] `numeric1BoxOutline
+    | [@bs.as "numeric-1-circle"] `numeric1Circle
+    | [@bs.as "numeric-1-circle-outline"] `numeric1CircleOutline
     | [@bs.as "numeric-2"] `numeric2
     | [@bs.as "numeric-2-box"] `numeric2Box
     | [@bs.as "numeric-2-box-multiple-outline"] `numeric2BoxMultipleOutline
     | [@bs.as "numeric-2-box-outline"] `numeric2BoxOutline
+    | [@bs.as "numeric-2-circle"] `numeric2Circle
+    | [@bs.as "numeric-2-circle-outline"] `numeric2CircleOutline
     | [@bs.as "numeric-3"] `numeric3
     | [@bs.as "numeric-3-box"] `numeric3Box
     | [@bs.as "numeric-3-box-multiple-outline"] `numeric3BoxMultipleOutline
     | [@bs.as "numeric-3-box-outline"] `numeric3BoxOutline
+    | [@bs.as "numeric-3-circle"] `numeric3Circle
+    | [@bs.as "numeric-3-circle-outline"] `numeric3CircleOutline
     | [@bs.as "numeric-4"] `numeric4
     | [@bs.as "numeric-4-box"] `numeric4Box
     | [@bs.as "numeric-4-box-multiple-outline"] `numeric4BoxMultipleOutline
     | [@bs.as "numeric-4-box-outline"] `numeric4BoxOutline
+    | [@bs.as "numeric-4-circle"] `numeric4Circle
+    | [@bs.as "numeric-4-circle-outline"] `numeric4CircleOutline
     | [@bs.as "numeric-5"] `numeric5
     | [@bs.as "numeric-5-box"] `numeric5Box
     | [@bs.as "numeric-5-box-multiple-outline"] `numeric5BoxMultipleOutline
     | [@bs.as "numeric-5-box-outline"] `numeric5BoxOutline
+    | [@bs.as "numeric-5-circle"] `numeric5Circle
+    | [@bs.as "numeric-5-circle-outline"] `numeric5CircleOutline
     | [@bs.as "numeric-6"] `numeric6
     | [@bs.as "numeric-6-box"] `numeric6Box
     | [@bs.as "numeric-6-box-multiple-outline"] `numeric6BoxMultipleOutline
     | [@bs.as "numeric-6-box-outline"] `numeric6BoxOutline
+    | [@bs.as "numeric-6-circle"] `numeric6Circle
+    | [@bs.as "numeric-6-circle-outline"] `numeric6CircleOutline
     | [@bs.as "numeric-7"] `numeric7
     | [@bs.as "numeric-7-box"] `numeric7Box
     | [@bs.as "numeric-7-box-multiple-outline"] `numeric7BoxMultipleOutline
     | [@bs.as "numeric-7-box-outline"] `numeric7BoxOutline
+    | [@bs.as "numeric-7-circle"] `numeric7Circle
+    | [@bs.as "numeric-7-circle-outline"] `numeric7CircleOutline
     | [@bs.as "numeric-8"] `numeric8
     | [@bs.as "numeric-8-box"] `numeric8Box
     | [@bs.as "numeric-8-box-multiple-outline"] `numeric8BoxMultipleOutline
     | [@bs.as "numeric-8-box-outline"] `numeric8BoxOutline
+    | [@bs.as "numeric-8-circle"] `numeric8Circle
+    | [@bs.as "numeric-8-circle-outline"] `numeric8CircleOutline
     | [@bs.as "numeric-9"] `numeric9
     | [@bs.as "numeric-9-box"] `numeric9Box
     | [@bs.as "numeric-9-box-multiple-outline"] `numeric9BoxMultipleOutline
     | [@bs.as "numeric-9-box-outline"] `numeric9BoxOutline
+    | [@bs.as "numeric-9-circle"] `numeric9Circle
+    | [@bs.as "numeric-9-circle-outline"] `numeric9CircleOutline
     | [@bs.as "numeric-9-plus-box"] `numeric9PlusBox
     | [@bs.as "numeric-9-plus-box-multiple-outline"] `numeric9PlusBoxMultipleOutline
     | [@bs.as "numeric-9-plus-box-outline"] `numeric9PlusBoxOutline
+    | [@bs.as "numeric-9-plus-circle"] `numeric9PlusCircle
+    | [@bs.as "numeric-9-plus-circle-outline"] `numeric9PlusCircleOutline
     | [@bs.as "nut"] `nut
     | [@bs.as "nutrition"] `nutrition
     | [@bs.as "oar"] `oar
@@ -1932,19 +2383,23 @@ module MaterialCommunityIcons = {
     | [@bs.as "oil"] `oil
     | [@bs.as "oil-temperature"] `oilTemperature
     | [@bs.as "omega"] `omega
+    | [@bs.as "one-up"] `oneUp
     | [@bs.as "onedrive"] `onedrive
     | [@bs.as "onenote"] `onenote
     | [@bs.as "onepassword"] `onepassword
     | [@bs.as "opacity"] `opacity
     | [@bs.as "open-in-app"] `openInApp
     | [@bs.as "open-in-new"] `openInNew
+    | [@bs.as "open-source-initiative"] `openSourceInitiative
     | [@bs.as "openid"] `openid
     | [@bs.as "opera"] `opera
     | [@bs.as "orbit"] `orbit
     | [@bs.as "origin"] `origin
     | [@bs.as "ornament"] `ornament
     | [@bs.as "ornament-variant"] `ornamentVariant
+    | [@bs.as "outlook"] `outlook
     | [@bs.as "owl"] `owl
+    | [@bs.as "pac-man"] `pacMan
     | [@bs.as "package"] `package
     | [@bs.as "package-down"] `packageDown
     | [@bs.as "package-up"] `packageUp
@@ -1957,9 +2412,24 @@ module MaterialCommunityIcons = {
     | [@bs.as "page-layout-header"] `pageLayoutHeader
     | [@bs.as "page-layout-sidebar-left"] `pageLayoutSidebarLeft
     | [@bs.as "page-layout-sidebar-right"] `pageLayoutSidebarRight
+    | [@bs.as "page-next"] `pageNext
+    | [@bs.as "page-next-outline"] `pageNextOutline
+    | [@bs.as "page-previous"] `pagePrevious
+    | [@bs.as "page-previous-outline"] `pagePreviousOutline
     | [@bs.as "palette"] `palette
     | [@bs.as "palette-advanced"] `paletteAdvanced
     | [@bs.as "palette-swatch"] `paletteSwatch
+    | [@bs.as "pan"] `pan
+    | [@bs.as "pan-bottom-left"] `panBottomLeft
+    | [@bs.as "pan-bottom-right"] `panBottomRight
+    | [@bs.as "pan-down"] `panDown
+    | [@bs.as "pan-horizontal"] `panHorizontal
+    | [@bs.as "pan-left"] `panLeft
+    | [@bs.as "pan-right"] `panRight
+    | [@bs.as "pan-top-left"] `panTopLeft
+    | [@bs.as "pan-top-right"] `panTopRight
+    | [@bs.as "pan-up"] `panUp
+    | [@bs.as "pan-vertical"] `panVertical
     | [@bs.as "panda"] `panda
     | [@bs.as "pandora"] `pandora
     | [@bs.as "panorama"] `panorama
@@ -1969,6 +2439,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "panorama-wide-angle"] `panoramaWideAngle
     | [@bs.as "paper-cut-vertical"] `paperCutVertical
     | [@bs.as "paperclip"] `paperclip
+    | [@bs.as "parachute"] `parachute
+    | [@bs.as "parachute-outline"] `parachuteOutline
     | [@bs.as "parking"] `parking
     | [@bs.as "passport"] `passport
     | [@bs.as "patreon"] `patreon
@@ -1989,12 +2461,15 @@ module MaterialCommunityIcons = {
     | [@bs.as "pencil-circle-outline"] `pencilCircleOutline
     | [@bs.as "pencil-lock"] `pencilLock
     | [@bs.as "pencil-off"] `pencilOff
+    | [@bs.as "pencil-outline"] `pencilOutline
     | [@bs.as "pentagon"] `pentagon
     | [@bs.as "pentagon-outline"] `pentagonOutline
     | [@bs.as "percent"] `percent
     | [@bs.as "periodic-table"] `periodicTable
     | [@bs.as "periodic-table-co2"] `periodicTableCo2
     | [@bs.as "periscope"] `periscope
+    | [@bs.as "perspective-less"] `perspectiveLess
+    | [@bs.as "perspective-more"] `perspectiveMore
     | [@bs.as "pharmacy"] `pharmacy
     | [@bs.as "phone"] `phone
     | [@bs.as "phone-bluetooth"] `phoneBluetooth
@@ -2041,18 +2516,20 @@ module MaterialCommunityIcons = {
     | [@bs.as "pistol"] `pistol
     | [@bs.as "piston"] `piston
     | [@bs.as "pizza"] `pizza
-    | [@bs.as "plane-shield"] `planeShield
     | [@bs.as "play"] `play
     | [@bs.as "play-box-outline"] `playBoxOutline
     | [@bs.as "play-circle"] `playCircle
     | [@bs.as "play-circle-outline"] `playCircleOutline
     | [@bs.as "play-network"] `playNetwork
+    | [@bs.as "play-network-outline"] `playNetworkOutline
     | [@bs.as "play-pause"] `playPause
     | [@bs.as "play-protected-content"] `playProtectedContent
     | [@bs.as "play-speed"] `playSpeed
     | [@bs.as "playlist-check"] `playlistCheck
     | [@bs.as "playlist-edit"] `playlistEdit
     | [@bs.as "playlist-minus"] `playlistMinus
+    | [@bs.as "playlist-music"] `playlistMusic
+    | [@bs.as "playlist-music-outline"] `playlistMusicOutline
     | [@bs.as "playlist-play"] `playlistPlay
     | [@bs.as "playlist-plus"] `playlistPlus
     | [@bs.as "playlist-remove"] `playlistRemove
@@ -2067,10 +2544,16 @@ module MaterialCommunityIcons = {
     | [@bs.as "plus-minus"] `plusMinus
     | [@bs.as "plus-minus-box"] `plusMinusBox
     | [@bs.as "plus-network"] `plusNetwork
+    | [@bs.as "plus-network-outline"] `plusNetworkOutline
     | [@bs.as "plus-one"] `plusOne
     | [@bs.as "plus-outline"] `plusOutline
     | [@bs.as "pocket"] `pocket
     | [@bs.as "podcast"] `podcast
+    | [@bs.as "podium"] `podium
+    | [@bs.as "podium-bronze"] `podiumBronze
+    | [@bs.as "podium-gold"] `podiumGold
+    | [@bs.as "podium-silver"] `podiumSilver
+    | [@bs.as "point-of-sale"] `pointOfSale
     | [@bs.as "pokeball"] `pokeball
     | [@bs.as "pokemon-go"] `pokemonGo
     | [@bs.as "poker-chip"] `pokerChip
@@ -2080,6 +2563,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "polymer"] `polymer
     | [@bs.as "pool"] `pool
     | [@bs.as "popcorn"] `popcorn
+    | [@bs.as "postage-stamp"] `postageStamp
     | [@bs.as "pot"] `pot
     | [@bs.as "pot-mix"] `potMix
     | [@bs.as "pound"] `pound
@@ -2110,14 +2594,17 @@ module MaterialCommunityIcons = {
     | [@bs.as "priority-high"] `priorityHigh
     | [@bs.as "priority-low"] `priorityLow
     | [@bs.as "professional-hexagon"] `professionalHexagon
+    | [@bs.as "progress-alert"] `progressAlert
     | [@bs.as "progress-check"] `progressCheck
     | [@bs.as "progress-clock"] `progressClock
     | [@bs.as "progress-download"] `progressDownload
     | [@bs.as "progress-upload"] `progressUpload
+    | [@bs.as "progress-wrench"] `progressWrench
     | [@bs.as "projector"] `projector
     | [@bs.as "projector-screen"] `projectorScreen
     | [@bs.as "publish"] `publish
     | [@bs.as "pulse"] `pulse
+    | [@bs.as "pumpkin"] `pumpkin
     | [@bs.as "puzzle"] `puzzle
     | [@bs.as "puzzle-outline"] `puzzleOutline
     | [@bs.as "qi"] `qi
@@ -2130,18 +2617,25 @@ module MaterialCommunityIcons = {
     | [@bs.as "quality-low"] `qualityLow
     | [@bs.as "quality-medium"] `qualityMedium
     | [@bs.as "quicktime"] `quicktime
+    | [@bs.as "quora"] `quora
     | [@bs.as "rabbit"] `rabbit
+    | [@bs.as "racing-helmet"] `racingHelmet
+    | [@bs.as "racquetball"] `racquetball
     | [@bs.as "radar"] `radar
     | [@bs.as "radiator"] `radiator
     | [@bs.as "radiator-disabled"] `radiatorDisabled
     | [@bs.as "radiator-off"] `radiatorOff
     | [@bs.as "radio"] `radio
+    | [@bs.as "radio-am"] `radioAm
+    | [@bs.as "radio-fm"] `radioFm
     | [@bs.as "radio-handheld"] `radioHandheld
     | [@bs.as "radio-tower"] `radioTower
     | [@bs.as "radioactive"] `radioactive
     | [@bs.as "radiobox-blank"] `radioboxBlank
     | [@bs.as "radiobox-marked"] `radioboxMarked
-    | [@bs.as "raspberrypi"] `raspberrypi
+    | [@bs.as "radius"] `radius
+    | [@bs.as "radius-outline"] `radiusOutline
+    | [@bs.as "raspberry-pi"] `raspberryPi
     | [@bs.as "ray-end"] `rayEnd
     | [@bs.as "ray-end-arrow"] `rayEndArrow
     | [@bs.as "ray-start"] `rayStart
@@ -2184,9 +2678,12 @@ module MaterialCommunityIcons = {
     | [@bs.as "resize-bottom-right"] `resizeBottomRight
     | [@bs.as "responsive"] `responsive
     | [@bs.as "restart"] `restart
+    | [@bs.as "restart-off"] `restartOff
     | [@bs.as "restore"] `restore
     | [@bs.as "restore-clock"] `restoreClock
     | [@bs.as "rewind"] `rewind
+    | [@bs.as "rewind-10"] `rewind10
+    | [@bs.as "rewind-30"] `rewind30
     | [@bs.as "rewind-outline"] `rewindOutline
     | [@bs.as "rhombus"] `rhombus
     | [@bs.as "rhombus-medium"] `rhombusMedium
@@ -2202,10 +2699,15 @@ module MaterialCommunityIcons = {
     | [@bs.as "robot-vacuum"] `robotVacuum
     | [@bs.as "robot-vacuum-variant"] `robotVacuumVariant
     | [@bs.as "rocket"] `rocket
+    | [@bs.as "roller-skate"] `rollerSkate
+    | [@bs.as "rollerblade"] `rollerblade
+    | [@bs.as "rollupjs"] `rollupjs
     | [@bs.as "room-service"] `roomService
+    | [@bs.as "room-service-outline"] `roomServiceOutline
     | [@bs.as "rotate-3d"] `rotate3D
     | [@bs.as "rotate-left"] `rotateLeft
     | [@bs.as "rotate-left-variant"] `rotateLeftVariant
+    | [@bs.as "rotate-orbit"] `rotateOrbit
     | [@bs.as "rotate-right"] `rotateRight
     | [@bs.as "rotate-right-variant"] `rotateRightVariant
     | [@bs.as "rounded-corner"] `roundedCorner
@@ -2215,10 +2717,16 @@ module MaterialCommunityIcons = {
     | [@bs.as "rowing"] `rowing
     | [@bs.as "rss"] `rss
     | [@bs.as "rss-box"] `rssBox
+    | [@bs.as "ruby"] `ruby
+    | [@bs.as "rugby"] `rugby
     | [@bs.as "ruler"] `ruler
+    | [@bs.as "ruler-square"] `rulerSquare
     | [@bs.as "run"] `run
     | [@bs.as "run-fast"] `runFast
+    | [@bs.as "sack"] `sack
+    | [@bs.as "sack-percent"] `sackPercent
     | [@bs.as "safe"] `safe
+    | [@bs.as "safety-goggles"] `safetyGoggles
     | [@bs.as "sale"] `sale
     | [@bs.as "salesforce"] `salesforce
     | [@bs.as "sass"] `sass
@@ -2238,33 +2746,35 @@ module MaterialCommunityIcons = {
     | [@bs.as "screen-rotation-lock"] `screenRotationLock
     | [@bs.as "screwdriver"] `screwdriver
     | [@bs.as "script"] `script
+    | [@bs.as "script-outline"] `scriptOutline
+    | [@bs.as "script-text"] `scriptText
+    | [@bs.as "script-text-outline"] `scriptTextOutline
     | [@bs.as "sd"] `sd
     | [@bs.as "seal"] `seal
     | [@bs.as "search-web"] `searchWeb
+    | [@bs.as "seat"] `seat
     | [@bs.as "seat-flat"] `seatFlat
     | [@bs.as "seat-flat-angled"] `seatFlatAngled
     | [@bs.as "seat-individual-suite"] `seatIndividualSuite
     | [@bs.as "seat-legroom-extra"] `seatLegroomExtra
     | [@bs.as "seat-legroom-normal"] `seatLegroomNormal
     | [@bs.as "seat-legroom-reduced"] `seatLegroomReduced
+    | [@bs.as "seat-outline"] `seatOutline
     | [@bs.as "seat-recline-extra"] `seatReclineExtra
     | [@bs.as "seat-recline-normal"] `seatReclineNormal
+    | [@bs.as "seatbelt"] `seatbelt
     | [@bs.as "security"] `security
-    | [@bs.as "security-account"] `securityAccount
-    | [@bs.as "security-account-outline"] `securityAccountOutline
-    | [@bs.as "security-close"] `securityClose
-    | [@bs.as "security-home"] `securityHome
-    | [@bs.as "security-lock"] `securityLock
     | [@bs.as "security-network"] `securityNetwork
-    | [@bs.as "security-off"] `securityOff
     | [@bs.as "select"] `select
     | [@bs.as "select-all"] `selectAll
+    | [@bs.as "select-color"] `selectColor
     | [@bs.as "select-compare"] `selectCompare
     | [@bs.as "select-drag"] `selectDrag
     | [@bs.as "select-inverse"] `selectInverse
     | [@bs.as "select-off"] `selectOff
     | [@bs.as "selection"] `selection
     | [@bs.as "selection-drag"] `selectionDrag
+    | [@bs.as "selection-ellipse"] `selectionEllipse
     | [@bs.as "selection-off"] `selectionOff
     | [@bs.as "send"] `send
     | [@bs.as "send-lock"] `sendLock
@@ -2300,13 +2810,33 @@ module MaterialCommunityIcons = {
     | [@bs.as "share"] `share
     | [@bs.as "share-outline"] `shareOutline
     | [@bs.as "share-variant"] `shareVariant
+    | [@bs.as "sheep"] `sheep
     | [@bs.as "shield"] `shield
+    | [@bs.as "shield-account"] `shieldAccount
+    | [@bs.as "shield-account-outline"] `shieldAccountOutline
+    | [@bs.as "shield-airplane"] `shieldAirplane
+    | [@bs.as "shield-airplane-outline"] `shieldAirplaneOutline
+    | [@bs.as "shield-check"] `shieldCheck
+    | [@bs.as "shield-check-outline"] `shieldCheckOutline
+    | [@bs.as "shield-cross"] `shieldCross
+    | [@bs.as "shield-cross-outline"] `shieldCrossOutline
     | [@bs.as "shield-half-full"] `shieldHalfFull
+    | [@bs.as "shield-home"] `shieldHome
+    | [@bs.as "shield-home-outline"] `shieldHomeOutline
+    | [@bs.as "shield-key"] `shieldKey
+    | [@bs.as "shield-key-outline"] `shieldKeyOutline
+    | [@bs.as "shield-link-variant"] `shieldLinkVariant
+    | [@bs.as "shield-link-variant-outline"] `shieldLinkVariantOutline
+    | [@bs.as "shield-lock"] `shieldLock
+    | [@bs.as "shield-lock-outline"] `shieldLockOutline
+    | [@bs.as "shield-off"] `shieldOff
+    | [@bs.as "shield-off-outline"] `shieldOffOutline
     | [@bs.as "shield-outline"] `shieldOutline
     | [@bs.as "shield-plus"] `shieldPlus
     | [@bs.as "shield-plus-outline"] `shieldPlusOutline
     | [@bs.as "shield-remove"] `shieldRemove
     | [@bs.as "shield-remove-outline"] `shieldRemoveOutline
+    | [@bs.as "shield-search"] `shieldSearch
     | [@bs.as "ship-wheel"] `shipWheel
     | [@bs.as "shoe-formal"] `shoeFormal
     | [@bs.as "shoe-heel"] `shoeHeel
@@ -2350,6 +2880,9 @@ module MaterialCommunityIcons = {
     | [@bs.as "sim-off"] `simOff
     | [@bs.as "sina-weibo"] `sinaWeibo
     | [@bs.as "sitemap"] `sitemap
+    | [@bs.as "skate"] `skate
+    | [@bs.as "skew-less"] `skewLess
+    | [@bs.as "skew-more"] `skewMore
     | [@bs.as "skip-backward"] `skipBackward
     | [@bs.as "skip-forward"] `skipForward
     | [@bs.as "skip-next"] `skipNext
@@ -2359,6 +2892,9 @@ module MaterialCommunityIcons = {
     | [@bs.as "skip-previous-circle"] `skipPreviousCircle
     | [@bs.as "skip-previous-circle-outline"] `skipPreviousCircleOutline
     | [@bs.as "skull"] `skull
+    | [@bs.as "skull-crossbones"] `skullCrossbones
+    | [@bs.as "skull-crossbones-outline"] `skullCrossbonesOutline
+    | [@bs.as "skull-outline"] `skullOutline
     | [@bs.as "skype"] `skype
     | [@bs.as "skype-business"] `skypeBusiness
     | [@bs.as "slack"] `slack
@@ -2375,6 +2911,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "soccer"] `soccer
     | [@bs.as "soccer-field"] `soccerField
     | [@bs.as "sofa"] `sofa
+    | [@bs.as "solar-panel"] `solarPanel
+    | [@bs.as "solar-panel-large"] `solarPanelLarge
     | [@bs.as "solar-power"] `solarPower
     | [@bs.as "solid"] `solid
     | [@bs.as "sort"] `sort
@@ -2383,6 +2921,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "sort-descending"] `sortDescending
     | [@bs.as "sort-numeric"] `sortNumeric
     | [@bs.as "sort-variant"] `sortVariant
+    | [@bs.as "sort-variant-lock"] `sortVariantLock
+    | [@bs.as "sort-variant-lock-open"] `sortVariantLockOpen
     | [@bs.as "soundcloud"] `soundcloud
     | [@bs.as "source-branch"] `sourceBranch
     | [@bs.as "source-commit"] `sourceCommit
@@ -2395,13 +2935,20 @@ module MaterialCommunityIcons = {
     | [@bs.as "source-fork"] `sourceFork
     | [@bs.as "source-merge"] `sourceMerge
     | [@bs.as "source-pull"] `sourcePull
+    | [@bs.as "source-repository"] `sourceRepository
+    | [@bs.as "source-repository-multiple"] `sourceRepositoryMultiple
     | [@bs.as "soy-sauce"] `soySauce
+    | [@bs.as "spa"] `spa
+    | [@bs.as "spa-outline"] `spaOutline
+    | [@bs.as "space-invaders"] `spaceInvaders
     | [@bs.as "speaker"] `speaker
     | [@bs.as "speaker-bluetooth"] `speakerBluetooth
+    | [@bs.as "speaker-multiple"] `speakerMultiple
     | [@bs.as "speaker-off"] `speakerOff
     | [@bs.as "speaker-wireless"] `speakerWireless
     | [@bs.as "speedometer"] `speedometer
     | [@bs.as "spellcheck"] `spellcheck
+    | [@bs.as "spider-web"] `spiderWeb
     | [@bs.as "spotify"] `spotify
     | [@bs.as "spotlight"] `spotlight
     | [@bs.as "spotlight-beam"] `spotlightBeam
@@ -2423,6 +2970,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "stack-overflow"] `stackOverflow
     | [@bs.as "stadium"] `stadium
     | [@bs.as "stairs"] `stairs
+    | [@bs.as "stamper"] `stamper
     | [@bs.as "standard-definition"] `standardDefinition
     | [@bs.as "star"] `star
     | [@bs.as "star-box"] `starBox
@@ -2461,6 +3009,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "subtitles"] `subtitles
     | [@bs.as "subtitles-outline"] `subtitlesOutline
     | [@bs.as "subway"] `subway
+    | [@bs.as "subway-alert-variant"] `subwayAlertVariant
     | [@bs.as "subway-variant"] `subwayVariant
     | [@bs.as "summit"] `summit
     | [@bs.as "sunglasses"] `sunglasses
@@ -2471,8 +3020,10 @@ module MaterialCommunityIcons = {
     | [@bs.as "surround-sound-7-1"] `surroundSound71
     | [@bs.as "svg"] `svg
     | [@bs.as "swap-horizontal"] `swapHorizontal
+    | [@bs.as "swap-horizontal-bold"] `swapHorizontalBold
     | [@bs.as "swap-horizontal-variant"] `swapHorizontalVariant
     | [@bs.as "swap-vertical"] `swapVertical
+    | [@bs.as "swap-vertical-bold"] `swapVerticalBold
     | [@bs.as "swap-vertical-variant"] `swapVerticalVariant
     | [@bs.as "swim"] `swim
     | [@bs.as "switch"] `switch_
@@ -2515,16 +3066,21 @@ module MaterialCommunityIcons = {
     | [@bs.as "tag"] `tag
     | [@bs.as "tag-faces"] `tagFaces
     | [@bs.as "tag-heart"] `tagHeart
+    | [@bs.as "tag-heart-outline"] `tagHeartOutline
     | [@bs.as "tag-minus"] `tagMinus
     | [@bs.as "tag-multiple"] `tagMultiple
     | [@bs.as "tag-outline"] `tagOutline
     | [@bs.as "tag-plus"] `tagPlus
     | [@bs.as "tag-remove"] `tagRemove
     | [@bs.as "tag-text-outline"] `tagTextOutline
+    | [@bs.as "tank"] `tank
     | [@bs.as "tape-measure"] `tapeMeasure
     | [@bs.as "target"] `target
+    | [@bs.as "target-account"] `targetAccount
     | [@bs.as "target-variant"] `targetVariant
     | [@bs.as "taxi"] `taxi
+    | [@bs.as "tea"] `tea
+    | [@bs.as "tea-outline"] `teaOutline
     | [@bs.as "teach"] `teach
     | [@bs.as "teamviewer"] `teamviewer
     | [@bs.as "telegram"] `telegram
@@ -2539,6 +3095,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "temperature-fahrenheit"] `temperatureFahrenheit
     | [@bs.as "temperature-kelvin"] `temperatureKelvin
     | [@bs.as "tennis"] `tennis
+    | [@bs.as "tennis-ball"] `tennisBall
     | [@bs.as "tent"] `tent
     | [@bs.as "terrain"] `terrain
     | [@bs.as "test-tube"] `testTube
@@ -2574,6 +3131,10 @@ module MaterialCommunityIcons = {
     | [@bs.as "tie"] `tie
     | [@bs.as "tilde"] `tilde
     | [@bs.as "timelapse"] `timelapse
+    | [@bs.as "timeline"] `timeline
+    | [@bs.as "timeline-outline"] `timelineOutline
+    | [@bs.as "timeline-text"] `timelineText
+    | [@bs.as "timeline-text-outline"] `timelineTextOutline
     | [@bs.as "timer"] `timer
     | [@bs.as "timer-10"] `timer10
     | [@bs.as "timer-3"] `timer3
@@ -2582,6 +3143,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "timer-sand-empty"] `timerSandEmpty
     | [@bs.as "timer-sand-full"] `timerSandFull
     | [@bs.as "timetable"] `timetable
+    | [@bs.as "toaster-oven"] `toasterOven
     | [@bs.as "toggle-switch"] `toggleSwitch
     | [@bs.as "toggle-switch-off"] `toggleSwitchOff
     | [@bs.as "toggle-switch-off-outline"] `toggleSwitchOffOutline
@@ -2590,14 +3152,19 @@ module MaterialCommunityIcons = {
     | [@bs.as "toolbox"] `toolbox
     | [@bs.as "toolbox-outline"] `toolboxOutline
     | [@bs.as "tooltip"] `tooltip
+    | [@bs.as "tooltip-account"] `tooltipAccount
     | [@bs.as "tooltip-edit"] `tooltipEdit
     | [@bs.as "tooltip-image"] `tooltipImage
+    | [@bs.as "tooltip-image-outline"] `tooltipImageOutline
     | [@bs.as "tooltip-outline"] `tooltipOutline
-    | [@bs.as "tooltip-outline-plus"] `tooltipOutlinePlus
+    | [@bs.as "tooltip-plus"] `tooltipPlus
+    | [@bs.as "tooltip-plus-outline"] `tooltipPlusOutline
     | [@bs.as "tooltip-text"] `tooltipText
+    | [@bs.as "tooltip-text-outline"] `tooltipTextOutline
     | [@bs.as "tooth"] `tooth
     | [@bs.as "tooth-outline"] `toothOutline
     | [@bs.as "tor"] `tor
+    | [@bs.as "tortoise"] `tortoise
     | [@bs.as "tournament"] `tournament
     | [@bs.as "tower-beach"] `towerBeach
     | [@bs.as "tower-fire"] `towerFire
@@ -2609,15 +3176,22 @@ module MaterialCommunityIcons = {
     | [@bs.as "trademark"] `trademark
     | [@bs.as "traffic-light"] `trafficLight
     | [@bs.as "train"] `train
+    | [@bs.as "train-car"] `trainCar
     | [@bs.as "train-variant"] `trainVariant
     | [@bs.as "tram"] `tram
     | [@bs.as "transcribe"] `transcribe
     | [@bs.as "transcribe-close"] `transcribeClose
-    | [@bs.as "transfer"] `transfer
+    | [@bs.as "transfer-down"] `transferDown
+    | [@bs.as "transfer-left"] `transferLeft
+    | [@bs.as "transfer-right"] `transferRight
+    | [@bs.as "transfer-up"] `transferUp
+    | [@bs.as "transit-connection"] `transitConnection
+    | [@bs.as "transit-connection-variant"] `transitConnectionVariant
     | [@bs.as "transit-transfer"] `transitTransfer
     | [@bs.as "transition"] `transition
     | [@bs.as "transition-masked"] `transitionMasked
     | [@bs.as "translate"] `translate
+    | [@bs.as "transmission-tower"] `transmissionTower
     | [@bs.as "trash-can"] `trashCan
     | [@bs.as "trash-can-outline"] `trashCanOutline
     | [@bs.as "treasure-chest"] `treasureChest
@@ -2628,12 +3202,15 @@ module MaterialCommunityIcons = {
     | [@bs.as "trending-up"] `trendingUp
     | [@bs.as "triangle"] `triangle
     | [@bs.as "triangle-outline"] `triangleOutline
+    | [@bs.as "triforce"] `triforce
     | [@bs.as "trophy"] `trophy
     | [@bs.as "trophy-award"] `trophyAward
+    | [@bs.as "trophy-broken"] `trophyBroken
     | [@bs.as "trophy-outline"] `trophyOutline
     | [@bs.as "trophy-variant"] `trophyVariant
     | [@bs.as "trophy-variant-outline"] `trophyVariantOutline
     | [@bs.as "truck"] `truck
+    | [@bs.as "truck-check"] `truckCheck
     | [@bs.as "truck-delivery"] `truckDelivery
     | [@bs.as "truck-fast"] `truckFast
     | [@bs.as "truck-trailer"] `truckTrailer
@@ -2647,6 +3224,9 @@ module MaterialCommunityIcons = {
     | [@bs.as "tumblr-reblog"] `tumblrReblog
     | [@bs.as "tune"] `tune
     | [@bs.as "tune-vertical"] `tuneVertical
+    | [@bs.as "turnstile"] `turnstile
+    | [@bs.as "turnstile-outline"] `turnstileOutline
+    | [@bs.as "turtle"] `turtle
     | [@bs.as "twitch"] `twitch
     | [@bs.as "twitter"] `twitter
     | [@bs.as "twitter-box"] `twitterBox
@@ -2654,6 +3234,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "twitter-retweet"] `twitterRetweet
     | [@bs.as "two-factor-authentication"] `twoFactorAuthentication
     | [@bs.as "uber"] `uber
+    | [@bs.as "ubisoft"] `ubisoft
     | [@bs.as "ubuntu"] `ubuntu
     | [@bs.as "ultra-high-definition"] `ultraHighDefinition
     | [@bs.as "umbraco"] `umbraco
@@ -2674,6 +3255,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "upload"] `upload
     | [@bs.as "upload-multiple"] `uploadMultiple
     | [@bs.as "upload-network"] `uploadNetwork
+    | [@bs.as "upload-network-outline"] `uploadNetworkOutline
     | [@bs.as "usb"] `usb
     | [@bs.as "van-passenger"] `vanPassenger
     | [@bs.as "van-utility"] `vanUtility
@@ -2702,9 +3284,9 @@ module MaterialCommunityIcons = {
     | [@bs.as "vector-triangle"] `vectorTriangle
     | [@bs.as "vector-union"] `vectorUnion
     | [@bs.as "venmo"] `venmo
-    | [@bs.as "verified"] `verified
     | [@bs.as "vhs"] `vhs
     | [@bs.as "vibrate"] `vibrate
+    | [@bs.as "vibrate-off"] `vibrateOff
     | [@bs.as "video"] `video
     | [@bs.as "video-3d"] `video3D
     | [@bs.as "video-4k-box"] `video4KBox
@@ -2716,6 +3298,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "video-input-svideo"] `videoInputSvideo
     | [@bs.as "video-minus"] `videoMinus
     | [@bs.as "video-off"] `videoOff
+    | [@bs.as "video-off-outline"] `videoOffOutline
+    | [@bs.as "video-outline"] `videoOutline
     | [@bs.as "video-plus"] `videoPlus
     | [@bs.as "video-stabilization"] `videoStabilization
     | [@bs.as "video-switch"] `videoSwitch
@@ -2735,6 +3319,8 @@ module MaterialCommunityIcons = {
     | [@bs.as "view-parallel"] `viewParallel
     | [@bs.as "view-quilt"] `viewQuilt
     | [@bs.as "view-sequential"] `viewSequential
+    | [@bs.as "view-split-horizontal"] `viewSplitHorizontal
+    | [@bs.as "view-split-vertical"] `viewSplitVertical
     | [@bs.as "view-stream"] `viewStream
     | [@bs.as "view-week"] `viewWeek
     | [@bs.as "vimeo"] `vimeo
@@ -2768,6 +3354,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "wallet"] `wallet
     | [@bs.as "wallet-giftcard"] `walletGiftcard
     | [@bs.as "wallet-membership"] `walletMembership
+    | [@bs.as "wallet-outline"] `walletOutline
     | [@bs.as "wallet-travel"] `walletTravel
     | [@bs.as "wan"] `wan
     | [@bs.as "washing-machine"] `washingMachine
@@ -2778,12 +3365,14 @@ module MaterialCommunityIcons = {
     | [@bs.as "watch-import-variant"] `watchImportVariant
     | [@bs.as "watch-variant"] `watchVariant
     | [@bs.as "watch-vibrate"] `watchVibrate
+    | [@bs.as "watch-vibrate-off"] `watchVibrateOff
     | [@bs.as "water"] `water
     | [@bs.as "water-off"] `waterOff
     | [@bs.as "water-percent"] `waterPercent
     | [@bs.as "water-pump"] `waterPump
     | [@bs.as "watermark"] `watermark
     | [@bs.as "waves"] `waves
+    | [@bs.as "waze"] `waze
     | [@bs.as "weather-cloudy"] `weatherCloudy
     | [@bs.as "weather-fog"] `weatherFog
     | [@bs.as "weather-hail"] `weatherHail
@@ -2808,6 +3397,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "webpack"] `webpack
     | [@bs.as "wechat"] `wechat
     | [@bs.as "weight"] `weight
+    | [@bs.as "weight-gram"] `weightGram
     | [@bs.as "weight-kilogram"] `weightKilogram
     | [@bs.as "weight-pound"] `weightPound
     | [@bs.as "whatsapp"] `whatsapp
@@ -2840,6 +3430,7 @@ module MaterialCommunityIcons = {
     | [@bs.as "wii"] `wii
     | [@bs.as "wiiu"] `wiiu
     | [@bs.as "wikipedia"] `wikipedia
+    | [@bs.as "wind-turbine"] `windTurbine
     | [@bs.as "window-close"] `windowClose
     | [@bs.as "window-closed"] `windowClosed
     | [@bs.as "window-maximize"] `windowMaximize
@@ -2849,10 +3440,13 @@ module MaterialCommunityIcons = {
     | [@bs.as "windows"] `windows
     | [@bs.as "windows-classic"] `windowsClassic
     | [@bs.as "wiper"] `wiper
+    | [@bs.as "wiper-wash"] `wiperWash
     | [@bs.as "wordpress"] `wordpress
     | [@bs.as "worker"] `worker
     | [@bs.as "wrap"] `wrap
+    | [@bs.as "wrap-disabled"] `wrapDisabled
     | [@bs.as "wrench"] `wrench
+    | [@bs.as "wrench-outline"] `wrenchOutline
     | [@bs.as "wunderlist"] `wunderlist
     | [@bs.as "xamarin"] `xamarin
     | [@bs.as "xamarin-outline"] `xamarinOutline
@@ -2881,9 +3475,11 @@ module MaterialCommunityIcons = {
     | [@bs.as "youtube"] `youtube
     | [@bs.as "youtube-creator-studio"] `youtubeCreatorStudio
     | [@bs.as "youtube-gaming"] `youtubeGaming
+    | [@bs.as "youtube-subscription"] `youtubeSubscription
     | [@bs.as "youtube-tv"] `youtubeTv
     | [@bs.as "z-wave"] `zWave
     | [@bs.as "zend"] `zend
+    | [@bs.as "zigbee"] `zigbee
     | [@bs.as "zip-box"] `zipBox
     | [@bs.as "zip-disk"] `zipDisk
     | [@bs.as "zodiac-aquarius"] `zodiacAquarius
@@ -2898,45 +3494,6 @@ module MaterialCommunityIcons = {
     | [@bs.as "zodiac-scorpio"] `zodiacScorpio
     | [@bs.as "zodiac-taurus"] `zodiacTaurus
     | [@bs.as "zodiac-virgo"] `zodiacVirgo
-    | [@bs.as "blank"] `blank
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "blank"] `blank  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "MaterialCommunityIcons";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`accessPoint,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=MaterialCommunityIcons.js,
-  ~props=
-    MaterialCommunityIcons.props(
-      ~allowFontScaling,
-      ~name=MaterialCommunityIcons.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

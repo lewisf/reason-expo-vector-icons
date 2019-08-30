@@ -10,7 +10,7 @@
     "in-source": true
   },
   "suffix": ".bs.js",
-  "bs-dependencies": ["bs-react-native", "reason-react"],
+  "bs-dependencies": ["reason-react-native", "reason-react"],
   "warnings": {
     "error": "+101"
   },

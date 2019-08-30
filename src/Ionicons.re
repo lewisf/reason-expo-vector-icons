@@ -1,10 +1,7 @@
 module Ionicons = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "Ionicons";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "ios-add"] `iosAdd
+  [@bs.module ("@expo/vector-icons", "Ionicons")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "ios-add"] `iosAdd
     | [@bs.as "ios-add-circle"] `iosAddCircle
     | [@bs.as "ios-add-circle-outline"] `iosAddCircleOutline
     | [@bs.as "ios-airplane"] `iosAirplane
@@ -699,45 +696,6 @@ module Ionicons = {
     | [@bs.as "md-water"] `mdWater
     | [@bs.as "md-wifi"] `mdWifi
     | [@bs.as "md-wine"] `mdWine
-    | [@bs.as "md-woman"] `mdWoman
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "md-woman"] `mdWoman  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "Ionicons";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`iosAdd,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=Ionicons.js,
-  ~props=
-    Ionicons.props(
-      ~allowFontScaling,
-      ~name=Ionicons.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

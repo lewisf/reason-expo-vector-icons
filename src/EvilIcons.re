@@ -1,10 +1,7 @@
 module EvilIcons = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "EvilIcons";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "archive"] `archive
+  [@bs.module ("@expo/vector-icons", "EvilIcons")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "archive"] `archive
     | [@bs.as "arrow-down"] `arrowDown
     | [@bs.as "arrow-left"] `arrowLeft
     | [@bs.as "arrow-right"] `arrowRight
@@ -73,45 +70,6 @@ module EvilIcons = {
     | [@bs.as "trophy"] `trophy
     | [@bs.as "undo"] `undo
     | [@bs.as "unlock"] `unlock
-    | [@bs.as "user"] `user
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "user"] `user  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "EvilIcons";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`archive,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=EvilIcons.js,
-  ~props=
-    EvilIcons.props(
-      ~allowFontScaling,
-      ~name=EvilIcons.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

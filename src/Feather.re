@@ -1,10 +1,7 @@
 module Feather = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "Feather";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "activity"] `activity
+  [@bs.module ("@expo/vector-icons", "Feather")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "activity"] `activity
     | [@bs.as "airplay"] `airplay
     | [@bs.as "alert-circle"] `alertCircle
     | [@bs.as "alert-octagon"] `alertOctagon
@@ -269,45 +266,6 @@ module Feather = {
     | [@bs.as "zap"] `zap
     | [@bs.as "zap-off"] `zapOff
     | [@bs.as "zoom-in"] `zoomIn
-    | [@bs.as "zoom-out"] `zoomOut
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "zoom-out"] `zoomOut  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "Feather";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`activity,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=Feather.js,
-  ~props=
-    Feather.props(
-      ~allowFontScaling,
-      ~name=Feather.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

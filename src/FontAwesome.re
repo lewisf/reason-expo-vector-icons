@@ -1,10 +1,7 @@
 module FontAwesome = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "FontAwesome";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "glass"] `glass
+  [@bs.module ("@expo/vector-icons", "FontAwesome")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "glass"] `glass
     | [@bs.as "music"] `music
     | [@bs.as "search"] `search
     | [@bs.as "envelope-o"] `envelopeO
@@ -789,45 +786,6 @@ module FontAwesome = {
     | [@bs.as "snowflake-o"] `snowflakeO
     | [@bs.as "superpowers"] `superpowers
     | [@bs.as "wpexplorer"] `wpexplorer
-    | [@bs.as "meetup"] `meetup
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "meetup"] `meetup  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "FontAwesome";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`glass,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=FontAwesome.js,
-  ~props=
-    FontAwesome.props(
-      ~allowFontScaling,
-      ~name=FontAwesome.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

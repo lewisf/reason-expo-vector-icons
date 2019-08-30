@@ -1,10 +1,7 @@
 module Foundation = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "Foundation";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "address-book"] `addressBook
+  [@bs.module ("@expo/vector-icons", "Foundation")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "address-book"] `addressBook
     | [@bs.as "alert"] `alert
     | [@bs.as "align-center"] `alignCenter
     | [@bs.as "align-justify"] `alignJustify
@@ -286,45 +283,6 @@ module Foundation = {
     | [@bs.as "x"] `x
     | [@bs.as "yen"] `yen
     | [@bs.as "zoom-in"] `zoomIn
-    | [@bs.as "zoom-out"] `zoomOut
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "zoom-out"] `zoomOut  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "Foundation";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`addressBook,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=Foundation.js,
-  ~props=
-    Foundation.props(
-      ~allowFontScaling,
-      ~name=Foundation.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

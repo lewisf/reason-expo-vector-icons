@@ -1,11 +1,9 @@
 module Octicons = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "Octicons";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "alert"] `alert
+  [@bs.module ("@expo/vector-icons", "Octicons")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "alert"] `alert
     | [@bs.as "archive"] `archive
+    | [@bs.as "arrow-both"] `arrowBoth
     | [@bs.as "arrow-down"] `arrowDown
     | [@bs.as "arrow-left"] `arrowLeft
     | [@bs.as "arrow-right"] `arrowRight
@@ -56,6 +54,7 @@ module Octicons = {
     | [@bs.as "diff-renamed"] `diffRenamed
     | [@bs.as "ellipsis"] `ellipsis
     | [@bs.as "eye"] `eye
+    | [@bs.as "eye-closed"] `eyeClosed
     | [@bs.as "file"] `file
     | [@bs.as "file-binary"] `fileBinary
     | [@bs.as "file-code"] `fileCode
@@ -68,6 +67,8 @@ module Octicons = {
     | [@bs.as "file-zip"] `fileZip
     | [@bs.as "flame"] `flame
     | [@bs.as "fold"] `fold
+    | [@bs.as "fold-down"] `foldDown
+    | [@bs.as "fold-up"] `foldUp
     | [@bs.as "gear"] `gear
     | [@bs.as "gift"] `gift
     | [@bs.as "gist"] `gist
@@ -77,6 +78,7 @@ module Octicons = {
     | [@bs.as "git-compare"] `gitCompare
     | [@bs.as "git-merge"] `gitMerge
     | [@bs.as "git-pull-request"] `gitPullRequest
+    | [@bs.as "github-action"] `githubAction
     | [@bs.as "globe"] `globe
     | [@bs.as "grabber"] `grabber
     | [@bs.as "graph"] `graph
@@ -125,6 +127,7 @@ module Octicons = {
     | [@bs.as "pencil"] `pencil
     | [@bs.as "person"] `person
     | [@bs.as "pin"] `pin
+    | [@bs.as "play"] `play
     | [@bs.as "plug"] `plug
     | [@bs.as "plus"] `plus
     | [@bs.as "plus-small"] `plusSmall
@@ -143,6 +146,7 @@ module Octicons = {
     | [@bs.as "repo-pull"] `repoPull
     | [@bs.as "repo-push"] `repoPush
     | [@bs.as "report"] `report
+    | [@bs.as "request-changes"] `requestChanges
     | [@bs.as "rocket"] `rocket
     | [@bs.as "rss"] `rss
     | [@bs.as "ruby"] `ruby
@@ -180,45 +184,6 @@ module Octicons = {
     | [@bs.as "versions"] `versions
     | [@bs.as "watch"] `watch
     | [@bs.as "x"] `x
-    | [@bs.as "zap"] `zap
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "zap"] `zap  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "Octicons";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`alert,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=Octicons.js,
-  ~props=
-    Octicons.props(
-      ~allowFontScaling,
-      ~name=Octicons.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

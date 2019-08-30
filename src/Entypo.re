@@ -1,10 +1,7 @@
 module Entypo = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "Entypo";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "500px"] `_500Px
+  [@bs.module ("@expo/vector-icons", "Entypo")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "500px"] `_500Px
     | [@bs.as "500px-with-circle"] `_500PxWithCircle
     | [@bs.as "add-to-list"] `addToList
     | [@bs.as "add-user"] `addUser
@@ -414,45 +411,6 @@ module Entypo = {
     | [@bs.as "youko"] `youko
     | [@bs.as "youko-with-circle"] `youkoWithCircle
     | [@bs.as "youtube"] `youtube
-    | [@bs.as "youtube-with-circle"] `youtubeWithCircle
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "youtube-with-circle"] `youtubeWithCircle  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "Entypo";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`_500Px,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=Entypo.js,
-  ~props=
-    Entypo.props(
-      ~allowFontScaling,
-      ~name=Entypo.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

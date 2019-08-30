@@ -1,10 +1,7 @@
 module Zocial = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "Zocial";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "acrobat"] `acrobat
+  [@bs.module ("@expo/vector-icons", "Zocial")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "acrobat"] `acrobat
     | [@bs.as "amazon"] `amazon
     | [@bs.as "android"] `android
     | [@bs.as "angellist"] `angellist
@@ -103,45 +100,6 @@ module Zocial = {
     | [@bs.as "yahoo"] `yahoo
     | [@bs.as "ycombinator"] `ycombinator
     | [@bs.as "yelp"] `yelp
-    | [@bs.as "youtube"] `youtube
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "youtube"] `youtube  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "Zocial";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`acrobat,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=Zocial.js,
-  ~props=
-    Zocial.props(
-      ~allowFontScaling,
-      ~name=Zocial.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

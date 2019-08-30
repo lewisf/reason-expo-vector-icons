@@ -1,10 +1,7 @@
 module MaterialIcons = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "MaterialIcons";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "3d-rotation"] `_3DRotation
+  [@bs.module ("@expo/vector-icons", "MaterialIcons")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "3d-rotation"] `_3DRotation
     | [@bs.as "ac-unit"] `acUnit
     | [@bs.as "access-alarm"] `accessAlarm
     | [@bs.as "access-alarms"] `accessAlarms
@@ -935,45 +932,6 @@ module MaterialIcons = {
     | [@bs.as "youtube-searched-for"] `youtubeSearchedFor
     | [@bs.as "zoom-in"] `zoomIn
     | [@bs.as "zoom-out"] `zoomOut
-    | [@bs.as "zoom-out-map"] `zoomOutMap
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "zoom-out-map"] `zoomOutMap  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "MaterialIcons";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`_3DRotation,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=MaterialIcons.js,
-  ~props=
-    MaterialIcons.props(
-      ~allowFontScaling,
-      ~name=MaterialIcons.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);

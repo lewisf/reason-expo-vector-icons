@@ -1,10 +1,7 @@
 module SimpleLineIcons = {
-  [@bs.module "@expo/vector-icons"]
-  external js : ReasonReact.reactClass = "SimpleLineIcons";
-
-  [@bs.deriving jsConverter]
-  type name = [
-    | [@bs.as "user"] `user
+  [@bs.module ("@expo/vector-icons", "SimpleLineIcons")] [@react.component]
+  external make:
+    (~name: [@bs.string][ | [@bs.as "user"] `user
     | [@bs.as "people"] `people
     | [@bs.as "user-female"] `userFemale
     | [@bs.as "user-follow"] `userFollow
@@ -192,45 +189,6 @@ module SimpleLineIcons = {
     | [@bs.as "social-youtube"] `socialYoutube
     | [@bs.as "social-dropbox"] `socialDropbox
     | [@bs.as "social-vkontakte"] `socialVkontakte
-    | [@bs.as "social-steam"] `socialSteam
-  ]
-  let nameToJs = nameToJs;
-
-  [@bs.deriving abstract]
-  type props = {
-    [@bs.optional]
-    allowFontScaling: bool,
-    [@bs.optional]
-    name: string,
-    [@bs.optional]
-    size: int,
-    [@bs.optional]
-    color: string,
-    [@bs.optional]
-    style: BsReactNative.Style.t,
-  };
-
+    | [@bs.as "social-steam"] `socialSteam  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+    React.element = "SimpleLineIcons";
 }
-
-let make =
-  (
-    ~allowFontScaling=false,
-    ~name=`user,
-    ~color="black",
-    ~size=12,
-    ~style=BsReactNative.Style.style([]),
-    children,
-  ) =>
-ReasonReact.wrapJsForReason(
-  ~reactClass=SimpleLineIcons.js,
-  ~props=
-    SimpleLineIcons.props(
-      ~allowFontScaling,
-      ~name=SimpleLineIcons.nameToJs(name),
-      ~size,
-      ~color,
-      ~style,
-      (),
-    ),
-  children,
-);
