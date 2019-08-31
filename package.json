@@ -7,8 +7,7 @@
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
     "install::dev": "yarn && install-self-peers -- --ignore-scripts",
-    "pub": "npx np --yolo",
-    "format:re": "find . -name \"*.re\" | grep -v \"node_modules\" | xargs bsrefmt --in-place"
+    "pub": "npx np --yolo"
   },
   "keywords": [
     "BuckleScript",
