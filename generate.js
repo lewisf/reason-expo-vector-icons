@@ -74,7 +74,7 @@ module ${name} = {
   external make:
     (~name: [@bs.string][ ${variant}  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
     React.element = "${name}";
-}
+};
 `;
 
 
@@ -128,12 +128,12 @@ function generate() {
           })
         )
         .then(file => {
-          fs.writeFileSync(path.join(__dirname, "src", `Icons_${name}.re`), file);
-          // fs.writeFileSync(path.join(__dirname, "src", `${name}.re`), file);
+          // fs.writeFileSync(path.join(__dirname, "src", `Icons_${name}.re`), file);
+          fs.writeFileSync(path.join(__dirname, "src", `${name}.re`), file);
         });
     })
   );
 }
 
-// generate();
-print('./src/')
+generate();
+// print('./src/')

@@ -31,7 +31,8 @@
     "lodash.capitalize": "^4.2.1"
   },
   "dependencies": {
-    "@expo/vector-icons": "^10.0.5"
+    "@expo/vector-icons": "^10.0.5",
+    "reason-expo-vector-icons": "https://github.com/idkjs/reason-expo-vector-icons.git"
   },
   "peerDependencies": {
     "expo": "^34.0.4",

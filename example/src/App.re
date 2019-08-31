@@ -31,7 +31,7 @@ let app = () => {
           {React.string("To get started, edit App.re")}
         </Text>
         // <FontAwesome name=`map size=20 color="#fafafa" />
-        <Ionicons name=`iosAddCircle size=32 color="magenta" />
+        <Ionicons.Ionicons name=`iosAddCircle size=32 color="magenta" />
         <Ionicons name=`iosAdd size=32 color="green" />
         <Icons.Ionicons name=`iosAddCircle size=32 color="magenta" />
       </LinearGradient>
