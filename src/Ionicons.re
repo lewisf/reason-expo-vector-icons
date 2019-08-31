@@ -1,7 +1,6 @@
-module Ionicons = {
-  [@bs.module ("@expo/vector-icons", "Ionicons")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "ios-add"] `iosAdd
+[@bs.module ("@expo/vector-icons", "Ionicons")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "ios-add"] `iosAdd
     | [@bs.as "ios-add-circle"] `iosAddCircle
     | [@bs.as "ios-add-circle-outline"] `iosAddCircleOutline
     | [@bs.as "ios-airplane"] `iosAirplane
@@ -697,5 +696,4 @@ module Ionicons = {
     | [@bs.as "md-wifi"] `mdWifi
     | [@bs.as "md-wine"] `mdWine
     | [@bs.as "md-woman"] `mdWoman  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "Ionicons";
-};
+  React.element = "Ionicons";

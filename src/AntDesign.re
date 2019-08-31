@@ -1,7 +1,6 @@
-module AntDesign = {
-  [@bs.module ("@expo/vector-icons", "AntDesign")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "stepforward"] `stepforward
+[@bs.module ("@expo/vector-icons", "AntDesign")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "stepforward"] `stepforward
     | [@bs.as "stepbackward"] `stepbackward
     | [@bs.as "forward"] `forward
     | [@bs.as "banckward"] `banckward
@@ -299,5 +298,4 @@ module AntDesign = {
     | [@bs.as "yuque"] `yuque
     | [@bs.as "slack"] `slack
     | [@bs.as "slack-square"] `slackSquare  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "AntDesign";
-};
+  React.element = "AntDesign";

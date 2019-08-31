@@ -1,7 +1,6 @@
-module Feather = {
-  [@bs.module ("@expo/vector-icons", "Feather")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "activity"] `activity
+[@bs.module ("@expo/vector-icons", "Feather")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "activity"] `activity
     | [@bs.as "airplay"] `airplay
     | [@bs.as "alert-circle"] `alertCircle
     | [@bs.as "alert-octagon"] `alertOctagon
@@ -267,5 +266,4 @@ module Feather = {
     | [@bs.as "zap-off"] `zapOff
     | [@bs.as "zoom-in"] `zoomIn
     | [@bs.as "zoom-out"] `zoomOut  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "Feather";
-};
+  React.element = "Feather";

@@ -1,7 +1,6 @@
-module MaterialCommunityIcons = {
-  [@bs.module ("@expo/vector-icons", "MaterialCommunityIcons")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "access-point"] `accessPoint
+[@bs.module ("@expo/vector-icons", "MaterialCommunityIcons")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "access-point"] `accessPoint
     | [@bs.as "access-point-network"] `accessPointNetwork
     | [@bs.as "access-point-network-off"] `accessPointNetworkOff
     | [@bs.as "account"] `account
@@ -3495,5 +3494,4 @@ module MaterialCommunityIcons = {
     | [@bs.as "zodiac-taurus"] `zodiacTaurus
     | [@bs.as "zodiac-virgo"] `zodiacVirgo
     | [@bs.as "blank"] `blank  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "MaterialCommunityIcons";
-};
+  React.element = "MaterialCommunityIcons";

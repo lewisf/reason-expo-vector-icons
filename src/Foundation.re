@@ -1,7 +1,6 @@
-module Foundation = {
-  [@bs.module ("@expo/vector-icons", "Foundation")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "address-book"] `addressBook
+[@bs.module ("@expo/vector-icons", "Foundation")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "address-book"] `addressBook
     | [@bs.as "alert"] `alert
     | [@bs.as "align-center"] `alignCenter
     | [@bs.as "align-justify"] `alignJustify
@@ -284,5 +283,4 @@ module Foundation = {
     | [@bs.as "yen"] `yen
     | [@bs.as "zoom-in"] `zoomIn
     | [@bs.as "zoom-out"] `zoomOut  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "Foundation";
-};
+  React.element = "Foundation";

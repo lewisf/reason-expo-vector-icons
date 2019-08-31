@@ -1,7 +1,6 @@
-module Zocial = {
-  [@bs.module ("@expo/vector-icons", "Zocial")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "acrobat"] `acrobat
+[@bs.module ("@expo/vector-icons", "Zocial")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "acrobat"] `acrobat
     | [@bs.as "amazon"] `amazon
     | [@bs.as "android"] `android
     | [@bs.as "angellist"] `angellist
@@ -101,5 +100,4 @@ module Zocial = {
     | [@bs.as "ycombinator"] `ycombinator
     | [@bs.as "yelp"] `yelp
     | [@bs.as "youtube"] `youtube  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "Zocial";
-};
+  React.element = "Zocial";

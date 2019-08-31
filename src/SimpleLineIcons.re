@@ -1,7 +1,6 @@
-module SimpleLineIcons = {
-  [@bs.module ("@expo/vector-icons", "SimpleLineIcons")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "user"] `user
+[@bs.module ("@expo/vector-icons", "SimpleLineIcons")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "user"] `user
     | [@bs.as "people"] `people
     | [@bs.as "user-female"] `userFemale
     | [@bs.as "user-follow"] `userFollow
@@ -190,5 +189,4 @@ module SimpleLineIcons = {
     | [@bs.as "social-dropbox"] `socialDropbox
     | [@bs.as "social-vkontakte"] `socialVkontakte
     | [@bs.as "social-steam"] `socialSteam  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "SimpleLineIcons";
-};
+  React.element = "SimpleLineIcons";

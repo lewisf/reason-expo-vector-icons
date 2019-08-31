@@ -68,13 +68,20 @@ const ICONS = [
       "https://raw.githack.com/expo/vector-icons/master/src/vendor/react-native-vector-icons/glyphmaps/Zocial.json"
   }
 ];
+// const moduleTemplate = ({ name, variant }) => stripIndent`
+// module ${name} = {
+//   [@bs.module ("@expo/vector-icons", "${name}")] [@react.component]
+//   external make:
+//     (~name: [@bs.string][ ${variant}  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+//     React.element = "${name}";
+// };
+// `;
 const moduleTemplate = ({ name, variant }) => stripIndent`
-module ${name} = {
-  [@bs.module ("@expo/vector-icons", "${name}")] [@react.component]
-  external make:
-    (~name: [@bs.string][ ${variant}  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "${name}";
-};
+
+[@bs.module ("@expo/vector-icons", "${name}")] [@react.component]
+external make:
+  (~name: [@bs.string][ ${variant}  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
+  React.element = "${name}";
 `;
 
 

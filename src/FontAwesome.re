@@ -1,7 +1,6 @@
-module FontAwesome = {
-  [@bs.module ("@expo/vector-icons", "FontAwesome")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "glass"] `glass
+[@bs.module ("@expo/vector-icons", "FontAwesome")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "glass"] `glass
     | [@bs.as "music"] `music
     | [@bs.as "search"] `search
     | [@bs.as "envelope-o"] `envelopeO
@@ -787,5 +786,4 @@ module FontAwesome = {
     | [@bs.as "superpowers"] `superpowers
     | [@bs.as "wpexplorer"] `wpexplorer
     | [@bs.as "meetup"] `meetup  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "FontAwesome";
-};
+  React.element = "FontAwesome";

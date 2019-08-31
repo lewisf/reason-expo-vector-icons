@@ -1,7 +1,6 @@
-module EvilIcons = {
-  [@bs.module ("@expo/vector-icons", "EvilIcons")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "archive"] `archive
+[@bs.module ("@expo/vector-icons", "EvilIcons")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "archive"] `archive
     | [@bs.as "arrow-down"] `arrowDown
     | [@bs.as "arrow-left"] `arrowLeft
     | [@bs.as "arrow-right"] `arrowRight
@@ -71,5 +70,4 @@ module EvilIcons = {
     | [@bs.as "undo"] `undo
     | [@bs.as "unlock"] `unlock
     | [@bs.as "user"] `user  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "EvilIcons";
-};
+  React.element = "EvilIcons";

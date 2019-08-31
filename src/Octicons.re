@@ -1,7 +1,6 @@
-module Octicons = {
-  [@bs.module ("@expo/vector-icons", "Octicons")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "alert"] `alert
+[@bs.module ("@expo/vector-icons", "Octicons")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "alert"] `alert
     | [@bs.as "archive"] `archive
     | [@bs.as "arrow-both"] `arrowBoth
     | [@bs.as "arrow-down"] `arrowDown
@@ -185,5 +184,4 @@ module Octicons = {
     | [@bs.as "watch"] `watch
     | [@bs.as "x"] `x
     | [@bs.as "zap"] `zap  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "Octicons";
-};
+  React.element = "Octicons";

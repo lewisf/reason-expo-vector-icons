@@ -1,7 +1,6 @@
-module MaterialIcons = {
-  [@bs.module ("@expo/vector-icons", "MaterialIcons")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "3d-rotation"] `_3DRotation
+[@bs.module ("@expo/vector-icons", "MaterialIcons")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "3d-rotation"] `_3DRotation
     | [@bs.as "ac-unit"] `acUnit
     | [@bs.as "access-alarm"] `accessAlarm
     | [@bs.as "access-alarms"] `accessAlarms
@@ -933,5 +932,4 @@ module MaterialIcons = {
     | [@bs.as "zoom-in"] `zoomIn
     | [@bs.as "zoom-out"] `zoomOut
     | [@bs.as "zoom-out-map"] `zoomOutMap  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "MaterialIcons";
-};
+  React.element = "MaterialIcons";

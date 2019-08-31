@@ -1,7 +1,6 @@
-module Entypo = {
-  [@bs.module ("@expo/vector-icons", "Entypo")] [@react.component]
-  external make:
-    (~name: [@bs.string][ | [@bs.as "500px"] `_500Px
+[@bs.module ("@expo/vector-icons", "Entypo")] [@react.component]
+external make:
+  (~name: [@bs.string][ | [@bs.as "500px"] `_500Px
     | [@bs.as "500px-with-circle"] `_500PxWithCircle
     | [@bs.as "add-to-list"] `addToList
     | [@bs.as "add-user"] `addUser
@@ -412,5 +411,4 @@ module Entypo = {
     | [@bs.as "youko-with-circle"] `youkoWithCircle
     | [@bs.as "youtube"] `youtube
     | [@bs.as "youtube-with-circle"] `youtubeWithCircle  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
-    React.element = "Entypo";
-};
+  React.element = "Entypo";
