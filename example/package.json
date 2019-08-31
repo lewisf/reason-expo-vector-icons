@@ -4,6 +4,7 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
+    "web": "expo start --web",
     "eject": "expo eject",
     "build": "bsb -make-world -clean-world",
     "watch": "bsb -make-world -clean-world -w"
@@ -14,7 +15,9 @@
     "expo": "^34.0.3",
     "expo-linear-gradient": "^5.0.1",
     "react": "16.8.3",
+    "react-dom": "16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+    "react-native-web": "0.11.7",
     "reason-expo": "^34.0.0",
     "reason-react": "^0.7.0",
     "reason-react-native": "^0.60.0"

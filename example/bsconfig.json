@@ -4,11 +4,9 @@
     "react-jsx": 3
   },
   "bsc-flags": ["-bs-super-errors"],
-  "bs-dependencies": ["reason-react", "reason-react-native", "reason-expo","../../reason-expo-vector-icons"],
+  "bs-dependencies": ["reason-react", "reason-react-native", "reason-expo","../../idkjs-reason-expo-vector-icons"],
   "sources": [
-    {
-      "dir": "src"
-    }
+    { "dir": "src", "subdirs": true }
   ],
   "suffix": ".bs.js",
   "refmt": 3,

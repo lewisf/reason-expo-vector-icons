@@ -32,7 +32,9 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^10.0.5",
-    "reason-expo-vector-icons": "https://github.com/idkjs/reason-expo-vector-icons.git"
+    "react-ionicons": "3.0.1",
+    "reason-macros-bin": "1.0.0-alpha.2",
+    "reason-react-native": "^0.60.0"
   },
   "peerDependencies": {
     "expo": "^34.0.4",
