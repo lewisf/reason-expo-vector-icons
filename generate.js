@@ -104,7 +104,14 @@ const generateVariantFromIconsSet = icons => [
 //     .join("\n    "),
 //   Object.keys(icons)[0]
 // ];
-
+function print( pathtodir ) {
+  let files = fs.readdirSync( pathtodir );
+  files.forEach( file => {
+    let stats = fs.statSync( pathtodir + '/' + file);
+    let created = new Date( stats.birthtime ).toDateString();
+    console.log( created, file );
+  });
+};
 function generate() {
   console.log("Generating...");
   Promise.all(
@@ -114,18 +121,19 @@ function generate() {
       return fetch(glyphMapUrl)
         .then(res => res.json())
         .then(generateVariantFromIconsSet)
-        .then(([variant, defaultIcon]) =>
+        .then(([variant]) =>
           moduleTemplate({
             name,
-            variant,
-            defaultIcon: makeReasonIdent(defaultIcon)
+            variant
           })
         )
         .then(file => {
-          fs.writeFileSync(path.join(__dirname, "src", `${name}.re`), file);
+          fs.writeFileSync(path.join(__dirname, "src", `Icons_${name}.re`), file);
+          // fs.writeFileSync(path.join(__dirname, "src", `${name}.re`), file);
         });
     })
   );
 }
 
-generate();
+// generate();
+print('./src/')

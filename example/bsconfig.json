@@ -1,19 +1,19 @@
 {
-  "name": "reason-expo-vector-icons-playground",
-  "bsc-flags": ["-bs-super-errors"],
-   "reason": {
+  "name": "my-reason-expo-app",
+  "reason": {
     "react-jsx": 3
   },
-  "refmt": 3,
-  "bs-dependencies": [
-    "reason-react",
-    "reason-react-native",
-    "../../reason-expo-vector-icons"
-  ],
+  "bsc-flags": ["-bs-super-errors"],
+  "bs-dependencies": ["reason-react", "reason-react-native", "reason-expo","../../reason-expo-vector-icons"],
   "sources": [
     {
-      "dir": "src",
-      "subdirs": true
+      "dir": "src"
     }
-  ]
+  ],
+  "suffix": ".bs.js",
+  "refmt": 3,
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  }
 }

@@ -698,4 +698,4 @@ module Ionicons = {
     | [@bs.as "md-wine"] `mdWine
     | [@bs.as "md-woman"] `mdWoman  ], ~size: int, ~color: string, ~style: ReactNative.Style.t=?) =>
     React.element = "Ionicons";
-};
+}

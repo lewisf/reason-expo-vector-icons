@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "example",
-    "slug": "example",
+    "name": "ExpoFontsTester",
+    "description": "A basic ReasonExpo app.",
+    "slug": "ExpoFontsTester",
     "privacy": "public",
     "sdkVersion": "34.0.0",
     "platforms": [

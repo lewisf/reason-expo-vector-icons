@@ -4,20 +4,23 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "watch": "bsb -clean-world -make-world -w",
-    "build": "bsb -clean-world -make-world",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "build": "bsb -make-world -clean-world",
+    "watch": "bsb -make-world -clean-world -w"
   },
   "dependencies": {
-    "bs-platform": "^5.0.6",
-    "reason-react-native": "^0.60.0",
-    "expo": "^34.0.4",
-    "react": "16.9.0",
+    "@expo/vector-icons": "10.0.5",
+    "bs-platform": "^5.0.4",
+    "expo": "^34.0.3",
+    "expo-linear-gradient": "^5.0.1",
+    "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
-    "reason-react": "^0.7.0"
+    "reason-expo": "^34.0.0",
+    "reason-react": "^0.7.0",
+    "reason-react-native": "^0.60.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.2.0"
+    "babel-preset-expo": "^6.0.0"
   },
   "private": true
 }

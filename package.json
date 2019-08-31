@@ -16,10 +16,10 @@
     "React",
     "Reason React Native"
   ],
-  "author": "Lewis Chung<@_lewisf>",
-  "repository": "https://github.com/lewisf/reason-expo-vector-icons",
-  "homepage": "https://github.com/lewisf/reason-expo-vector-icons",
-  "bugs": "https://github.com/lewisf/reason-expo-vector-icons",
+  "author": "Alain Armand>",
+  "repository": "https://github.com/idkjs/reason-expo-vector-icons",
+  "homepage": "https://github.com/idkjs/reason-expo-vector-icons",
+  "bugs": "https://github.com/idkjs/reason-expo-vector-icons",
   "license": "MIT",
   "devDependencies": {
     "@team-griffin/install-self-peers": "^1.1.1",

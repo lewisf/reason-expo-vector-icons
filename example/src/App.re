@@ -1,34 +1,44 @@
 open ReactNative;
+open Expo;
+open FontAwesome;
+// open Ionicons;
 open ReasonExpoVectorIcons;
-module Icons = ReasonExpoVectorIcons;
+let styles =
+  Style.(
+    StyleSheet.create({
+      "container":
+        style(
+          ~flex=1.,
+          ~justifyContent=`center,
+          ~alignItems=`center,
+          ~backgroundColor="#F5FCFF",
+          (),
+        ),
+      "instructions": style(~textAlign=`center, ~color="#ffffff", ()),
+    })
+  );
 
-let component = ReasonReact.statelessComponent("App");
-
-module Styles = {
-  open Style;
-  let container =
-    style(~flex=1., ~alignItems=`center, ~justifyContent=`center, ());
-  let profileContainer = style(~backgroundColor="rgb(76, 217, 100)", ());
-};
 [@react.component]
-let make = () => {
-    <SafeAreaView
-      style={StyleSheet.flatten([|
-        Styles.container,
-        Styles.profileContainer,
-      |])}>
-      <View>
-        <FontAwesomeUpdated name=`map size=20 color="#fafafa" />
-        // <Icons.Ionicons name=`iosAddCircle size=32 color="magenta" />
-        // <Icons.Ionicons name=`iosAdd size=32 color="green" />
-        // <Icons.AntDesign name=`stepforward size=32 color="red" />
-        // <Icons.Feather name=`airplay size=32 color="yellow" />
-        // <Icons.Foundation name=`dieThree size=32 color="yellow" />
-        // <Icons.Octicons name=`flame size=32 color="orange" />
-        // <Icons.SimpleLineIcons name=`eyeglass size=32 color="aqua" />
-        // <Icons.Zocial name=`twitter size=32 color="lightblue" />
-      </View>
-    </SafeAreaView>;
+let app = () => {
+  <View style=styles##container>
+    <LinearGradient
+      colors=[|"#DD4B39", "#C62C19"|]
+      start=[|0.0, 0.0|]
+      _end=[|1.0, 1.0|]
+      style=Style.(style(~padding=dp(12.), ~borderRadius=12., ()))>
+      <Text style=styles##instructions>
+        {React.string("To get started, edit App.re")}
+      </Text>
+      // <FontAwesome name=`map size=20 color="#fafafa" />
+      <Ionicons name=`iosAddCircle size=32 color="magenta" />
+        <Ionicons name=`iosAdd size=32 color="green" />
+        <Icons.Ionicons name=`iosAddCircle size=32 color="magenta" />
+        // <AntDesign name=`stepforward size=32 color="red" />
+        // <Feather name=`airplay size=32 color="yellow" />
+        // <Foundation name=`dieThree size=32 color="yellow" />
+        // <Octicons name=`flame size=32 color="orange" />
+        // <SimpleLineIcons name=`eyeglass size=32 color="aqua" />
+        // <Zocial name=`twitter size=32 color="lightblue" />
+    </LinearGradient>
+  </View>;
 };
-
-let default = make;
