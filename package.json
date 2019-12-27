@@ -9,7 +9,12 @@
     "install::dev": "yarn && install-self-peers -- --ignore-scripts",
     "pub": "npx np --yolo"
   },
-  "keywords": ["BuckleScript", "Expo", "React Native", "React"],
+  "keywords": [
+    "BuckleScript",
+    "Expo",
+    "React Native",
+    "React"
+  ],
   "author": "Lewis Chung<@_lewisf>",
   "repository": "https://github.com/lewisf/reason-expo-vector-icons",
   "homepage": "https://github.com/lewisf/reason-expo-vector-icons",
@@ -24,7 +29,7 @@
     "lodash.capitalize": "^4.2.1"
   },
   "dependencies": {
-    "@expo/vector-icons": "^8.1.0"
+    "@expo/vector-icons": "^10.0.6"
   },
   "peerDependencies": {
     "bs-react-native": "^0.10.0",
