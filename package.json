@@ -1,6 +1,6 @@
 {
   "name": "reason-expo-vector-icons",
-  "version": "31.0.1",
+  "version": "36.0.0",
   "description": "Bucklescript bindings for @expo/vector-icons, the standard way to use icons with Expo.",
   "scripts": {
     "build": "bsb -make-world",
